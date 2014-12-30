@@ -7,15 +7,16 @@ files=("bash_profile"
        "vimrc"
        "zshrc")
 
-for file in files; do
-    ln -snf "$(pwd)/$file" ~/.$file
+for file in "${files[@]}"; do
+    ln -snf "$(pwd)/$file" $HOME/.$file
 done
 
 folders=("tmux"
-         "vim")
+         "vim"
+         "oh-my-zsh")
 
-for folder in folders; do
-    ln -snfF "$(pwd)/$folder" ~/.($folder)
+for folder in "${folders[@]}"; do
+    ln -snfF "$(pwd)/$folder" $HOME/.$folder
 done
 
 git submodule update --init --recursive
