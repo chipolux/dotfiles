@@ -1,0 +1,12 @@
+[user]
+	name = NaKyle Wright
+	email = nakyle.wright@gmail.com
+[core]
+	excludesfile = ~/.gitignore
+	pager = less -FX
+[push]
+	default = simple
+[merge]
+	tool = vimdiff
+[alias]
+	lp = log --graph --pretty=format:'%C(yellow)%h %C(blue)(%cr) %C(reset)- %s %C(green)<%cn>'
