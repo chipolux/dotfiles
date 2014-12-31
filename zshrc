@@ -14,7 +14,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # HIST_STAMPS="mm/dd/yyyy"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-plugins=(git tmux heroku osx)
+plugins=(git heroku osx brew)
 
 source $ZSH/oh-my-zsh.sh
 
