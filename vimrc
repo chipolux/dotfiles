@@ -35,19 +35,21 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 0
 let g:airline#extensions#whitespace#enabled = 0
 
+" Vim JSON stuff
+let g:vim_json_syntax_conceal = 0
+
 " Statusline if airline/powerline not available
 set statusline=%t\ %m%=%c,%l/%L\ %P
 
-" js-syntax stuff
+" Folding stuff
 au FileType javascript call JavaScriptFold()
+au FileType json set foldmethod=syntax
 
 " Display stuff
 if has("gui_running")
-    colorscheme solarized
     set guifont=Inconsolata\ for\ Powerline:h11
-    set background=dark
 else
     let g:solarized_termcolors = 256
-    colorscheme solarized
-    set background=dark
 endif
+colorscheme solarized
+set background=dark
