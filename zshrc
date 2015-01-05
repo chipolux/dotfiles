@@ -44,9 +44,9 @@ if [ -s "/usr/local/bin/virtualenvwrapper.sh" ]; then
 fi
 
 # autoenv
-if [ -s "/usr/local/opt/autoenv/activate.sh" ]; then
-    source /usr/local/opt/autoenv/activate.sh
-fi
+#if [ -s "/usr/local/opt/autoenv/activate.sh" ]; then
+#    source /usr/local/opt/autoenv/activate.sh
+#fi
 
 # Don't share history between terminals
 setopt no_share_history
@@ -60,4 +60,3 @@ alias grpy='grep -r --include="*.py" --exclude-dir="migrations"'
 alias grjs='grep -r --include="*.js" --exclude-dir={bin,node_modules,vendor,app-components}'
 alias grhtml='grep -r --include="*.html" --exclude-dir={bin,node_modules,vendor,app-components}'
 alias grcss='grep -r --include="*.css" --exclude-dir={bin,node_modules,vendor,app-components}'
-
