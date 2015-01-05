@@ -23,6 +23,9 @@ source $ZSH/oh-my-zsh.sh
 # Set local bins before system bins
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
+# Set Postgres stuff
+export PGDATA='/usr/local/var/postgres'
+
 # RVM
 if [ -s "$HOME/.rvm/scripts/rvm" ]; then
     # Load RVM into a shell session *as a function*
