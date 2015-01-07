@@ -16,7 +16,6 @@ set number
 set nowrap
 set hlsearch
 set incsearch
-match ColorColumn /\%81v.\+/
 set ttyfast
 
 " Close buffer without killing split
@@ -25,7 +24,7 @@ nmap <silent> <leader>D :bp!\|bd #<CR>
 
 " Vim-Pymode Stuff
 let g:pymode_lint = 0
-let g:pymode_options_max_line_length = 0
+let g:pymode_options_max_line_length = 80
 let g:pymode_rope_complete_on_dot = 0
 let g:pymode_breakpoint_cmd = ''
 
