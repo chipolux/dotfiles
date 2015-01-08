@@ -22,6 +22,9 @@ set ttyfast
 nmap <silent> <leader>d :bp\|bd #<CR>
 nmap <silent> <leader>D :bp!\|bd #<CR>
 
+" Remove trailing whitespace
+nmap <silent> <leader>s :%s/\s\+$//<CR>
+
 " Vim-Pymode Stuff
 let g:pymode_lint = 0
 let g:pymode_options_max_line_length = 80
