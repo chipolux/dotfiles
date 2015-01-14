@@ -17,6 +17,7 @@ set nowrap
 set hlsearch
 set incsearch
 set ttyfast
+set mouse=a
 
 " Close buffer without killing split
 nmap <silent> <leader>d :bp\|bd #<CR>
