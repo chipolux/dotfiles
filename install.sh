@@ -19,7 +19,7 @@ folders=("tmux"
          "oh-my-zsh")
 
 for folder in "${folders[@]}"; do
-    if [ -s $HOME/.$folder]; then
+    if [ -s $HOME/.$folder ]; then
         mv -f $HOME/.$folder $HOME/.$folder.old
     fi
     ln -snfF "$(pwd)/$folder" $HOME/.$folder
