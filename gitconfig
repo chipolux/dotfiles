@@ -1,6 +1,10 @@
 [user]
 	name = NaKyle Wright
 	email = nakyle.wright@gmail.com
+[ui]
+    color = true
+[color]
+    ui = auto
 [core]
 	excludesfile = ~/.gitignore
 	pager = less -FX
