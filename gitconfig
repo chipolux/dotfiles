@@ -9,7 +9,7 @@
 	excludesfile = ~/.gitignore
 	pager = less -FX
 [push]
-	default = simple
+	default = current
 [merge]
 	tool = vimdiff
 [alias]
