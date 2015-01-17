@@ -11,6 +11,7 @@ set backspace=2
 set laststatus=2
 set tabstop=4
 set shiftwidth=4
+set colorcolumn=81
 set expandtab
 set number
 set nowrap
@@ -28,9 +29,7 @@ nmap <silent> <leader>s :%s/\s\+$//<CR>
 
 " Vim-Pymode Stuff
 let g:pymode_lint = 0
-let g:pymode_options_max_line_length = 80
 let g:pymode_rope_complete_on_dot = 0
-let g:pymode_breakpoint_cmd = ''
 
 " Airline stuff
 let g:airline_powerline_fonts = 1
