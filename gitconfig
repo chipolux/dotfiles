@@ -7,7 +7,8 @@
     ui = auto
 [core]
 	excludesfile = ~/.gitignore
-	pager = less -FX
+    pager = less -FX
+    editor = vim
 [push]
 	default = current
 [merge]
