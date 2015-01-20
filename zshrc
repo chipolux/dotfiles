@@ -22,8 +22,25 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# Set local bins before system bins
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+# Prepend local bin to path
+if [ -d "/usr/local/bin" ]; then
+    export PATH="/opt/local/bin:$PATH"
+fi
+
+# Prepend local sbin to path
+if [ -d "/usr/local/sbin" ]; then
+    export PATH="/usr/local/sbin:$PATH"
+fi
+
+# Prepend opt local bin to path
+if [ -d "/opt/local/bin" ]; then
+    export PATH="/opt/local/bin:$PATH"
+fi
+
+# Prepend opt local sbin to path
+if [ -d "/opt/local/sbin" ]; then
+    export PATH="/opt/local/sbin:$PATH"
+fi
 
 # Set Postgres stuff
 export PGDATA='/usr/local/var/postgres'
