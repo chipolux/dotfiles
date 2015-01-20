@@ -43,13 +43,13 @@ if [ -d "/opt/local/sbin" ]; then
 fi
 
 # Set Postgres stuff
-export PGDATA='/usr/local/var/postgres'
+if [ -d "/usr/local/var/postgres" ]; then
+    export PGDATA="/usr/local/var/postgres"
+fi
 
-# RVM
+# RVM stuff
 if [ -s "$HOME/.rvm/scripts/rvm" ]; then
-    # Load RVM into a shell session *as a function*
     source "$HOME/.rvm/scripts/rvm"
-    # Add RVM to PATH for scripting
     export PATH="$PATH:$HOME/.rvm/bin"
 fi
 
