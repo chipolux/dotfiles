@@ -25,4 +25,17 @@ for folder in "${folders[@]}"; do
     ln -snfF "$(pwd)/$folder" $HOME/.$folder
 done
 
+weechat=("irc.conf"
+         "weechat.conf")
+
+for file in "${weechat[@]}"; do
+    if [ -s $HOME/.weechat/$file ]; then
+        mv -f $HOME/.weechat/$file $HOME/.weechat/$file.old
+        python $(pwd)/weechat/set_options.py \
+            $HOME/.weechat/$file.old \
+            $(pwd)/weechat/$file \
+            $HOME/.weechat/$file
+    fi
+done
+
 git submodule update --init --recursive
