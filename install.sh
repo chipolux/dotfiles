@@ -8,7 +8,7 @@ files=("bash_profile"
        "zshrc")
 
 for file in "${files[@]}"; do
-    if [ -s $HOME/.$file ]; then
+    if [ -e $HOME/.$file -a ! -h $HOME/.$file ]; then
         mv -f $HOME/.$file $HOME/.$file.old
     fi
     ln -snf "$(pwd)/$file" $HOME/.$file
@@ -19,7 +19,7 @@ folders=("tmux"
          "oh-my-zsh")
 
 for folder in "${folders[@]}"; do
-    if [ -s $HOME/.$folder ]; then
+    if [ -d $HOME/.$folder -a ! -h $HOME/.$folder ]; then
         mv -f $HOME/.$folder $HOME/.$folder.old
     fi
     ln -snfF "$(pwd)/$folder" $HOME/.$folder
@@ -29,7 +29,7 @@ weechat=("irc.conf"
          "weechat.conf")
 
 for file in "${weechat[@]}"; do
-    if [ -s $HOME/.weechat/$file ]; then
+    if [ -e $HOME/.weechat/$file ]; then
         mv -f $HOME/.weechat/$file $HOME/.weechat/$file.old
         python $(pwd)/weechat/set_options.py \
             $HOME/.weechat/$file.old \
