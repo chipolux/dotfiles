@@ -27,6 +27,11 @@ nmap <silent> <leader>D :bp!\|bd #<CR>
 " Remove trailing whitespace
 nmap <silent> <leader>s :%s/\s\+$//<CR>
 
+" Quickly open file tree
+" You can use let g:netrw_liststyle=1-4
+" To change tree display
+nmap <leader>t :Explore<CR>
+
 " Vim-Pymode Stuff
 let g:pymode_lint = 0
 let g:pymode_rope_complete_on_dot = 0
