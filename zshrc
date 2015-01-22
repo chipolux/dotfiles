@@ -71,6 +71,14 @@ fi
 #    source /usr/local/opt/autoenv/activate.sh
 #fi
 
+if [ -s "$(which forego)" ]; then
+    alias frun='forego run'
+    alias fpython='frun python'
+elif [ -s "$(which foreman)" ]; then
+    alias frun='foreman run'
+    alias fpython='frun python'
+fi
+
 # Don't share history between terminals
 setopt no_share_history
 setopt no_inc_append_history
