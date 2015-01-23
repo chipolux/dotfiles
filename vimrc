@@ -32,6 +32,9 @@ nmap <silent> <leader>s :%s/\s\+$//<CR>
 " To change tree display
 nmap <leader>t :Explore<CR>
 
+" Toggle highlighting cursor column and line
+nmap <leader>v :set cursorline! cursorcolumn!<CR>
+
 " Vim-Pymode Stuff
 let g:pymode_lint = 0
 let g:pymode_rope_complete_on_dot = 0
