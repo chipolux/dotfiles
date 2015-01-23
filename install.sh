@@ -1,6 +1,8 @@
 #!/bin/bash
 
-files=("bash_profile"
+files=("bashrc"
+       "profile"
+       "bash_profile"
        "gitconfig"
        "gitignore"
        "tmux.conf"
