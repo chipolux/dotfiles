@@ -1,22 +1,13 @@
-# Prepend local bin to path
-if [ -d "/usr/local/bin" ]; then
-    export PATH="/usr/local/bin:$PATH"
-fi
+PARTS=("/usr/local/bin"
+       "/usr/local/sbin"
+       "/opt/local/bin"
+       "/opt/local/sbin")
 
-# Prepend local sbin to path
-if [ -d "/usr/local/sbin" ]; then
-    export PATH="/usr/local/sbin:$PATH"
-fi
-
-# Prepend opt local bin to path
-if [ -d "/opt/local/bin" ]; then
-    export PATH="/opt/local/bin:$PATH"
-fi
-
-# Prepend opt local sbin to path
-if [ -d "/opt/local/sbin" ]; then
-    export PATH="/opt/local/sbin:$PATH"
-fi
+for PART in "${PARTS[@]}"; do
+    if [[ -e $PART && ":$PATH:" != *":$PART:"* ]]; then
+        export PATH="$PART:$PATH"
+    fi
+done
 
 # Set Postgres stuff
 if [ -d "/usr/local/var/postgres" ]; then
@@ -26,12 +17,18 @@ fi
 # RVM stuff
 if [ -s "$HOME/.rvm/scripts/rvm" ]; then
     source "$HOME/.rvm/scripts/rvm"
-    export PATH="$PATH:$HOME/.rvm/bin"
+    PART="$HOME/.rvm/bin"
+    if [[ -e $PART && ! ":$PATH:" == *":$PART:"* ]]; then
+        export PATH="$PATH:$PART"
+    fi
 fi
 
 # calibre command line tools
 if [ -s "/Applications/calibre.app/Contents/MacOS/calibre" ]; then
-    export PATH="/Applications/calibre.app/Contents/MacOS:$PATH"
+    PART="/Applications/calibre.app/Contents/MacOS"
+    if [[ -e $PART && ! ":$PATH:" == *":$PART:"* ]]; then
+        export PATH="$PART:$PATH"
+    fi
 fi
 
 # virtualenvwrapper
