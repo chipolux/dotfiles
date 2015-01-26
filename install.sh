@@ -7,7 +7,8 @@ files=("bashrc"
        "gitignore"
        "tmux.conf"
        "vimrc"
-       "zshrc")
+       "zshrc"
+       "mailcap")
 
 for file in "${files[@]}"; do
     if [ -e $HOME/.$file -a ! -h $HOME/.$file ]; then
@@ -18,7 +19,8 @@ done
 
 folders=("tmux"
          "vim"
-         "oh-my-zsh")
+         "oh-my-zsh"
+         "mutt")
 
 for folder in "${folders[@]}"; do
     if [ -d $HOME/.$folder -a ! -h $HOME/.$folder ]; then
