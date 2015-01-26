@@ -57,6 +57,10 @@ alias grcss='grep -r --include="*.css" --exclude-dir={bin,node_modules,vendor,ap
 # lt instances
 alias lt='ls -lth'
 
+# mutt aliases
+alias mail-personal='mutt -F ~/.mutt/personal.muttrc'
+alias mail-newmedio='mutt -F ~/.mutt/newmedio.muttrc'
+
 # Coloring
 #export CLICOLOR=1
 #export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx

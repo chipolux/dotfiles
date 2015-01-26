@@ -1,0 +1,51 @@
+# Where to store certificates
+set certificate_file = "~/.mutt/certificates"
+
+# Make imap refreshing nicer
+unset imap_passive
+set imap_check_subscribed
+set imap_keepalive = 900
+set mail_check = 60
+set timeout = 10
+
+# Don't prompt for some common stuff
+set move = "no"
+set copy = "yes"
+set delete = "yes"
+
+# Misc looks and other settings
+set sig_on_top = "yes"
+set net_inc = 5
+set sort = "threads"
+set sort_aux = "last-date-received"
+set markers = "no"
+set date_format = "!%a, %b %d, %Y at %I:%M:%S%p %Z"
+set index_format = "%4C %Z [%[%a %m/%d %H:%M]] %-16.16L%?X? [%X]? (%?l?%4l&%4c?) %s"
+set forward_format="Fwd: %s"
+set status_format=" %r %b %f New:%n Del:%d Total:%m Tag:%t Flag:%F Size:%l"
+
+# Use mailcap settings for viewing html emails
+auto_view text/html
+
+# Show html emails last
+alternative_order text/plain text/enriched text/html
+
+# Hide everything from email view, then re-add fields
+ignore *
+unignore from date subject to cc bcc
+unignore x-mailing-list posted-to
+
+# imap is the more important fetch
+bind index G imap-fetch-mail
+bind index ,G fetch-mail
+
+# Wooh, nice colors
+source ~/.mutt/solarized-dark-16.muttrc
+
+# Weird/unknown settings
+set hidden_host = "yes"
+set use_domain = "yes"
+set pager_stop = "yes"
+set envelope_from = "yes"
+set strict_threads = "yes"
+#set pager_index_lines = 20

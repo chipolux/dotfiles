@@ -1,0 +1,18 @@
+# Personal email account
+set from = "nakyle.wright@gmail.com"
+set realname = "NaKyle Wright"
+set imap_user = "nakyle.wright@gmail.com"
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed = "=Drafts"
+set record  = "=Sent"
+set smtp_url = "smtp://nakyle.wright@smtp.gmail.com:587/"
+set smtp_authenticators = "gssapi:login"
+set ssl_starttls = "yes"
+set ssl_force_tls = "yes"
+
+set header_cache = "~/.mutt/cache/personal.headers"
+set message_cachedir = "~/.mutt/cache/personal.bodies"
+set signature = "~/.mutt/personal.sig"
+
+source ~/.mutt/common.muttrc

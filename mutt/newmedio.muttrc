@@ -1,0 +1,18 @@
+# New Medio email account
+set from = "nakyle@newmedio.com"
+set realname = "NaKyle Wright"
+set imap_user = "nakyle@newmedio.com"
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed = "=Drafts"
+set record  = "=Sent"
+set smtp_url = "smtp://nakyle@newmedio.com@smtp.gmail.com:587/"
+set smtp_authenticators = "gssapi:login"
+set ssl_starttls = "yes"
+set ssl_force_tls = "yes"
+
+set header_cache = "~/.mutt/cache/newmedio.headers"
+set message_cachedir = "~/.mutt/cache/newmedio.bodies"
+set signature = "~/.mutt/newmedio.sig"
+
+source ~/.mutt/common.muttrc
