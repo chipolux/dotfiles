@@ -10,7 +10,6 @@ set timeout = 10
 
 # Don't prompt for some common stuff
 set move = "no"
-set copy = "yes"
 set delete = "yes"
 
 # Misc looks and other settings
