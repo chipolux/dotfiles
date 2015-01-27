@@ -1,17 +1,17 @@
 [user]
-	name = NaKyle Wright
-	email = nakyle.wright@gmail.com
+    name = NaKyle Wright
+    email = nakyle.wright@gmail.com
 [ui]
     color = true
 [color]
     ui = auto
 [core]
-	excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore
     pager = less -FX
     editor = vim
 [push]
-	default = current
+    default = current
 [merge]
-	tool = vimdiff
+    tool = vimdiff
 [alias]
-	lp = log --graph --pretty=format:'%C(yellow)%h %C(blue)(%cr) %C(reset)- %s %C(green)<%cn>'
+    lp = log --graph --pretty=format:'%C(yellow)%h %C(blue)(%cr) %C(reset)- %s %C(green)<%cn>'
