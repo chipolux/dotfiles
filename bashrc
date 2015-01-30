@@ -56,7 +56,7 @@ alias grcss='grep -r --include="*.css" --exclude-dir={bin,node_modules,vendor,ap
 
 # useful aliases
 alias lt='ls -lth'
-alias rsync='rysnc -h --progress --partial'
+alias rsync='rsync -h --progress --partial'
 
 # mutt aliases
 alias mail-personal='mutt -F ~/.mutt/personal.muttrc'
