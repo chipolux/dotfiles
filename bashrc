@@ -54,8 +54,9 @@ alias grjs='grep -r --include="*.js" --exclude-dir={bin,node_modules,vendor,app-
 alias grhtml='grep -r --include="*.html" --exclude-dir={bin,node_modules,vendor,app-components}'
 alias grcss='grep -r --include="*.css" --exclude-dir={bin,node_modules,vendor,app-components}'
 
-# lt instances
+# useful aliases
 alias lt='ls -lth'
+alias rsync='rysnc -h --progress --partial'
 
 # mutt aliases
 alias mail-personal='mutt -F ~/.mutt/personal.muttrc'
