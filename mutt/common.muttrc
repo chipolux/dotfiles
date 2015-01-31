@@ -23,6 +23,12 @@ set index_format = "%4C %Z [%[%a %m/%d %H:%M]] %-16.16L%?X? [%X]? (%?l?%4l&%4c?)
 set forward_format="Fwd: %s"
 set status_format=" %r %b %f New:%n Del:%d Total:%m Tag:%t Flag:%F Size:%l"
 
+# Multi-pane style kinda
+#set pager_index_lines = 20
+set pager_stop = "yes"
+set menu_scroll = "yes"
+set tilde = "yes"
+
 # Use mailcap settings for viewing html emails
 auto_view text/html
 
@@ -44,7 +50,5 @@ source ~/.mutt/solarized-dark-16.muttrc
 # Weird/unknown settings
 set hidden_host = "yes"
 set use_domain = "yes"
-set pager_stop = "yes"
 set envelope_from = "yes"
 set strict_threads = "yes"
-#set pager_index_lines = 20
