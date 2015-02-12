@@ -3,7 +3,6 @@
 modules=("oh-my-zsh"
          "tmux/plugins/tpm"
          "vim/bundle/editorconfig-vim"
-         "vim/bundle/rainbow-parentheses"
          "vim/bundle/vim-airline"
          "vim/bundle/vim-clojure-static"
          "vim/bundle/vim-colors-solarized"
