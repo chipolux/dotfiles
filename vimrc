@@ -51,6 +51,13 @@ let g:vim_json_syntax_conceal = 0
 " Statusline if airline/powerline not available
 set statusline=%t\ %m%=%c,%l/%L\ %P
 
+" Rainbow parenthesis stuff
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+au Syntax * RainbowParenthesesLoadChevrons
+
 " Folding stuff
 au FileType javascript call JavaScriptFold()
 au FileType json set foldmethod=syntax
