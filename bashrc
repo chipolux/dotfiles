@@ -62,6 +62,11 @@ alias rsync='rsync -h --progress --partial'
 alias mail-personal='mutt -F ~/.mutt/personal.muttrc'
 alias mail-newmedio='mutt -F ~/.mutt/newmedio.muttrc'
 
+# open all modified files in git repo with vim (need to be at root of repo)
+alias git-modified='git status --porcelain | sed -ne "s/^ M //p"'
+#alias open-modified='git-modified | tr "\n" "\0" | tr -d "\"" | xargs -0 vim'
+alias open-modified='vim `git-modified`'
+
 # Coloring
 #export CLICOLOR=1
 #export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
