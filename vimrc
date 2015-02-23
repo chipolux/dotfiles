@@ -11,7 +11,7 @@ set backspace=2
 set laststatus=2
 set tabstop=4
 set shiftwidth=4
-set colorcolumn=81
+set colorcolumn=79
 set expandtab
 set number
 set nowrap
@@ -38,6 +38,7 @@ nmap <leader>v :set cursorline! cursorcolumn!<CR>
 " Vim-Pymode Stuff
 let g:pymode_rope = 0
 let g:pymode_rope_complete_on_dot = 0
+let g:pymode_options_max_line_length = 79
 
 " Airline stuff
 let g:airline_powerline_fonts = 1
