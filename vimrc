@@ -20,6 +20,10 @@ set incsearch
 set ttyfast
 set mouse=a
 
+" Enable project specific .vimrcs, disable shell execution
+set exrc
+set secure
+
 " Close buffer without killing split
 nmap <silent> <leader>d :bp\|bd #<CR>
 nmap <silent> <leader>D :bp!\|bd #<CR>
