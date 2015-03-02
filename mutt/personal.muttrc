@@ -16,4 +16,6 @@ set header_cache = "~/.mutt/cache/personal.headers"
 set message_cachedir = "~/.mutt/cache/personal.bodies"
 set signature = "~/.mutt/personal.sig"
 
+set certificate_file = "~/.mutt/personal.cert"
+
 source ~/.mutt/common.muttrc

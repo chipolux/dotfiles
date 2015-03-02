@@ -1,6 +1,3 @@
-# Where to store certificates
-set certificate_file = "~/.mutt/certificates"
-
 # Make imap refreshing nicer
 unset imap_passive
 set imap_check_subscribed

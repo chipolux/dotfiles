@@ -16,4 +16,6 @@ set header_cache = "~/.mutt/cache/newmedio.headers"
 set message_cachedir = "~/.mutt/cache/newmedio.bodies"
 set signature = "~/.mutt/newmedio.sig"
 
+set certificate_file = "~/.mutt/newmedio.cert"
+
 source ~/.mutt/common.muttrc
