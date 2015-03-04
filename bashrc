@@ -61,6 +61,7 @@ alias rsync='rsync -h --progress --partial'
 # mutt aliases
 alias mail-personal='mutt -F ~/.mutt/personal.muttrc'
 alias mail-newmedio='mutt -F ~/.mutt/newmedio.muttrc'
+alias mail-summit='mutt -F ~/.mutt/summit.muttrc'
 
 # open all modified files in git repo with vim (need to be at root of repo)
 alias git-modified='git status --porcelain | sed -ne "s/^ M //p"'
