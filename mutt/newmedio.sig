@@ -1,3 +1,3 @@
 NaKyle Wright
-nakylet@newmedio.com
+nakyle@newmedio.com
 
