@@ -1,0 +1,21 @@
+# Summit email account
+set from = "nwright@summitesp.com"
+set realname = "NaKyle Wright"
+
+set imap_user = "kfoc\\nwright"
+set folder = "imap://owa.kfoc.net:143"
+set spoolfile = "=INBOX"
+set postponed = "=Drafts"
+set record = "=Sent Items"
+
+#set smtp_url = "smtp://kfoc\\nwright@kfocex1.kfoc.local:587/"
+
+set copy = "yes"
+
+set header_cache = "~/.mutt/cache/summit.headers"
+set message_cachedir = "~/.mutt/cache/summit.bodies"
+set signature = "~/.mutt/summit.sig"
+
+set certificate_file = "~/.mutt/summit.cert"
+
+source ~/.mutt/common.muttrc
