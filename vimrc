@@ -60,6 +60,9 @@ set statusline=%t\ %m%=%c,%l/%L\ %P
 au FileType javascript call JavaScriptFold()
 au FileType json set foldmethod=syntax
 
+" Enable spellcheck for mail
+au FileType mail set spell spelllang=en_us
+
 " Display stuff
 if has("gui_running")
     set guifont=Inconsolata\ for\ Powerline:h11
