@@ -15,8 +15,8 @@ set ssl_force_tls = "yes"
 
 set copy = "no"
 
-set header_cache = "~/.mutt/cache/newmedio.headers"
-set message_cachedir = "~/.mutt/cache/newmedio.bodies"
+set header_cache = "~/.mutt/cache/newmedio"
+set message_cachedir = "~/.mutt/cache/newmedio"
 set signature = "~/.mutt/newmedio.sig"
 
 set certificate_file = "~/.mutt/newmedio.cert"

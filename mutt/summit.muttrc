@@ -13,8 +13,8 @@ set smtp_authenticators = "login"
 
 set copy = "yes"
 
-set header_cache = "~/.mutt/cache/summit.headers"
-set message_cachedir = "~/.mutt/cache/summit.bodies"
+set header_cache = "~/.mutt/cache/summit"
+set message_cachedir = "~/.mutt/cache/summit"
 set signature = "~/.mutt/summit.sig"
 
 set certificate_file = "~/.mutt/summit.cert"

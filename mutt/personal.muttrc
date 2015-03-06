@@ -15,8 +15,8 @@ set ssl_force_tls = "yes"
 
 set copy = "no"
 
-set header_cache = "~/.mutt/cache/personal.headers"
-set message_cachedir = "~/.mutt/cache/personal.bodies"
+set header_cache = "~/.mutt/cache/personal"
+set message_cachedir = "~/.mutt/cache/personal"
 set signature = "~/.mutt/personal.sig"
 
 set certificate_file = "~/.mutt/personal.cert"
