@@ -1,8 +1,18 @@
 " Vundle stuff
-set rtp += bundle/Vundle.vim
+set rtp +=~/.vim/bundle/Vundle.vim
+let g:vundle_default_git_proto = 'git'
 
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
+Plugin 'bling/vim-airline'
+Plugin 'guns/vim-clojure-static'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'elzr/vim-json'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'klen/python-mode'
+Plugin 'groenewege/vim-less'
 call vundle#end()
 
 syntax enable
