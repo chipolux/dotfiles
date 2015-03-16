@@ -9,7 +9,8 @@ modules=("oh-my-zsh"
          "vim/bundle/vim-javascript-syntax"
          "vim/bundle/vim-json"
          "vim/bundle/vim-markdown"
-         "vim/bundle/vim-pathogen")
+         "vim/bundle/vim-pathogen"
+         "vim/bundle/vim-less")
 
 for module in "${modules[@]}"; do
     pushd $module
