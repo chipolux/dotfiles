@@ -1,8 +1,7 @@
 # Make imap refreshing nicer
 unset imap_passive
 set imap_check_subscribed
-set imap_keepalive = 900
-set mail_check = 60
+set mail_check = 10
 set timeout = 10
 
 # Don't prompt for some common stuff

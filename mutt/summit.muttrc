@@ -11,7 +11,15 @@ set record = "=Sent Items"
 set smtp_url = "smtp://kfoc\\nwright@kfocex1.kfoc.local:587/"
 set smtp_authenticators = "login"
 
+set ssl_starttls = "no"
 set copy = "yes"
+
+# default is 5
+#set mail_check = 2
+set timeout = 2
+set imap_idle = "yes"
+set imap_keepalive = 2
+#set imap_passive = "yes"
 
 set header_cache = "~/.mutt/cache/summit"
 set message_cachedir = "~/.mutt/cache/summit"
