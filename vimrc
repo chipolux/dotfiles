@@ -1,7 +1,9 @@
-" Pathogen stuff
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
-execute pathogen#helptags()
+" Vundle stuff
+set rtp += bundle/Vundle.vim
+
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+call vundle#end()
 
 syntax enable
 filetype plugin indent on
