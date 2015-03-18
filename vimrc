@@ -70,10 +70,10 @@ set statusline=%t\ %m%=%c,%l/%L\ %P
 
 " Folding stuff
 au FileType javascript call JavaScriptFold()
-au FileType json set foldmethod=syntax
+au FileType json setlocal foldmethod=syntax
 
 " Enable spellcheck for some stuff
-au FileType mail,mkd,rst set spell spelllang=en_us
+au FileType mail,mkd,rst setlocal spell spelllang=en_us
 
 " Display stuff
 if has("gui_running")
