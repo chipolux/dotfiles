@@ -1,6 +1,6 @@
 " Vundle stuff
 set rtp +=~/.vim/bundle/Vundle.vim
-let g:vundle_default_git_proto = 'git'
+"let g:vundle_default_git_proto = 'git'
 
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
