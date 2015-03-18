@@ -43,3 +43,5 @@ for file in "${weechat[@]}"; do
 done
 
 git submodule update --init --recursive
+
+vim +PluginInstall +qall
