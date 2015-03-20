@@ -32,6 +32,8 @@ set hlsearch
 set incsearch
 set ttyfast
 set mouse=a
+set wildmenu
+set wildchar=<Tab>
 
 " Enable project specific .vimrcs, disable shell execution
 set exrc
