@@ -13,6 +13,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'klen/python-mode'
 Plugin 'groenewege/vim-less'
+Plugin 'tpope/vim-fugitive'
 call vundle#end()
 
 syntax enable
