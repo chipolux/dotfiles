@@ -25,9 +25,6 @@ function setup-minimal () {
 
     echo "Getting submodules!"
     git submodule update --init --recursive
-
-    echo "Installing vim plugins!"
-    vim +PluginInstall +qall
 }
 
 function setup-normal () {
