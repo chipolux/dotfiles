@@ -1,0 +1,28 @@
+# Use vim keybindings in scrollback mode
+set-option -g mode-keys vi
+
+# Enable UTF-8
+set-option -g status-utf8 on
+set-window-option -g utf8 on
+
+# Allow mouse clicks to select and modify panes
+set-option -g mouse-select-pane on
+set-option -g mouse-select-window on
+set-option -g mouse-resize-pane on
+
+# Override mouse scroll to go into pane history
+set-window-option -g mode-mouse on
+
+# Show activity in other windows
+set-window-option -g monitor-activity on
+
+# Set escape-time to limit 1;2c issues in cygwin
+set-option -s escape-time 50
+
+# Load solarized colorscheme
+source-file ~/.tmux/solarized.conf
+
+# In some environments pane split and create doesn't
+# keep current directory information.
+bind-key % split-window -h -c "#{pane_current_path}"
+bind-key '"' split-window -c "#{pane_current_path}"
