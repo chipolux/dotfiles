@@ -44,4 +44,4 @@ done
 
 git submodule update --init --recursive
 
-vim +PluginInstall +qall
+#vim +PluginInstall +qall
