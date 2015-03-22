@@ -68,8 +68,14 @@ alias git-modified='git status --porcelain | sed -ne "s/^ M //p"'
 #alias open-modified='git-modified | tr "\n" "\0" | tr -d "\"" | xargs -0 vim'
 alias open-modified='vim `git-modified`'
 
-# boot2docker stuff
-alias init-docker='$(boot2docker shellinit)'
+# docker stuff
+alias b2d-init='$(boot2docker shellinit)'
+alias drm='docker rm'
+alias dri='docker rmi'
+alias dps='docker ps'
+function da () {
+    docker start $1 && docker attach $1
+}
 
 # Coloring
 #export CLICOLOR=1
