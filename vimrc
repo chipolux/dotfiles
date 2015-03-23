@@ -86,7 +86,6 @@ else
 endif
 colorscheme solarized
 set background=dark
-set t_Co=256
 
 " Highlight line in insert mode
 "au InsertEnter * set cursorline
