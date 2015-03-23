@@ -21,8 +21,3 @@ set-option -s escape-time 50
 
 # Load solarized colorscheme
 source-file ~/.tmux/solarized.conf
-
-# In some environments pane split and create doesn't
-# keep current directory information.
-bind-key % split-window -h -c "#{pane_current_path}"
-bind-key '"' split-window -c "#{pane_current_path}"
