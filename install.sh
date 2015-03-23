@@ -24,7 +24,7 @@ function setup-minimal () {
         "oh-my-zsh"
 
     echo "Getting submodules!"
-    git submodule update --init --recursive
+    git submodule update --init --recursive oh-my-zsh
 }
 
 function setup-normal () {
