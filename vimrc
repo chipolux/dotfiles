@@ -23,7 +23,6 @@ set backspace=2
 set laststatus=2
 set tabstop=4
 set shiftwidth=4
-set colorcolumn=79
 set expandtab
 set number
 set nowrap
@@ -33,6 +32,11 @@ set ttyfast
 set mouse=a
 set wildmenu
 set wildchar=<Tab>
+
+" Some of my favorites aren't on old vim versions :(
+if exists('&colorcolumn')
+    set colorcolumn=79
+endif
 
 " Enable project specific .vimrcs, disable shell execution
 set exrc
@@ -83,5 +87,5 @@ if has("gui_running")
 else
     let g:solarized_termcolors = 256
 endif
-colorscheme solarized
+silent! colorscheme solarized
 set background=dark
