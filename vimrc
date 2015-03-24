@@ -1,6 +1,5 @@
 " Vundle stuff
 set rtp +=~/.vim/bundle/Vundle.vim
-"let g:vundle_default_git_proto = 'git'
 
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
@@ -86,11 +85,3 @@ else
 endif
 colorscheme solarized
 set background=dark
-
-" Highlight line in insert mode
-"au InsertEnter * set cursorline
-"au InsertLeave * set nocursorline
-
-" Change cursor shape in different modes for iTerm2 and tmux on OSX
-"let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-"let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
