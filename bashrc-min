@@ -17,15 +17,6 @@ if [ -s $venvwrapper -a -z "$VIRTUAL_ENV" ]; then
     source $venvwrapper
 fi
 
-# Foreman (and ports) stuff
-if [ -s "$(which forego)" ]; then
-    alias frun='forego run'
-    alias fpython='frun python'
-elif [ -s "$(which foreman)" ]; then
-    alias frun='foreman run'
-    alias fpython='frun python'
-fi
-
 # project specific greps
 alias grpy='grep -r --include={"*.py","*.pyw"} --exclude-dir="migrations"'
 alias grjs='grep -r --include={"*.js","*.json"} --exclude-dir={bin,node_modules,vendor,app-components}'
@@ -35,7 +26,3 @@ alias grcss='grep -r --include="*.css" --exclude-dir={bin,node_modules,vendor,ap
 # useful aliases
 alias lt='ls -lth'
 alias rsync='rsync -h --progress --partial'
-
-# open all modified files in git repo with vim (need to be at root of repo)
-alias git-modified='git status --porcelain | sed -ne "s/^ M //p"'
-alias open-modified='vim `git-modified`'
