@@ -12,6 +12,7 @@ You can either follow the source install instructions from
 [here](http://sourceforge.net/p/tmux/tmux-code/ci/master/tree/README).
 
 Or you can add the pi-rho dev repository and install from there:
+
 1. `sudo add-apt-repository -y ppa:pi-rho/dev`
 2. `sudo apt-get update`
 3. `sudo apt-get install -y tmux`
