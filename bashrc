@@ -76,6 +76,7 @@ alias dps='docker ps'
 function da () {
     docker start $1 && docker attach $1
 }
+alias esp8266-build='docker run --rm -ti -v $(pwd):/home/esp8266/project chipolux/esp8266-buildbox'
 
 # Coloring
 #export CLICOLOR=1
