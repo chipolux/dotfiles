@@ -77,6 +77,7 @@ set statusline=%t\ %m%=%c,%l/%L\ %P
 " Folding stuff
 au FileType javascript call JavaScriptFold()
 au FileType json setlocal foldmethod=syntax
+au FileType c,h,cpp setlocal foldmethod=syntax
 
 " Enable spellcheck for some stuff
 au FileType mail,mkd,rst setlocal spell spelllang=en_us
