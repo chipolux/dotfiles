@@ -83,6 +83,7 @@ alias esp8266-build='docker run --rm -ti -v $(pwd):/home/esp8266/project chipolu
 # Don't close terminal on Ctrl+D
 export IGNOREEOF=2
 
-# Coloring
-#export CLICOLOR=1
-#export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+# Coloring on some systems for ls
+# http://osxdaily.com/2012/02/21/add-color-to-the-terminal-in-mac-os-x/
+export CLICOLOR=1
+export LSCOLORS=GxfxcxdxbxAgAdabagacad
