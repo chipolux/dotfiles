@@ -80,6 +80,9 @@ function da () {
 alias sync-b2d-time='boot2docker ssh sudo ntpclient -s -h pool.ntp.org'
 alias esp8266-build='docker run --rm -ti -v $(pwd):/home/esp8266/project chipolux/esp8266-buildbox'
 
+# Don't close terminal on Ctrl+D
+export IGNOREEOF=2
+
 # Coloring
 #export CLICOLOR=1
 #export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx

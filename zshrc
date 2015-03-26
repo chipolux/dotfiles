@@ -34,3 +34,6 @@ setopt no_inc_append_history
 
 # Leave glob unexpanded when no results
 setopt no_nomatch
+
+# Don't close the terminal on Ctrl+D
+setopt ignoreeof
