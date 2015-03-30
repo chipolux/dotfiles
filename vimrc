@@ -15,6 +15,7 @@ Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-fugitive'
 Plugin 'sudar/vim-arduino-syntax'
 Plugin 'AndrewRadev/linediff.vim'
+Plugin 'tmhedberg/matchit'
 call vundle#end()
 
 syntax enable
