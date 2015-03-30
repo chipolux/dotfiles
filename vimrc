@@ -13,6 +13,7 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'klen/python-mode'
 Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-fugitive'
+Plugin 'sudar/vim-arduino-syntax'
 call vundle#end()
 
 syntax enable
@@ -78,6 +79,7 @@ set statusline=%t\ %m%=%c,%l/%L\ %P
 au FileType javascript call JavaScriptFold()
 au FileType json setlocal foldmethod=syntax
 au FileType c,h,cpp setlocal foldmethod=syntax
+au FileType arduino setlocal foldmethod=syntax
 
 " Enable spellcheck for some stuff
 au FileType mail,mkd,rst setlocal spell spelllang=en_us
