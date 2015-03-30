@@ -14,6 +14,7 @@ Plugin 'klen/python-mode'
 Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-fugitive'
 Plugin 'sudar/vim-arduino-syntax'
+Plugin 'AndrewRadev/linediff.vim'
 call vundle#end()
 
 syntax enable
