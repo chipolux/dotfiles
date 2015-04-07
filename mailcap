@@ -1,4 +1,5 @@
 image/*; open %s &; test=test -n "$DISPLAY"; needsterminal;
+application/*; open %s &; test=test -n "$DISPLAY"; needsterminal;
 
 text/html; open %s &; test=test -n "$DISPLAY"; needsterminal;
 text/html; links -dump %s; nametemplate=%s.html; copiousoutput;
