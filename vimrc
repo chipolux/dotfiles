@@ -17,6 +17,9 @@ Plugin 'sudar/vim-arduino-syntax'
 Plugin 'tmhedberg/matchit'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-unimpaired'
 Plugin 'wavded/vim-stylus'
 call vundle#end()
 
