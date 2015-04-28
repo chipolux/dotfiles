@@ -12,4 +12,4 @@ set-window-option -g monitor-activity on
 set-option -s escape-time 50
 
 # Load solarized colorscheme
-source-file ~/.tmux/solarized.conf
+source-file ~/.tmux/solarized-dark.conf
