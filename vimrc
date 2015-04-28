@@ -44,7 +44,7 @@ set wildchar=<Tab>
 
 " Some of my favorites aren't on old vim versions :(
 if exists('&colorcolumn')
-    set colorcolumn=79
+    set colorcolumn=80
 endif
 
 " Enable project specific .vimrcs, disable shell execution
@@ -68,8 +68,10 @@ nmap <leader>v :set cursorline! cursorcolumn!<CR>
 
 " Vim-Pymode Stuff
 let g:pymode_rope = 0
+let g:pymode_doc = 0
 let g:pymode_rope_complete_on_dot = 0
-let g:pymode_options_max_line_length = 79
+let g:pymode_lint_cwindow = 0
+let g:pymode_lint_unmodified = 1
 
 " Airline stuff
 let g:airline_powerline_fonts = 1
