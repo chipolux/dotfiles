@@ -72,6 +72,7 @@ let g:pymode_doc = 0
 let g:pymode_rope_complete_on_dot = 0
 let g:pymode_lint_cwindow = 0
 let g:pymode_lint_unmodified = 1
+nmap <leader>l :PymodeLint<CR>
 
 " Airline stuff
 let g:airline_powerline_fonts = 1
