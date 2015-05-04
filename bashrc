@@ -49,11 +49,11 @@ elif [ -s "$(which foreman)" ]; then
 fi
 
 # project specific greps
-alias grpy='grep -r --include={"*.py","*.pyw"} --exclude-dir="migrations"'
-alias grjs='grep -r --include={"*.js","*.json"} --exclude-dir={bin,node_modules,vendor,app-components}'
-alias grhtml='grep -r --include="*.html" --exclude-dir={bin,node_modules,vendor,app-components}'
-alias grcss='grep -r --include={"*.css","*.less"} --exclude-dir={bin,node_modules,vendor,app-components}'
-alias grc='grep -r --include={"*.c","*.h","*.cpp"}'
+alias grpy='grep -r --include={*.py,*.pyw} --exclude-dir="migrations"'
+alias grjs='grep -r --include={*.js,*.json} --exclude-dir={bin,node_modules,vendor,app-components}'
+alias grmu='grep -r --include={*.html,*.md} --exclude-dir={bin,node_modules,vendor,app-components}'
+alias grsty='grep -r --include={*.css,*.less,*.styl} --exclude-dir={bin,node_modules,vendor,app-components}'
+alias grc='grep -r --include={*.c,*.h,*.cpp}'
 
 # useful aliases
 alias lt='ls -lth'
