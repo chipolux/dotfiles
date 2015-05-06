@@ -9,6 +9,7 @@ set move = "no"
 set delete = "yes"
 
 # Misc looks and other settings
+set editor = "vim"
 set sig_on_top = "yes"
 set net_inc = 5
 set sort = "threads"
@@ -17,8 +18,9 @@ set sort_aux = "last-date-received"
 set markers = "no"
 set date_format = "!%a, %b %d, %Y at %I:%M:%S%p %Z"
 set index_format = "%4C %Z [%[%a %m/%d %H:%M]] %-16.16L%?X? [%X]? (%?l?%4l&%4c?) %s"
-set forward_format="Fwd: %s"
-set status_format=" %r %b %f New:%n Del:%d Total:%m Tag:%t Flag:%F Size:%l"
+set forward_format = "Fwd: %s"
+set status_format = " %r %b %f New:%n Del:%d Total:%m Tag:%t Flag:%F Size:%l"
+set text_flowed = "yes"
 
 # Multi-pane style kinda
 set pager_stop = "yes"

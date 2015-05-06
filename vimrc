@@ -95,6 +95,9 @@ au FileType arduino setlocal foldmethod=syntax
 " Enable spellcheck for some stuff
 au FileType mail,mkd,rst setlocal spell spelllang=en_us
 
+" Some wrapping stuff for editing mail
+au FileType mail setlocal fo+=aw
+
 " Display stuff
 if has("gui_running")
     set guifont=Inconsolata\ for\ Powerline:h11
