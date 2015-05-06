@@ -22,6 +22,10 @@ set forward_format = "Fwd: %s"
 set status_format = " %r %b %f New:%n Del:%d Total:%m Tag:%t Flag:%F Size:%l"
 set text_flowed = "yes"
 
+# Get aliases from a different file
+set alias_file = "~/.mutt/aliases"
+source ~/.mutt/aliases
+
 # Multi-pane style kinda
 set pager_stop = "yes"
 set menu_scroll = "yes"
