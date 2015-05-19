@@ -32,6 +32,7 @@ set backspace=2
 set laststatus=2
 set tabstop=4
 set shiftwidth=4
+set modeline
 set expandtab
 set number
 set nowrap
