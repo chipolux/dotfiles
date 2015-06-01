@@ -101,7 +101,7 @@ au FileType mail setlocal fo+=aw
 
 " Display stuff
 if has("gui_running")
-    set guifont=Inconsolata\ for\ Powerline:h11
+    set guifont=Inconsolata\ for\ Powerline:h14
 else
     let g:solarized_termcolors = 256
 endif
