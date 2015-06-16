@@ -99,6 +99,9 @@ au FileType mail,mkd,rst setlocal spell spelllang=en_us
 " Some wrapping stuff for editing mail
 au FileType mail setlocal fo+=aw
 
+" Ugh omni-complete for sql files is bound to a shitty key by default
+let g:ftplugin_sql_omni_key = '<C-j>'
+
 " Display stuff
 if has("gui_running")
     set guifont=Inconsolata\ for\ Powerline:h14
