@@ -67,6 +67,9 @@ nmap <leader>t :Explore<CR>
 " Toggle highlighting cursor column and line
 nmap <leader>v :set cursorline! cursorcolumn!<CR>
 
+" Toggle folding by syntax
+nmap <leader>f :setlocal foldmethod=syntax<CR>
+
 " Vim-Pymode Stuff
 let g:pymode_rope = 0
 let g:pymode_doc = 0
@@ -89,9 +92,6 @@ set statusline=%t\ %m%=%c,%l/%L\ %P
 
 " Folding stuff
 au FileType javascript call JavaScriptFold()
-au FileType json setlocal foldmethod=syntax
-au FileType c,h,cpp setlocal foldmethod=syntax
-au FileType arduino setlocal foldmethod=syntax
 
 " Enable spellcheck for some stuff
 au FileType mail,mkd,rst setlocal spell spelllang=en_us
