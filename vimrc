@@ -99,6 +99,9 @@ au FileType mail,mkd,rst setlocal spell spelllang=en_us
 " Some wrapping stuff for editing mail
 au FileType mail setlocal fo+=aw
 
+" Makefiles need tabs instead of spaces
+au FileType make setlocal noexpandtab shiftwidth=8 softtabstop=0
+
 " Ugh omni-complete for sql files is bound to a shitty key by default
 let g:ftplugin_sql_omni_key = '<C-j>'
 
