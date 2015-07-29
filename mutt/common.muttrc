@@ -21,6 +21,8 @@ set index_format = "%4C %Z [%[%a %m/%d %H:%M]] %-16.16L%?X? [%X]? (%?l?%4l&%4c?)
 set forward_format = "Fwd: %s"
 set status_format = " %r %b %f New:%n Del:%d Total:%m Tag:%t Flag:%F Size:%l"
 set text_flowed = "yes"
+set mime_forward = "yes"
+set mime_forward_rest = "yes"
 
 # Get aliases from a different file
 set alias_file = "~/.mutt/aliases"
