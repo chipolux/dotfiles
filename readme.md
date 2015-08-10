@@ -19,3 +19,13 @@ Or you can add the pi-rho dev repository and install from there:
 4. `sudo apt-get install -y tmux`
 
 You should get 1.9a if you run `tmux -V`, and then all will be well in the world.
+
+##Upgrading/Installing Latest Weechat
+
+Same as with TMUX, the latest versions usually aren't in the
+default repositories.
+
+1. `sudo apt-get install -y software-properties-common python-software-properties`
+2. `sudo add-apt-repository -y ppa:nesthib/weechat-stable`
+3. `sudo apt-get update`
+4. `sudo apt-get install -y weechat`
