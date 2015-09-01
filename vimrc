@@ -22,6 +22,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'wavded/vim-stylus'
+Plugin 'sotte/presenting.vim'
 call vundle#end()
 
 syntax enable
