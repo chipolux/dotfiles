@@ -3,26 +3,26 @@ set rtp +=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
-Plugin 'AndrewRadev/linediff.vim'
-Plugin 'airblade/vim-gitgutter'
+
+" Look And Feel
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'elzr/vim-json'
-Plugin 'groenewege/vim-less'
-Plugin 'guns/vim-clojure-static'
-Plugin 'jelera/vim-javascript-syntax'
+
+" Filetype Specific
 Plugin 'klen/python-mode'
+Plugin 'elzr/vim-json'
+Plugin 'jelera/vim-javascript-syntax'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'sudar/vim-arduino-syntax'
+Plugin 'wavded/vim-stylus'
+
+" Utility
+Plugin 'editorconfig/editorconfig-vim'
 Plugin 'tmhedberg/matchit'
-Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'wavded/vim-stylus'
-Plugin 'sotte/presenting.vim'
 call vundle#end()
 
 syntax enable
