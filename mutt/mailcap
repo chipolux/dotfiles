@@ -1,0 +1,5 @@
+image/*; open %s; needsterminal;
+application/*; open %s; needsterminal;
+
+text/html; open %s; needsterminal;
+text/html; links -dump %s; nametemplate=%s.html; copiousoutput;

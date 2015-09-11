@@ -38,7 +38,6 @@ function setup-normal () {
         "tmux.conf" \
         "vimrc" \
         "zshrc" \
-        "mailcap" \
         "rtorrent.rc"
 
     echo "Moving dotfolders!"

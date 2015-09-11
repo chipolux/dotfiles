@@ -34,6 +34,7 @@ set menu_scroll = "yes"
 set tilde = "yes"
 
 # Use mailcap settings for viewing html emails
+set mailcap_path = "~/.mutt/mailcap"
 auto_view text/html
 
 # Show html emails last
