@@ -15,6 +15,7 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'sudar/vim-arduino-syntax'
 Plugin 'wavded/vim-stylus'
+Plugin 'PProvost/vim-ps1'
 
 " Utility
 Plugin 'editorconfig/editorconfig-vim'
