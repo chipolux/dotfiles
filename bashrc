@@ -48,13 +48,6 @@ elif [ -s "$(which foreman)" ]; then
     alias fpython='frun python'
 fi
 
-# project specific greps
-alias grpy='grep -r --include={*.py,*.pyw} --exclude-dir="migrations"'
-alias grjs='grep -r --include={*.js,*.json} --exclude-dir={bin,node_modules,vendor,app-components}'
-alias grmu='grep -r --include={*.html,*.md} --exclude-dir={bin,node_modules,vendor,app-components}'
-alias grsty='grep -r --include={*.css,*.less,*.styl} --exclude-dir={bin,node_modules,vendor,app-components}'
-alias grc='grep -r --include={*.c,*.h,*.cpp}'
-
 # useful aliases
 alias lt='ls -lth'
 alias rsync='rsync -h --progress --partial'
@@ -64,21 +57,9 @@ alias mail-personal='mutt -F ~/.mutt/personal.muttrc'
 alias mail-newmedio='mutt -F ~/.mutt/newmedio.muttrc'
 alias mail-summit='mutt -F ~/.mutt/summit.muttrc'
 
-# open all modified files in git repo with vim (need to be at root of repo)
-alias git-modified='git status --porcelain | sed -ne "s/^ M //p"'
-#alias open-modified='git-modified | tr "\n" "\0" | tr -d "\"" | xargs -0 vim'
-alias open-modified='vim `git-modified`'
-
 # docker stuff
 alias b2d-init='$(boot2docker shellinit)'
 alias b2d-time='boot2docker ssh "sudo ntpclient -s -h pool.ntp.org"'
-alias drm='docker rm'
-alias dri='docker rmi'
-alias dps='docker ps'
-function da () {
-    docker start $1 && docker attach $1
-}
-alias esp8266-build='docker run --rm -ti -v $(pwd):/home/esp8266/project chipolux/esp8266-buildbox'
 
 # Don't close terminal on Ctrl+D
 export IGNOREEOF=2
