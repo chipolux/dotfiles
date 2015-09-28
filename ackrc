@@ -1,0 +1,17 @@
+# Add type for powershell files
+--type-set=ps:ext:.ps1,.psm1,.psd1
+
+# Ignore django migrations
+--ignore-dir=migrations
+
+# Ignore js non-source dirs
+--ignore-dir={bin,node_modules,vendor,app-components}
+
+# Use less as pager
+--pager=less -FX
+
+# Always color files
+--color
+
+# Always sort files
+--sort-files

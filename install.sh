@@ -15,6 +15,7 @@ function setup-minimal () {
         "gitignore" \
         "tmux.conf" \
         "vimrc" \
+        "ackrc" \
         "zshrc"
 
     echo "Moving dotfolders!"
@@ -38,6 +39,7 @@ function setup-normal () {
         "tmux.conf" \
         "vimrc" \
         "zshrc" \
+        "ackrc" \
         "rtorrent.rc"
 
     echo "Moving dotfolders!"
