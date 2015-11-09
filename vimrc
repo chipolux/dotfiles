@@ -16,6 +16,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'sudar/vim-arduino-syntax'
 Plugin 'wavded/vim-stylus'
 Plugin 'PProvost/vim-ps1'
+Plugin 'wannesm/wmgraphviz.vim'
 
 " Utility
 Plugin 'editorconfig/editorconfig-vim'
