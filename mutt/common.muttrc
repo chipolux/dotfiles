@@ -10,7 +10,7 @@ set delete = "yes"
 
 # Misc looks and other settings
 set editor = "vim"
-set sig_on_top = "yes"
+set sig_on_top = "no"
 set net_inc = 5
 set sort = "threads"
 set strict_threads = "yes"
