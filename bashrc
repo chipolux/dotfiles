@@ -32,8 +32,8 @@ if [ -s "/Applications/calibre.app/Contents/MacOS/calibre" ]; then
 fi
 
 # virtualenvwrapper
-venvwrapper=`which virtualenvwrapper.sh`
-if [ -s $venvwrapper -a -z $VIRTUAL_ENV ]; then
+venvwrapper=$(which virtualenvwrapper.sh)
+if [ $venvwrapper ] && [ -s $venvwrapper -a -z $VIRTUAL_ENV ]; then
     export WORKON_HOME=$HOME/.virtualenvs
     export PIP_VIRTUALENV_BASE=$WORKON_HOME
     source $venvwrapper
