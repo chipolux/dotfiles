@@ -40,14 +40,16 @@ function setup-normal () {
         "vimrc" \
         "zshrc" \
         "ackrc" \
-        "rtorrent.rc"
+        "rtorrent.rc" \
+        "taskrc"
 
     echo "Moving dotfolders!"
     move-dot-folders \
         "tmux" \
         "vim" \
         "oh-my-zsh" \
-        "mutt"
+        "mutt" \
+        "task"
 
     echo "Moving weechat stuff!"
     move-weechat-stuff
