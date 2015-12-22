@@ -6,7 +6,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Look And Feel
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-flagship'
 
 " Filetype Specific
 Plugin 'klen/python-mode'
@@ -33,6 +33,8 @@ filetype plugin indent on
 " Favorite defaults
 set backspace=2
 set laststatus=2
+set showtabline=2
+set guioptions-=e
 set tabstop=4
 set shiftwidth=4
 set modeline
@@ -45,6 +47,8 @@ set ttyfast
 set mouse=a
 set wildmenu
 set wildchar=<Tab>
+
+set statusline=%([%H%W]\ %)%.25f\ %y%m%r%=%c,%l/%L\ %P
 
 " Some of my favorites aren't on old vim versions :(
 if exists('&colorcolumn')
@@ -81,17 +85,8 @@ let g:pymode_lint_cwindow = 0
 let g:pymode_lint_unmodified = 1
 nmap <leader>l :let g:pymode_lint_cwindow = 1 <bar> :PymodeLint<CR>
 
-" Airline stuff
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tagbar#enabled = 0
-let g:airline#extensions#whitespace#enabled = 0
-
 " Vim JSON stuff
 let g:vim_json_syntax_conceal = 0
-
-" Statusline if airline/powerline not available
-set statusline=%t\ %m%=%c,%l/%L\ %P
 
 " Folding stuff
 au FileType javascript call JavaScriptFold()
