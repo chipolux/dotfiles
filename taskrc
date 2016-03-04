@@ -3,4 +3,7 @@
 
 data.location = ~/.task-data
 
+uda.priority.values=H,M,,L
+urgency.uda.priority.L.coefficient=-1.8
+
 include ~/.task/solarized-dark-256.theme
