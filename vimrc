@@ -47,7 +47,7 @@ set mouse=a
 set wildmenu
 set wildchar=<Tab>
 
-set statusline=%([%H%W]\ %)%.25f\ %y%m%r%=%c,%l/%L\ %P
+" set statusline=%([%H%W]\ %)%.25f\ %y[%{&ff}]%m%r%=%c,%l/%L\ %P
 
 " Some of my favorites aren't on old vim versions :(
 if exists('&colorcolumn')
