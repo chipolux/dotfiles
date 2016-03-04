@@ -6,7 +6,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Look And Feel
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'tpope/vim-flagship'
+Plugin 'itchyny/lightline.vim'
 
 " Filetype Specific
 Plugin 'klen/python-mode'
