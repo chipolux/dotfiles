@@ -33,7 +33,6 @@ filetype plugin indent on
 " Favorite defaults
 set backspace=2
 set laststatus=2
-set showtabline=2
 set guioptions-=e
 set tabstop=4
 set shiftwidth=4
