@@ -33,6 +33,10 @@ fi
 
 # virtualenvwrapper
 venvwrapper=$(which virtualenvwrapper.sh)
+if [ -f ~/.local/bin/virtualenvwrapper.sh ]; then
+    venvwrapper=~/.local/bin/virtualenvwrapper.sh
+fi
+
 if [ $venvwrapper ] && [ -s $venvwrapper -a -z $VIRTUAL_ENV ]; then
     export WORKON_HOME=$HOME/.virtualenvs
     export PIP_VIRTUALENV_BASE=$WORKON_HOME
