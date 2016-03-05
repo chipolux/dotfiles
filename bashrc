@@ -52,6 +52,11 @@ elif [ -s "$(which foreman)" ]; then
     alias fpython='frun python'
 fi
 
+# Ack-grep to ack
+if [ -s "$(which ack-grep)" ]; then
+    alias ack='ack-grep'
+fi
+
 # useful aliases
 alias lt='ls -lth'
 alias rsync='rsync -h --progress --partial'
