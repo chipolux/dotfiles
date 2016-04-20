@@ -1,0 +1,21 @@
+[begin] (Main Menu)
+    [submenu] (Applications) {}
+        [exec] (urxvt) {urxvt} </usr/share/pixmaps/urxvt_32x32.xpm>
+        [exec] (Firefox) {firefox} </usr/share/pixmaps/firefox.png>
+    [end]
+
+    [submenu] (Fluxbox) {}
+        [workspaces] (Workspaces)
+        [config] (Configuration)
+        [reconfig] (Reconfigure)
+        [restart] (Restart)
+        [exit] (Exit)
+        [submenu] (Styles) {}
+            [stylesdir] (~/.fluxbox/styles)
+            [stylesdir] (/usr/share/fluxbox/styles)
+        [end]
+    [end]
+
+    [exec] (Reboot) {reboot}
+    [exec] (Shutdown) {shutdown -P now}
+[end]
