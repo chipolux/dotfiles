@@ -49,7 +49,8 @@ function setup-normal () {
         "vim" \
         "oh-my-zsh" \
         "mutt" \
-        "task"
+        "task" \
+        "fluxbox"
 
     echo "Moving weechat stuff!"
     move-weechat-stuff
