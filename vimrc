@@ -17,6 +17,7 @@ Plugin 'sudar/vim-arduino-syntax'
 Plugin 'wavded/vim-stylus'
 Plugin 'PProvost/vim-ps1'
 Plugin 'wannesm/wmgraphviz.vim'
+Plugin 'fatih/vim-nginx'
 
 " Utility
 Plugin 'editorconfig/editorconfig-vim'
