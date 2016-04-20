@@ -70,6 +70,9 @@ alias mail-summit='mutt -F ~/.mutt/summit.muttrc'
 alias b2d-init='$(boot2docker shellinit)'
 alias b2d-time='boot2docker ssh "sudo ntpclient -s -h pool.ntp.org"'
 
+# always try to use imagemagick with feh
+alias feh='feh --magick-timeout 1 --geometry 500x500'
+
 # Don't close terminal on Ctrl+D
 export IGNOREEOF=2
 
