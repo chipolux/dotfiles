@@ -1,5 +1,6 @@
 [begin] (Main Menu)
     [submenu] (Applications) {}
+        [exec] (uxterm) {uxterm} </usr/share/pixmaps/mini.xterm_32x32.xpm>
         [exec] (urxvt) {urxvt} </usr/share/pixmaps/urxvt_32x32.xpm>
         [exec] (Firefox) {firefox} </usr/share/pixmaps/firefox.png>
     [end]
