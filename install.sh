@@ -41,7 +41,8 @@ function setup-normal () {
         "zshrc" \
         "ackrc" \
         "rtorrent.rc" \
-        "taskrc"
+        "taskrc" \
+        "Xresources"
 
     echo "Moving dotfolders!"
     move-dot-folders \
