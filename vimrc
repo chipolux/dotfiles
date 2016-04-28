@@ -11,7 +11,8 @@ Plugin 'itchyny/lightline.vim'
 " Filetype Specific
 Plugin 'klen/python-mode'
 Plugin 'elzr/vim-json'
-Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'sudar/vim-arduino-syntax'
 Plugin 'wavded/vim-stylus'
@@ -87,9 +88,6 @@ nmap <leader>l :let g:pymode_lint_cwindow = 1 <bar> :PymodeLint<CR>
 
 " Vim JSON stuff
 let g:vim_json_syntax_conceal = 0
-
-" Folding stuff
-au FileType javascript call JavaScriptFold()
 
 " Enable spellcheck for some stuff
 au FileType mail,mkd,rst setlocal spell spelllang=en_us
