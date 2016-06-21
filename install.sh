@@ -1,34 +1,6 @@
 #!/bin/bash
 
-function setup-minimal () {
-    echo "Moving minimal dotfiles!"
-    mv vimrc-min vimrc
-    mv bashrc-min bashrc
-    mv tmux.conf-min tmux.conf
-
-    echo "Moving dotfiles!"
-    move-dot-files \
-        "bashrc" \
-        "profile" \
-        "bash_profile" \
-        "gitconfig" \
-        "gitignore" \
-        "tmux.conf" \
-        "vimrc" \
-        "ackrc" \
-        "zshrc"
-
-    echo "Moving dotfolders!"
-    move-dot-folders \
-        "tmux" \
-        "vim" \
-        "oh-my-zsh"
-
-    echo "Getting submodules!"
-    git submodule update --init --recursive oh-my-zsh
-}
-
-function setup-normal () {
+function setup () {
     echo "Moving dotfiles!"
     move-dot-files \
         "bashrc" \
@@ -96,10 +68,4 @@ function move-weechat-stuff () {
     done
 }
 
-if [ "$1" == "minimal" ]; then
-    echo "Minimal setup..."
-    setup-minimal
-else
-    echo "Standard setup..."
-    setup-normal
-fi
+setup
