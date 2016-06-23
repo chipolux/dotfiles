@@ -19,6 +19,7 @@ Plugin 'wavded/vim-stylus'
 Plugin 'PProvost/vim-ps1'
 Plugin 'wannesm/wmgraphviz.vim'
 Plugin 'fatih/vim-nginx'
+Plugin 'kchmck/vim-coffee-script'
 
 " Utility
 Plugin 'editorconfig/editorconfig-vim'
@@ -100,6 +101,9 @@ au FileType mail setlocal fo+=aw
 
 " Makefiles need tabs instead of spaces
 au FileType make setlocal noexpandtab shiftwidth=8 softtabstop=0
+
+" Coffescript files should set foldmethod to indent
+au FileType coffee setlocal foldmethod=indent
 
 " Ugh omni-complete for sql files is bound to a shitty key by default
 let g:ftplugin_sql_omni_key = '<C-j>'
