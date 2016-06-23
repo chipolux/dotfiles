@@ -78,6 +78,9 @@ nmap <leader>v :set cursorline! cursorcolumn!<CR>
 " Toggle folding by syntax
 nmap <leader>f :setlocal foldmethod=syntax<CR>
 
+" Format selected json using python
+vmap <leader>j !python -m json.tool<CR>
+
 " Vim-Pymode Stuff
 let g:pymode_rope = 0
 let g:pymode_doc = 0
