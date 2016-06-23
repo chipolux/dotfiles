@@ -20,6 +20,7 @@ Plugin 'PProvost/vim-ps1'
 Plugin 'wannesm/wmgraphviz.vim'
 Plugin 'fatih/vim-nginx'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'a-watson/vim-gdscript'
 
 " Utility
 Plugin 'editorconfig/editorconfig-vim'
