@@ -5,7 +5,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Look And Feel
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomasr/molokai'
 Plugin 'itchyny/lightline.vim'
 
 " Filetype Specific
@@ -112,8 +112,5 @@ let g:ftplugin_sql_omni_key = '<C-j>'
 " Display stuff
 if has("gui_running")
     set guifont=Inconsolata\ for\ Powerline:h14
-else
-    let g:solarized_termcolors = 256
 endif
-silent! colorscheme solarized
-set background=dark
+silent! colorscheme molokai
