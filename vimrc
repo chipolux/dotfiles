@@ -21,6 +21,7 @@ Plugin 'wannesm/wmgraphviz.vim'
 Plugin 'fatih/vim-nginx'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'a-watson/vim-gdscript'
+Plugin 'JuliaLang/julia-vim'
 
 " Utility
 Plugin 'editorconfig/editorconfig-vim'
