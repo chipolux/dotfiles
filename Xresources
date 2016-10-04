@@ -17,9 +17,11 @@ xterm*metaSendsEscape: true
 !------------------------------------------------------------------------------
 ! URxvt settings
 !------------------------------------------------------------------------------
-URxvt.font: xft:monospace:size=10
+URxvt.font: xft:monospace:size=9
 URxvt.letterSpace: -2
 URxvt.scrollBar: false
+!URxvt.transparent: true
+!URxvt.shading: 50
 
 !------------------------------------------------------------------------------
 ! Color settings
