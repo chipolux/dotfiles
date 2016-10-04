@@ -88,8 +88,11 @@ handleWidth:                         4
 
 *font:                               DeJavu Sans-10
 
-background:                          mod
-background.modX:                     4
-background.modY:                     4
-background.color:                    #706a5f
-background.colorTo:                  #555147
+background:                          solid
+background.color:                    #555147
+
+# background:                          mod
+# background.color:                    #706a5f
+# background.colorTo:                  #555147
+# background.modX:                     4
+# background.modY:                     4
