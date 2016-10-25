@@ -39,7 +39,8 @@ Only do this if you know exactly what you're doing! This only works on systemd
 systems, so newer Ubuntu releases are good.
 
 Install mingetty: `sudo apt-get install mingetty`
-Create and open a virtual terminal config: `sudo systemctl edit getty@tty1`
+Create and open a unit: `sudo systemctl edit getty@tty1`, or
+edit the existing unit at `/etc/systemd/system/getty@tty1.service.d/override.conf`.
 Add these lines (swapping username as appropriate):
 ```
 [Service]
