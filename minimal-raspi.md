@@ -121,23 +121,24 @@ To disable the boot splash screen add `disable_splash=1` to `/boot/config.txt`
 
 
 # Enabling Hardware Video Acceleration
-If you get `libEGL warning: DRI2 failed to authenticate` then there is a bad version of libEGL
-and/or libGLESv2 on the system. Find them, `sudo find / -name "*libEGL*"` and `"*libGLESv2*"`
-then overwrite them with symlinks to the proper versions:
+If you get `libEGL warning: DRI2 failed to authenticate` when starting a GUI app
+then there is a bad version of libEGL and/or libGLESv2 on the system. Find them,
+`sudo find / -name "*libEGL*"` and `"*libGLESv2*"` then overwrite them with
+symlinks to the proper versions:
 ```
 sudo ln -sf /opt/vc/lib/libEGL.so    /usr/lib/arm-linux-gnueabihf/libEGL.so.1
 sudo ln -sf /opt/vc/lib/libGLESv2.so /usr/lib/arm-linux-gnueabihf/libGLESv2.so.2
 ```
 Finally run `sudo ldconfig` then reboot.
 
-If you get 'failed to open vchiq device' you should ensure that your users have access to
-/dev/vchiq. Do this:
+That might just let you get to a 'failed to open vchiq device' error, you should
+ensure that your users have access to /dev/vchiq. Do this:
 Create `/etc/udev/rules.d/10-vchiq-permissions.rules` with the contents:
 ```
 SUBSYSTEM=="vchiq",GROUP="video",MODE="0660"
 ```
 Then add your users to the video group: `sudo usermod -a -G video kiosk`
 
-If you get 'failed to add service - already in use' when startx then there is probably
-not enough memory assigned for the gpu. Edit `/boot/config.txt` and adjust gpu_mem from 16 to
-something like 64 or 128.
+Finally if you get 'failed to add service - already in use' on startx then there
+is probably not enough memory assigned for the gpu. Edit `/boot/config.txt` and
+set `gpu_mem` to something like 64 or 128. I've had no problems yet with either.
