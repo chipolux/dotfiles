@@ -90,10 +90,7 @@ the 'new' network adapters.
 
 Remove `/etc/resolv.conf` so that it doesn't have any cached DNS servers, etc.
 
-Remove `/var/log/auth.log`
-Remove `/var/log/daemon.log`
-Remove `/var/log/messages`
-Remove `/var/log/syslog`
+Clean out `/var/log`.
 
 
 # Minimizing Power Consumption
