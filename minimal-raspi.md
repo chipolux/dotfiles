@@ -139,3 +139,13 @@ Then add your users to the video group: `sudo usermod -a -G video kiosk`
 Finally if you get 'failed to add service - already in use' on startx then there
 is probably not enough memory assigned for the gpu. Edit `/boot/config.txt` and
 set `gpu_mem` to something like 64 or 128. I've had no problems yet with either.
+
+
+# Disabling Virtual Terminal Switching
+To disable the `Ctrl-Alt-F{1..6}` virtual terminal switching open/create
+`/etc/X11/xorg.conf` and add this:
+```
+Section "ServerFlags"
+    Option "DontVTSwitch" "true"
+EndSection
+```
