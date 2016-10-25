@@ -1,5 +1,5 @@
 # Setting Up Minimal Raspberry Pi 3
-Get miniban [here](https://minibianpi.wordpress.com/setup/).
+Get minibian [here](https://minibianpi.wordpress.com/setup/).
 
 Extract and use `dd` to copy it to a SD card.
 
