@@ -1,7 +1,6 @@
 [begin] (Main Menu)
     [submenu] (Applications) {}
-        [exec] (urxvt) {urxvt} </usr/share/pixmaps/urxvt_32x32.xpm>
-        [exec] (Firefox) {firefox} </usr/share/pixmaps/firefox.png>
+        [include] (~/.fluxbox/application-menu)
     [end]
 
     [submenu] (Fluxbox) {}
