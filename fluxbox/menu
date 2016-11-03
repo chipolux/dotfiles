@@ -16,6 +16,7 @@
         [end]
     [end]
 
-    [exec] (Reboot) {reboot}
-    [exec] (Shutdown) {shutdown -P now}
+    [exec] (Run) {fbrun}
+    [exec] (Reboot) {sudo reboot}
+    [exec] (Shutdown) {sudo shutdown -P now}
 [end]
