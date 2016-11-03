@@ -52,3 +52,12 @@ Now when you boot up it should automatically start tty1 with your user. You can
 use normal profile scripts to `startx` etc.
 
 Check out [this](https://wiki.archlinux.org/index.php/Getty#Automatic_login_to_virtual_console) for more info and details.
+
+
+# Virtualbox Shared Folders
+Make sure you have `virtualbox-guest-utils` installed, you can use apt for it.
+
+Once you've added the folder via the virtualbox settings and set it up for auto-mount
+and as a permanent folder, your VM should see something like `/media/sf_*` but may
+not be able to access it. If you can't just add yourself to the `vboxsf` goup like
+so: `sudo usermod nakyle -a -G vboxsf`, once you re-log you should be able to access it.
