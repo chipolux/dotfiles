@@ -52,6 +52,9 @@ set mouse=a
 set wildmenu
 set wildchar=<Tab>
 
+" Unbind the Shift+K man page binding
+map <S-k> <Nop>
+
 " set statusline=%([%H%W]\ %)%.25f\ %y[%{&ff}]%m%r%=%c,%l/%L\ %P
 
 " Some of my favorites aren't on old vim versions :(
