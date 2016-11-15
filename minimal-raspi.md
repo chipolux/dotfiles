@@ -149,3 +149,11 @@ Section "ServerFlags"
     Option "DontVTSwitch" "true"
 EndSection
 ```
+
+# Upside Down Video
+If the case or stand you're using for a display holds your screen such that
+everything is upside down, just add this to `/boot/config.txt`:
+```
+lcd_rotate=2
+```
+You can adjust that rotation for other orientations as well.
