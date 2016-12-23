@@ -52,6 +52,45 @@ setup a profiles `~/.xinitrc` to run a GUI app (or install a window manager),
 then edit an accounts `~/.profile` to `startx &> /dev/null`.
 
 
+# Keep X App Alive
+Setup the profile that will run the app to have a `~/.xinitrc` like:
+```
+while true; do
+    python3 app.py
+done
+```
+
+
+# Keep Screen Awake
+If your screen blacks/blanks out after a period of inactivity and you don't like
+that you can add this to your `/etc/X11/xorg.conf`
+```
+Secion "Monitor"
+    Identifier "Monitor0"
+    Option "DPMS" "false"
+EndSection
+
+Section "ServerLayout"
+    Identifier "ServerLayout0"
+    Option "StandbyTime" "0"
+    Option "SuspendTime" "0"
+    Option "OffTime" "0"
+    Option "BlankTime" "0"
+EndSection
+```
+
+Alternatively you could add this to your `.xinitrc`
+```
+xset s off
+xset -dpms
+```
+
+
+# Set Background Image For X
+Ensure you have `feh` installed: `sudo apt-get install feh`
+Then in your `~/.xinitrc` you can do: `feh --bg-fill /path/to/img`
+
+
 # Setting Up WiFi and Bluetooth
 Install WiFi and Bluetooth firmware: `apt-get install firmware-brcm80211 pi-bluetooth`
 
@@ -90,7 +129,7 @@ the 'new' network adapters.
 
 Remove `/etc/resolv.conf` so that it doesn't have any cached DNS servers, etc.
 
-Clean out `/var/log`.
+Clean out logs `sudo rm -rf /var/log/*`
 
 
 # Minimizing Power Consumption
@@ -108,7 +147,7 @@ Disable login messages by creating `~/.hushlogin`
 
 Disable startx messages with redirection `startx &> /dev/null`
 
-To disable the boot messages, replace `console=tty1` with `console=tty3` in `/boot/cmdline.txt`
+To disable the boot messages, replace `console=tty1` with `console=null quiet` in `/boot/cmdline.txt`
 
 To disable non-critical kernal log messages add `loglevel=3` to `/boot/cmdline.txt`
 
@@ -157,3 +196,43 @@ everything is upside down, just add this to `/boot/config.txt`:
 lcd_rotate=2
 ```
 You can adjust that rotation for other orientations as well.
+
+
+# Disable Serial Port Console
+By default minibian/raspbian will start a console for use via a serial connection.
+You might not want this enabled when locking down the system.
+
+Remove the `console=ttyAMA0,115200 kgdboc=ttyAMA0,115200` options from `/boot/cmdline.txt`
+
+Remove the following lines from `/etc/inittab`:
+```
+#Spawn a getty on Raspberry Pi serial line
+T0:23:respawn:/sbin/getty -L ttyAMA0 115200 vt100
+```
+
+
+# Controlling Touch Display
+The display is controlled via a raw sys interface in `/sys/class/backlight/rpi_backlight`.
+
+You can power the display off with `echo 1 > /sys/class/backlight/rpi_backlight/bl_power`
+
+Back on with `echo 0 > /sys/class/backlight/rpi_backlight/bl_power`
+
+You can adjust the brightness through a range of 0-255 with `echo 128 > /sys/class/backlight/rpi_backlight/brightness`
+
+You may not have access to those files though, if that's the case add the file
+`/etc/udev/rules.d/backlight-permissions.rules` with this:
+```
+SUBSYSTEM=="backlight",RUN+="/bin/chmod 666 /sys/class/backlight/%k/brightness /sys/class/backlight/%k/bl_power"
+```
+
+
+SUBSYSTEM=="backlight",RUN+="/bin/chmod 666 /sys/class/backlight/%k/brightness /sys/class/backlight/%k/bl_power"# PyQt5 App Gotchas
+The easiest and most reliable way of getting PyQt5 and Python 3 on your
+minibian system is to use the repositories.
+```
+sudo apt-get install python3-dev
+sudo apt-get install python3-pyqt5
+```
+
+If you need/want to display SVG images you will need the SVG lib: `sudo apt-get install libqt5svg5`
