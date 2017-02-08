@@ -236,3 +236,12 @@ sudo apt-get install python3-pyqt5
 ```
 
 If you need/want to display SVG images you will need the SVG lib: `sudo apt-get install libqt5svg5`
+
+
+# Enabling Camera
+To enabled the raspi-camera edit your `/boot/config.txt` to contain `start_x=1`
+
+Then you can take pictures like `raspistill -t 1 -n -o picture.jpg`
+
+You can also use things like `apt-get install python3-picamera` to programmatically
+control the camera.
