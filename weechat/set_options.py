@@ -25,7 +25,7 @@ def load_config(path):
         allow_no_value=True,
         delimiters=(' = ',)
     )
-    config.optionxform = unicode
+    config.optionxform = str
     config.read(path)
     return config
 
