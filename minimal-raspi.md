@@ -180,6 +180,37 @@ is probably not enough memory assigned for the gpu. Edit `/boot/config.txt` and
 set `gpu_mem` to something like 64 or 128. I've had no problems yet with either.
 
 
+# Getting PyQt5 For EGLFS
+LeanDog provides a source for Qt5.7, SIP, and PyQt5.7 using EGLFS on Raspbian.
+https://gist.github.com/garyjohnson/f041d2274dccd6641c51
+
+First ensure that the EGLFS binaries are accessible at the expected locations for Qt.
+```
+ln -fs /opt/vc/lib/libEGL.so /usr/lib/arm-linux-gnueabihf/libEGL.so.1.0.0
+ln -fs /opt/vc/lib/libGLESv2.so /usr/lib/arm-linux-gnueabihf/libGLESv2.so.2.0.0
+```
+
+Then add `deb http://apt.leandog.com/ jessie main` to `/etc/apt/sources.list` and
+run `apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BDCBFB15`.
+
+Ensure that you don't have `python3-pyqt5`, `qt5-default`, etc. installed.
+
+Then, `apt-get update` and `apt-get install qt5 sip pyqt5`!
+
+
+# Input Access Under EGLFS
+If you use EGLFS you'll need to ensure the user of your app is able to access
+the actual input devices. If you don't you will get several permissions errors
+relating to `/dev/input*` devices as well as not being able to interact with
+your app!
+
+You can fix this using udev rules, create a new rule in `/etc/udev/rules.d`
+like `10-input.rules`, inside it you should have this:
+`SUBSYSTEM=="input",GROUP="input",MODE="660"`
+
+Then just ensure your user is in the input group, `usermod -a -G input kiosk`.
+
+
 # Disabling Virtual Terminal Switching
 To disable the `Ctrl-Alt-F{1..6}` virtual terminal switching open/create
 `/etc/X11/xorg.conf` and add this:
