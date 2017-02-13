@@ -22,6 +22,7 @@ Plugin 'fatih/vim-nginx'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'a-watson/vim-gdscript'
 Plugin 'JuliaLang/julia-vim'
+Plugin 'peterhoeg/vim-qml'
 
 " Utility
 Plugin 'editorconfig/editorconfig-vim'
