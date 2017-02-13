@@ -258,7 +258,7 @@ SUBSYSTEM=="backlight",RUN+="/bin/chmod 666 /sys/class/backlight/%k/brightness /
 ```
 
 
-SUBSYSTEM=="backlight",RUN+="/bin/chmod 666 /sys/class/backlight/%k/brightness /sys/class/backlight/%k/bl_power"# PyQt5 App Gotchas
+# PyQt5 App Gotchas
 The easiest and most reliable way of getting PyQt5 and Python 3 on your
 minibian system is to use the repositories.
 ```
