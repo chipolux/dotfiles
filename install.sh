@@ -16,6 +16,17 @@ function setup () {
         "taskrc" \
         "Xresources"
 
+    echo "Cloning tools!"
+    if [ ! -d oh-my-zsh ]; then
+        git clone --depth 1 https://github.com/robbyrussell/oh-my-zsh.git oh-my-zsh
+    fi
+    if [ ! -d tmux/plugins/tpm ]; then
+        git clone --depth 1 https://github.com/tmux-plugins/tpm.git tmux/plugins/tpm
+    fi
+    if [ ! -d vim/bundle/Vundle.vim ]; then
+        git clone --depth 1 https://github.com/gmarik/Vundle.vim.git vim/bundle/Vundle.vim
+    fi
+
     echo "Moving dotfolders!"
     move-dot-folders \
         "tmux" \
@@ -27,9 +38,6 @@ function setup () {
 
     echo "Moving weechat stuff!"
     move-weechat-stuff
-
-    echo "Getting submodules!"
-    git submodule update --init --recursive
 
     echo "Installing vim plugins!"
     vim +PluginInstall +qall
