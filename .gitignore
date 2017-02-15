@@ -1,4 +1,8 @@
+oh-my-zsh
+
 tmux/plugins/*
 tmux/resurrect/*
+
+vim/bundle/*
 
 vim/spell
