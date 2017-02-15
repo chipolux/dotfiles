@@ -59,11 +59,20 @@ function move-weechat-stuff () {
 
     for file in "${weechat[@]}"; do
         if [ -e $HOME/.weechat/$file ]; then
+            # Backup existing config
             mv -f $HOME/.weechat/$file $HOME/.weechat/$file.old
-            python $(pwd)/weechat/set_options.py \
+        fi
+
+        if [ -e $HOME/.weechat/$file.old ]; then
+            # Create new config based on backup and customizations
+            $(pwd)/weechat/set_options.py \
                 $HOME/.weechat/$file.old \
                 $(pwd)/weechat/$file \
                 $HOME/.weechat/$file
+            if [ $? != 0 ]; then
+                # Failed to setup new config, replace original
+                mv -f $HOME/.weechat/$file.old $HOME/.weechat/$file
+            fi
         fi
     done
 }
