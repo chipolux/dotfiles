@@ -1,4 +1,7 @@
 # Setting Up Minimal Raspberry Pi 3
+
+
+## Imaging SD Card
 Get minibian [here](https://minibianpi.wordpress.com/setup/).
 
 Extract and use `dd` to copy it to a SD card.
@@ -6,19 +9,31 @@ Extract and use `dd` to copy it to a SD card.
 * OSX
     * `diskutil list`
     * `diskutil unmountDisk /dev/disk*`
-    * `sudo dd if=miniban.img of=/dev/rdisk* bs=32m`
+    * `sudo dd if=minibian.img of=/dev/rdisk* bs=32m`
+* Linux
+    * `df` to find removable disk, usually /dev/sdd
+    * `umount <path to disk>`
+    * `sudo dd bs=4M if=minibian.img of=<path to disk>`
 
-Slap the SD card in the pi and boot it up.
+Slap the SD card in the pi and boot it up. As found on the minibian site, by default
+there is only the `root` account with password `raspberry`, you will want to change
+this quickly.
 
 Expand the disk:
 Edit partitions using `fdisk /dev/mmcblk0`, list them with `p`, delete the 2nd one
 with `d`, then re-create it with `n` as a primary partition, starting at the offset
 you saw in the `p` list, and ending at the end of the drive (leave it blank). Then
-use `w` to write, you'll get an error that the device is in use, is fine.
+use `w` to write, you'll get an error like `Device or resource busy`, that's fine.
 Now reboot so that new partition table takes effect. Once you're back in use
 `resize2fs /dev/mmcblk0p2` to expand the filesystem to fit the partition. You can
 verify using `df -h`!
 
+Cleanup:
+If you've mounted the disk on a macOS machine it may have left a `.Trash` folder
+on the boot partition, it can be removed.
+
+
+## Initial OS Setup
 This will probably take a long time but it's best to make sure everything is
 up to date: `apt-get update && apt-get dist-upgrade`
 
@@ -33,7 +48,9 @@ Add the your user to the sudo group: `usermod -a -G sudo some-guy`
 
 Disable root ssh login: `vi /etc/ssh/sshd_config` and `PermitRootLogin no`
 
-Change root password using `passwd`
+Change root password using `passwd`, or disable lock the root account like `passwd -l root`
+
+***From this point on, do everything with the user you created with `sudo` rights instead of root!***
 
 Install apt-utils, `apt-get install apt-utils`
 
