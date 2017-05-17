@@ -85,6 +85,8 @@ if [ $TERM = "screen" ]; then
     export TERM=screen-256color
 fi
 
+export EDITOR=vim
+
 # If there is stuff like API tokens, keys, etc that need to be put in the
 # environment, put them in ~/.private_profile and this will source them in
 if [ -s "$HOME/.private_profile" ]; then
