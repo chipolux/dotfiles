@@ -37,21 +37,22 @@ syntax enable
 filetype plugin indent on
 
 " Favorite defaults
-set backspace=2
-set laststatus=2
-set guioptions-=e
-set tabstop=4
-set shiftwidth=4
-set modeline
-set expandtab
-set number
-set nowrap
-set hlsearch
-set incsearch
-set ttyfast
-set mouse=a
-set wildmenu
-set wildchar=<Tab>
+set nocompatible  " ensure we aren't maintaining vi compatibility (default)
+set backspace=indent,eol,start  " allow backspace to go over indentation, eol, and start of current insert
+set laststatus=2  " always show statusline
+set guioptions-=e  " don't use GUI tabs when in a gui like gvim
+set tabstop=4  " tabs display as 4 spaces wide
+set shiftwidth=4  " (auto)indent to 4 spaces
+set expandtab  " pressing tab inserts spaces
+set modeline  " enable modeline comments to set vim options (security risk)
+set number  " show line numbers
+set nowrap  " do not soft-wrap lines
+set hlsearch  " highlight search pattern matches
+set incsearch  " as you type a search pattern start trying to match
+set ttyfast  " our terminal is fast so send more characters for smoother display
+set mouse=a  " enable mouse control
+set wildmenu  " pop up completions over statusline when tabbing in command line
+set wildchar=<Tab>  " ensure tab activates wildmenu (default)
 
 " Unbind the Shift+K man page binding
 map <S-k> <Nop>
