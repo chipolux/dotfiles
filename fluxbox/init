@@ -4,7 +4,7 @@
 
 session.screen0.toolbar.widthPercent: 85
 session.screen0.toolbar.tools: prevworkspace, workspacename, nextworkspace, iconbar, systemtray, clock
-session.screen0.strftimeFormat: %d %b, %a %l:%M %P
+session.screen0.strftimeFormat: %-d, %b %l:%M %P
 session.screen0.workspaces: 4
 session.screen0.workspaceNames: W1,W2,W3,W4
 session.screen0.opaqueMove: False
