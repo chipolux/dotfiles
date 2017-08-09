@@ -41,6 +41,12 @@ function setup () {
 
     echo "Installing vim plugins!"
     vim +PluginInstall +qall
+
+    zsh_path=$(which zsh)
+    if [ -e $zsh_path ]; then
+        echo "Setting shell to zsh!"
+        sudo chsh -s $zsh_path $USER
+    fi
 }
 
 function move-dot-files () {
