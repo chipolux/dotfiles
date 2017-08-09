@@ -68,6 +68,9 @@ endif
 set exrc
 set secure
 
+" Jump to last known position in a file after opening it, same as doing `"
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
 " Close buffer without killing split
 nmap <silent> <leader>d :bp <bar> :bd #<CR>
 nmap <silent> <leader>D :bp! <bar> :bd #<CR>
