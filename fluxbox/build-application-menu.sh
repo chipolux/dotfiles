@@ -20,6 +20,11 @@ if [ $app_path ]; then
     echo "[exec] (Chrome) {$app_path} </usr/share/icons/hicolor/32x32/apps/google-chrome.png>" >> $menu
 fi
 
+app_path=$(which chromium-browser)
+if [ $app_path ]; then
+    echo "[exec] (Chromium) {$app_path} </usr/share/pixmaps/chromium-browser.png>" >> $menu
+fi
+
 app_path=$(which spyder)
 if [ $app_path ]; then
     echo "[exec] (Spyder) {$app_path} </usr/share/pixmaps/spyder.png>" >> $menu
