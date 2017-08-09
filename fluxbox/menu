@@ -6,6 +6,7 @@
     [submenu] (Fluxbox) {}
         [workspaces] (Workspaces)
         [config] (Configuration)
+        [exec] (Build App Menu) {~/.fluxbox/build-application-menu.sh}
         [reconfig] (Reconfigure)
         [restart] (Restart)
         [exit] (Exit)
