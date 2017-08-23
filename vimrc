@@ -57,6 +57,13 @@ set wildchar=<Tab>  " ensure tab activates wildmenu (default)
 " Unbind the Shift+K man page binding
 map <S-k> <Nop>
 
+" Useful re-bindings
+" command WQ wq
+" command Wq wq
+" command W w
+" command Q q
+" nnoremap ; :
+
 " set statusline=%([%H%W]\ %)%.25f\ %y[%{&ff}]%m%r%=%c,%l/%L\ %P
 
 " Some of my favorites aren't on old vim versions :(
@@ -91,6 +98,9 @@ nmap <leader>f :setlocal foldmethod=syntax<CR>
 
 " Format selected json using python
 vmap <leader>j !python -m json.tool<CR>
+
+" Show current byte offset
+nmap <leader>b :echo eval(line2byte(line('.')) + col('.') - 1)<CR>
 
 " Vim-Pymode Stuff
 let g:pymode_rope = 0
