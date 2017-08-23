@@ -116,8 +116,11 @@ let g:vim_json_syntax_conceal = 0
 " Enable spellcheck for some stuff
 au FileType mail,mkd,rst setlocal spell spelllang=en_us
 
-" Some wrapping stuff for editing mail
-au FileType mail setlocal fo+=aw
+" Don't auto-wrap lines when editing mail, do interpret a line ending in
+" whitespace as meaning the next line continues the same paragraph.
+au FileType mail setlocal formatoptions-=t formatoptions+=w
+" tcql aw
+" croql
 
 " Makefiles need tabs instead of spaces
 au FileType make setlocal noexpandtab shiftwidth=8 softtabstop=0
