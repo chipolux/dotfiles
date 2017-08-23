@@ -6,6 +6,7 @@
 tags
 
 *.tmp
+tmp/
 
 ### vim ###
 [._]*.s[a-w][a-z]
