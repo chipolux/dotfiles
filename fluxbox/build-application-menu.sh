@@ -5,27 +5,29 @@ if [ -e $menu ]; then
     rm $menu
 fi
 
-app_path=$(which urxvt)
-if [ $app_path ]; then
-    echo "[exec] (urxvt) {$app_path} </usr/share/pixmaps/urxvt_32x32.xpm>" >> $menu
-fi
+function add-to-menu () {
+    app_path=$(which $1)
+    app_name=$2
+    icon_path=$3
+    if [ $app_path ]; then
+        echo "[exec] ($app_name) {$app_path} <$icon_path>" >> $menu
+    fi
+}
 
-app_path=$(which firefox)
-if [ $app_path ]; then
-    echo "[exec] (Firefox) {$app_path} </usr/share/pixmaps/firefox.png>" >> $menu
-fi
+add-to-menu "urxvt" "urxvt" "/usr/share/pixmaps/urxvt_32x32.xpm"
 
-app_path=$(which google-chrome)
-if [ $app_path ]; then
-    echo "[exec] (Chrome) {$app_path} </usr/share/icons/hicolor/32x32/apps/google-chrome.png>" >> $menu
-fi
+add-to-menu "firefox" "Firefox" "/usr/share/pixmaps/firefox.png"
+add-to-menu "google-chrome" "Chrome" "/usr/share/icons/hicolor/32x32/apps/google-chrome.png"
+add-to-menu "chromium-browser" "Chromium" "/usr/share/pixmaps/chromium-browser.png"
 
-app_path=$(which chromium-browser)
-if [ $app_path ]; then
-    echo "[exec] (Chromium) {$app_path} </usr/share/pixmaps/chromium-browser.png>" >> $menu
-fi
+add-to-menu "spyder" "Spyder" "/usr/share/pixmaps/spyder.png"
+add-to-menu "virtualbox" "VirtualBox" "/usr/share/pixmaps/virtualbox.xpm"
 
-app_path=$(which spyder)
-if [ $app_path ]; then
-    echo "[exec] (Spyder) {$app_path} </usr/share/pixmaps/spyder.png>" >> $menu
-fi
+add-to-menu "steam" "Steam" "/usr/share/pixmaps/steam.png"
+add-to-menu "discord" "Discord" "/usr/share/pixmaps/discord.png"
+
+add-to-menu "gimp" "Gimp" "/usr/share/pixmaps/gimp.xpm"
+
+add-to-menu "cura" "Cura" "/usr/share/cura/resources/images/c.png"
+add-to-menu "blender" "Blender" "/usr/share/pixmaps/blender-32x32.xpm"
+add-to-menu "solvespace" "SolveSpace" "/usr/local/share/pixmaps/solvespace-32x32.xpm"
