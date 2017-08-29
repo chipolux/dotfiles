@@ -21,9 +21,20 @@ if [ $? -eq 0 ]; then
     fbautostart
 fi
 
+# start conky to display system info
+# conky -d
+
+# start xfce4-power-manager to show battery status
+xfce4-power-manager
+
+# start nm-applet to allow managing networks
+nm-applet &
+
+# start syndaemon to disable the touchpad while typing
+syndaemon -k -i 0.3 -d
+
 # And last but not least we start fluxbox.
 # Because it is the last app you have to run it with ''exec'' before it.
-
 exec fluxbox
 # or if you want to keep a log:
 # exec fluxbox -log "$HOME/.fluxbox/log"
