@@ -1,5 +1,5 @@
 toolbar:                             raised gradient vertical
-toolbar.height:                      32
+toolbar.height:                      22
 toolbar.color:                       #333333
 toolbar.colorTo:                     #222222
 toolbar.button:                      parentrelative
@@ -30,7 +30,7 @@ menu.hilite.color:                   #333333
 menu.bullet:                         triangle
 menu.bullet.position:                right
 
-window.title.height:                 28
+window.title.height:                 22
 window.title.focus:                  raised gradient vertical
 window.title.focus.color:            #333333
 window.title.focus.colorTo:          #222222
