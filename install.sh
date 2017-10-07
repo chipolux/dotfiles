@@ -32,6 +32,7 @@ function setup () {
         "tmux" \
         "vim" \
         "oh-my-zsh" \
+        "zsh-custom" \
         "mutt" \
         "task" \
         "fluxbox"
