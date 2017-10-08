@@ -1,6 +1,9 @@
 # Add type for powershell files
 --type-set=ps:ext:ps1,psm1,psd1
 
+# Add type for qml files
+--type-set=qml:ext:qml
+
 # Update python type to include pyw files
 --type-add=python:ext:pyw
 
