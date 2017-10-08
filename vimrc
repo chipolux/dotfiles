@@ -34,6 +34,7 @@ Plugin 'tpope/vim-unimpaired'
 call vundle#end()
 
 syntax enable
+filetype off
 filetype plugin indent on
 
 " Favorite defaults
