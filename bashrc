@@ -23,6 +23,7 @@ fi
 if [ $venvwrapper ] && [ -s $venvwrapper ] && [ -z $VIRTUAL_ENV ]; then
     export WORKON_HOME=$HOME/.virtualenvs
     export PIP_VIRTUALENV_BASE=$WORKON_HOME
+    export VIRTUALENVWRAPPER_PYTHON=$(which python3)
     source $venvwrapper
 fi
 
