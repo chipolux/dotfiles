@@ -54,6 +54,7 @@ set ttyfast  " our terminal is fast so send more characters for smoother display
 set mouse=a  " enable mouse control
 set wildmenu  " pop up completions over statusline when tabbing in command line
 set wildchar=<Tab>  " ensure tab activates wildmenu (default)
+set wildignore=*.qmlc,*.jsc,*.pyc
 
 " Unbind the Shift+K man page binding
 map <S-k> <Nop>

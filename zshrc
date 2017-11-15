@@ -38,3 +38,6 @@ setopt no_nomatch
 
 # Don't close the terminal on Ctrl+D
 setopt ignoreeof
+
+# Don't autocomplete some filetypes for vim
+zstyle ':completion:*:*:vim:*' file-patterns '^*.(qmlc|jsc):source-files' '*:all-files'
