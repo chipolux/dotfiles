@@ -144,3 +144,4 @@ if has("gui_running")
     set guifont=Inconsolata\ for\ Powerline:h14
 endif
 silent! colorscheme molokai
+hi MatchParen cterm=bold ctermfg=15 ctermbg=none guifg=#ffffff guibg=background gui=bold
