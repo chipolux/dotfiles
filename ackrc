@@ -7,6 +7,9 @@
 # Update python type to include pyw files
 --type-add=python:ext:pyw
 
+# Update js type to include jsx files
+--type-add=js:ext:jsx
+
 # Ignore js non-source dirs
 --ignore-dir={bin,node_modules,vendor,app-components}
 
