@@ -104,6 +104,12 @@ vmap <leader>j !python -m json.tool<CR>
 " Show current byte offset
 nmap <leader>b :echo eval(line2byte(line('.')) + col('.') - 1)<CR>
 
+" I always hold shift just a tiny bit too long
+command WQ wq
+command Wq wq
+command W w
+command Q q
+
 " Vim-Pymode Stuff
 let g:pymode_rope = 0
 let g:pymode_doc = 0
