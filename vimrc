@@ -1,37 +1,36 @@
-" Vundle stuff
-set rtp +=~/.vim/bundle/Vundle.vim
-
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-
+" vim-plug stuff
+call plug#begin('~/.vim/plugged')
 " Look And Feel
-Plugin 'tomasr/molokai'
-Plugin 'itchyny/lightline.vim'
+Plug 'tomasr/molokai'
+Plug 'itchyny/lightline.vim'
 
 " Filetype Specific
-Plugin 'klen/python-mode'
-Plugin 'elzr/vim-json'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'PProvost/vim-ps1'
-Plugin 'fatih/vim-nginx'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'peterhoeg/vim-qml'
-" Plugin 'wannesm/wmgraphviz.vim'
-" Plugin 'sudar/vim-arduino-syntax'
-" Plugin 'wavded/vim-stylus'
-" Plugin 'a-watson/vim-gdscript'
-" Plugin 'JuliaLang/julia-vim'
+if !has("win32")
+    " this plugin doesn't work right on windows
+    Plug 'klen/python-mode'
+endif
+Plug 'elzr/vim-json'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'plasticboy/vim-markdown'
+Plug 'PProvost/vim-ps1'
+Plug 'fatih/vim-nginx'
+Plug 'kchmck/vim-coffee-script'
+Plug 'peterhoeg/vim-qml'
+" Plug 'wannesm/wmgraphviz.vim'
+" Plug 'sudar/vim-arduino-syntax'
+" Plug 'wavded/vim-stylus'
+" Plug 'a-watson/vim-gdscript'
+" Plug 'JuliaLang/julia-vim'
 
 " Utility
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'tmhedberg/matchit'
-" Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-unimpaired'
-call vundle#end()
+Plug 'editorconfig/editorconfig-vim'
+Plug 'tmhedberg/matchit'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-unimpaired'
+" Plug 'tpope/vim-surround'
+call plug#end()
 
 syntax enable
 filetype off
@@ -140,8 +139,9 @@ au FileType coffee,qml setlocal foldmethod=indent
 let g:ftplugin_sql_omni_key = '<C-j>'
 
 " Display stuff
-if has("gui_running")
-    set guifont=Inconsolata\ for\ Powerline:h14
+set guifont=Consolas:h10
+if has("win32")
+    set noswapfile
 endif
 silent! colorscheme molokai
 hi MatchParen cterm=bold ctermfg=15 ctermbg=none guifg=#ffffff guibg=background gui=bold

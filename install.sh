@@ -23,8 +23,8 @@ function setup () {
     if [ ! -d tmux/plugins/tpm ]; then
         git clone --depth 1 https://github.com/tmux-plugins/tpm.git tmux/plugins/tpm
     fi
-    if [ ! -d vim/bundle/Vundle.vim ]; then
-        git clone --depth 1 https://github.com/gmarik/Vundle.vim.git vim/bundle/Vundle.vim
+    if [ ! -d vim/autoload/plug.vim ]; then
+        curl -fLo vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     fi
 
     echo "Moving dotfolders!"
