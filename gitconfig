@@ -9,6 +9,7 @@
     excludesfile = ~/.gitignore
     pager = less -FX
     editor = vim
+    autocrlf = false
 [push]
     default = current
 [merge]

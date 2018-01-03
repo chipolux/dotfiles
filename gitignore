@@ -1,5 +1,6 @@
 # Global gitignore
 
+*.swp
 .rope*
 .env
 *.so*
