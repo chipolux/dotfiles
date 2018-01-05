@@ -41,7 +41,7 @@ function setup () {
     move-weechat-stuff
 
     echo "Installing vim plugins!"
-    vim +PluginInstall +qall
+    vim +PlugInstall +qall
 
     zsh_path=$(which zsh)
     if [ -e $zsh_path ]; then
