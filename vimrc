@@ -4,10 +4,19 @@ call plug#begin('~/.vim/plugged')
 Plug 'tomasr/molokai'
 Plug 'itchyny/lightline.vim'
 
+" Utility
+Plug 'editorconfig/editorconfig-vim'
+Plug 'tmhedberg/matchit'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-unimpaired'
+
 " Filetype Specific
 Plug 'tmhedberg/SimpylFold'
+" Plug 'tweekmonster/braceless.vim'
 Plug 'Vimjas/vim-python-pep8-indent'
-Plug 'nvie/vim-flake8'
+" Plug 'nvie/vim-flake8'
+Plug 'alfredodeza/khuno.vim'
 Plug 'elzr/vim-json'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -16,13 +25,6 @@ Plug 'PProvost/vim-ps1'
 Plug 'fatih/vim-nginx'
 Plug 'kchmck/vim-coffee-script'
 Plug 'peterhoeg/vim-qml'
-
-" Utility
-Plug 'editorconfig/editorconfig-vim'
-Plug 'tmhedberg/matchit'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-unimpaired'
 call plug#end()
 
 syntax enable
@@ -96,7 +98,14 @@ command Q q
 " Python Plugin Settings
 let g:SimpylFold_fold_docstring = 0
 let g:SimpylFold_fold_import = 0
-autocmd FileType python map <leader>l :call Flake8()<CR>
+autocmd FileType python :call SetPythonOptions()
+function SetPythonOptions()
+    " map <leader>l :call Flake8()<CR>
+    map <leader>l :Khuno show<CR>
+    map <leader>r :exec '!python' shellescape(@%, 1)<CR>
+    syn keyword pythonSelf self
+    highlight def link pythonSelf Special
+endfunction
 
 " Vim JSON stuff
 let g:vim_json_syntax_conceal = 0
