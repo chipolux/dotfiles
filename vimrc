@@ -5,10 +5,9 @@ Plug 'tomasr/molokai'
 Plug 'itchyny/lightline.vim'
 
 " Filetype Specific
-if !has("win32")
-    " this plugin doesn't work right on windows
-    Plug 'klen/python-mode'
-endif
+Plug 'tmhedberg/SimpylFold'
+Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'nvie/vim-flake8'
 Plug 'elzr/vim-json'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -17,11 +16,6 @@ Plug 'PProvost/vim-ps1'
 Plug 'fatih/vim-nginx'
 Plug 'kchmck/vim-coffee-script'
 Plug 'peterhoeg/vim-qml'
-" Plug 'wannesm/wmgraphviz.vim'
-" Plug 'sudar/vim-arduino-syntax'
-" Plug 'wavded/vim-stylus'
-" Plug 'a-watson/vim-gdscript'
-" Plug 'JuliaLang/julia-vim'
 
 " Utility
 Plug 'editorconfig/editorconfig-vim'
@@ -29,7 +23,6 @@ Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
-" Plug 'tpope/vim-surround'
 call plug#end()
 
 syntax enable
@@ -57,15 +50,6 @@ set wildignore=*.qmlc,*.jsc,*.pyc
 
 " Unbind the Shift+K man page binding
 map <S-k> <Nop>
-
-" Useful re-bindings
-" command WQ wq
-" command Wq wq
-" command W w
-" command Q q
-" nnoremap ; :
-
-" set statusline=%([%H%W]\ %)%.25f\ %y[%{&ff}]%m%r%=%c,%l/%L\ %P
 
 " Some of my favorites aren't on old vim versions :(
 if exists('&colorcolumn')
@@ -109,13 +93,10 @@ command Wq wq
 command W w
 command Q q
 
-" Vim-Pymode Stuff
-let g:pymode_rope = 0
-let g:pymode_doc = 0
-let g:pymode_rope_complete_on_dot = 0
-let g:pymode_lint_cwindow = 0
-let g:pymode_lint_unmodified = 1
-nmap <leader>l :let g:pymode_lint_cwindow = 1 <bar> :PymodeLint<CR>
+" Python Plugin Settings
+let g:SimpylFold_fold_docstring = 0
+let g:SimpylFold_fold_import = 0
+autocmd FileType python map <leader>l :call Flake8()<CR>
 
 " Vim JSON stuff
 let g:vim_json_syntax_conceal = 0
@@ -126,8 +107,6 @@ au FileType mail,mkd,rst setlocal spell spelllang=en_us
 " Don't auto-wrap lines when editing mail, do interpret a line ending in
 " whitespace as meaning the next line continues the same paragraph.
 au FileType mail setlocal formatoptions-=t formatoptions+=w
-" tcql aw
-" croql
 
 " Makefiles need tabs instead of spaces
 au FileType make setlocal noexpandtab shiftwidth=8 softtabstop=0
@@ -139,9 +118,11 @@ au FileType coffee,qml setlocal foldmethod=indent
 let g:ftplugin_sql_omni_key = '<C-j>'
 
 " Display stuff
-set guifont=Consolas:h10
 if has("win32")
+    set guifont=Consolas:h13
     set noswapfile
+elseif has("gui_macvim")
+    set guifont=Roboto\ Mono:h13
 endif
 silent! colorscheme molokai
 hi MatchParen cterm=bold ctermfg=15 ctermbg=none guifg=#ffffff guibg=background gui=bold
