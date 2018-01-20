@@ -13,10 +13,8 @@ Plug 'tpope/vim-unimpaired'
 
 " Filetype Specific
 Plug 'tmhedberg/SimpylFold'
-" Plug 'tweekmonster/braceless.vim'
 Plug 'Vimjas/vim-python-pep8-indent'
-" Plug 'nvie/vim-flake8'
-Plug 'alfredodeza/khuno.vim'
+Plug 'nvie/vim-flake8'
 Plug 'elzr/vim-json'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -100,8 +98,7 @@ let g:SimpylFold_fold_docstring = 0
 let g:SimpylFold_fold_import = 0
 autocmd FileType python :call SetPythonOptions()
 function SetPythonOptions()
-    " map <leader>l :call Flake8()<CR>
-    map <leader>l :Khuno show<CR>
+    map <leader>l :call Flake8()<CR>
     map <leader>r :exec '!python' shellescape(@%, 1)<CR>
     syn keyword pythonSelf self
     highlight def link pythonSelf Special
@@ -128,7 +125,7 @@ let g:ftplugin_sql_omni_key = '<C-j>'
 
 " Display stuff
 if has("win32")
-    set guifont=Consolas:h13
+    set guifont=Consolas:h11
     set noswapfile
 elseif has("gui_macvim")
     set guifont=Roboto\ Mono:h13
