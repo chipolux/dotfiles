@@ -124,10 +124,13 @@ au FileType coffee,qml setlocal foldmethod=indent
 let g:ftplugin_sql_omni_key = '<C-j>'
 
 " Display stuff
-set guifont=Roboto\ Mono:h14
 if has("win32")
     set guifont=Consolas:h11
     set noswapfile
+elseif has("gui_macvim")
+    set guifont=Roboto\ Mono:h14
+elseif has("gui_gtk")
+    set guifont=Monospace\ 10
 endif
 silent! colorscheme molokai
 hi MatchParen cterm=bold ctermfg=15 ctermbg=none guifg=#ffffff guibg=background gui=bold
