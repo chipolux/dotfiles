@@ -129,7 +129,7 @@ let g:ftplugin_sql_omni_key = '<C-j>'
 
 " Display stuff
 if has("win32")
-    set guifont=Consolas:h11
+    set guifont=Consolas:h10
     set noswapfile
 elseif has("gui_macvim")
     set guifont=Roboto\ Mono:h14
