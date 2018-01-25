@@ -34,6 +34,10 @@ set nocompatible  " ensure we aren't maintaining vi compatibility (default)
 set backspace=indent,eol,start  " allow backspace to go over indentation, eol, and start of current insert
 set laststatus=2  " always show statusline
 set guioptions-=e  " don't use GUI tabs when in a gui like gvim
+set guioptions-=m  " don't show menubar in GUI
+set guioptions-=T  " don't show toolbar in GUI
+set guioptions-=r  " don't show right scrollbar
+set guioptions-=L  " don't show left scrollbar
 set tabstop=4  " tabs display as 4 spaces wide
 set shiftwidth=4  " (auto)indent to 4 spaces
 set expandtab  " pressing tab inserts spaces
