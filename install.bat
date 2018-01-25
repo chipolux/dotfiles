@@ -2,7 +2,7 @@
 
 :: backup old vimrc and link in current
 if exist %USERPROFILE%\.vimrc (
-    move /Y %USERPROFILE%\.vimrc %USERPROFILE%\.vimrc_old
+    del %USERPROFILE%\.vimrc
 )
 mklink /H %USERPROFILE%\.vimrc vimrc
 
@@ -13,18 +13,18 @@ if not exist vim\autoload\plug.vim (
     rmdir /S /Q vim\autoload\vim-plug
 )
 if exist %USERPROFILE%\.vim (
-    move /Y %USERPROFILE%\.vim %USERPROFILE%\.vim_old
+    del %USERPROFILE%\.vim
 )
 mklink /J %USERPROFILE%\.vim vim
 mklink /J %USERPROFILE%\vimfiles vim
 
 :: link git stuff
 if exist %USERPFORILE%\.gitignore (
-    move /Y %USERPROFILE%\.gitignore %USERPROFILE%\.gitignore_old
+    del %USERPROFILE%\.gitignore
 )
 mklink /H %USERPROFILE%\.gitignore gitignore
 if exist %USERPFORILE%\.gitconfig (
-    move /Y %USERPROFILE%\.gitconfig %USERPROFILE%\.gitconfig_old
+    del %USERPROFILE%\.gitconfig
 )
 mklink /H %USERPROFILE%\.gitconfig gitconfig
 
