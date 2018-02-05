@@ -13,6 +13,6 @@
 [push]
     default = current
 [merge]
-    tool = vimdiff
+    tool = gvimdiff
 [alias]
     lp = log --graph --pretty=format:'%C(yellow)%h %C(blue)(%cr) %C(reset)- %s %C(green)<%an>'

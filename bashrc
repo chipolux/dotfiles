@@ -35,6 +35,7 @@ fi
 # useful aliases
 alias lt='ls -lth'
 alias rsync='rsync -h --progress --partial'
+alias gvir='gvim --remote'
 
 # mutt aliases
 alias mail-personal='mutt -F ~/.mutt/personal.muttrc'
