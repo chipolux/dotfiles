@@ -43,6 +43,9 @@ function setup () {
     echo "Installing vim plugins!"
     vim +PlugInstall +qall
 
+    echo "Installing tmux terminfo!"
+    tic -x tmux-terminfo.txt
+
     zsh_path=$(which zsh)
     if [ -e $zsh_path ]; then
         echo "Setting shell to zsh!"
