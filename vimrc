@@ -144,3 +144,5 @@ endif
 silent! colorscheme molokai
 hi MatchParen cterm=bold ctermfg=15 ctermbg=none guifg=#ffffff guibg=background gui=bold
 autocmd BufRead,BufNewFile * syn match Braces /[\[\](){}]/ | hi Braces ctermfg=gray guifg=#b8b8b8
+hi Special cterm=italic
+hi Comment cterm=italic
