@@ -46,6 +46,9 @@ function setup () {
     echo "Installing tmux terminfo!"
     tic -x tmux-terminfo.txt
 
+    echo "Installing xterm terminfo!"
+    tic -x xterm-terminfo.txt
+
     zsh_path=$(which zsh)
     if [ $zsh_path ] && [ -e $zsh_path ]; then
         echo "Setting shell to zsh!"
