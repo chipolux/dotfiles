@@ -1,7 +1,8 @@
 PARTS=("/usr/local/bin"
        "/usr/local/sbin"
        "/opt/local/bin"
-       "/opt/local/sbin")
+       "/opt/local/sbin"
+       "$HOME/.local/bin")
 
 for PART in "${PARTS[@]}"; do
     if [[ -e $PART && ":$PATH:" != *":$PART:"* ]]; then
