@@ -37,9 +37,6 @@ function setup () {
         "task" \
         "fluxbox"
 
-    echo "Moving weechat stuff!"
-    move-weechat-stuff
-
     echo "Installing vim plugins!"
     vim +PlugInstall +qall
 
@@ -71,30 +68,6 @@ function move-dot-folders () {
             mv -f $HOME/.$folder $HOME/.$folder.old
         fi
         ln -snfF "$(pwd)/$folder" $HOME/.$folder
-    done
-}
-
-function move-weechat-stuff () {
-    weechat=("irc.conf"
-             "weechat.conf")
-
-    for file in "${weechat[@]}"; do
-        if [ -e $HOME/.weechat/$file ]; then
-            # Backup existing config
-            mv -f $HOME/.weechat/$file $HOME/.weechat/$file.old
-        fi
-
-        if [ -e $HOME/.weechat/$file.old ]; then
-            # Create new config based on backup and customizations
-            $(pwd)/weechat/set_options.py \
-                $HOME/.weechat/$file.old \
-                $(pwd)/weechat/$file \
-                $HOME/.weechat/$file
-            if [ $? != 0 ]; then
-                # Failed to setup new config, replace original
-                mv -f $HOME/.weechat/$file.old $HOME/.weechat/$file
-            fi
-        fi
     done
 }
 
