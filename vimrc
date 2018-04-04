@@ -106,10 +106,13 @@ command Q q
 " Python Plugin Settings
 let g:SimpylFold_fold_docstring = 0
 let g:SimpylFold_fold_import = 0
+let g:flake8_show_in_gutter=1
+autocmd BufWritePost *.py call Flake8()  " run flake8 when saving a py file
+"autocmd BufReadPost *.py call Flake8()  " run flake8 when opening a py file
 autocmd FileType python :call SetPythonOptions()
 function SetPythonOptions()
-    map <leader>l :call Flake8()<CR>
-    map <leader>r :exec '!python' shellescape(@%, 1)<CR>
+    map <buffer> <leader>l :call Flake8()<CR>
+    map <buffer> <leader>r :exec '!python' shellescape(@%, 1)<CR>
     syn keyword pythonSelf self
     highlight def link pythonSelf Special
 endfunction
