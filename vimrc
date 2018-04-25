@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
 " Look And Feel
 Plug 'tomasr/molokai'
 Plug 'itchyny/lightline.vim'
+Plug 'dannyob/quickfixstatus'
 
 " Utility
 Plug 'editorconfig/editorconfig-vim'
@@ -106,8 +107,10 @@ command Q q
 let g:SimpylFold_fold_docstring = 0
 let g:SimpylFold_fold_import = 0
 let g:flake8_show_in_gutter=1
-autocmd BufWritePost *.py call Flake8()  " run flake8 when saving a py file
-"autocmd BufReadPost *.py call Flake8()  " run flake8 when opening a py file
+autocmd BufWritePost *.py call Flake8()  " run flake8 when saving a py/pyw file
+autocmd BufWritePost *.pyw call Flake8()
+"autocmd BufReadPost *.py call Flake8()  " run flake8 when opening a py/pyw file
+"autocmd BufReadPost *.pyw call Flake8()
 autocmd FileType python :call SetPythonOptions()
 function SetPythonOptions()
     map <buffer> <leader>l :call Flake8()<CR>
