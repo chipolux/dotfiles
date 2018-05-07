@@ -11,7 +11,7 @@
 --type-add=js:ext:jsx
 
 # Ignore js non-source dirs
---ignore-dir={bin,node_modules,vendor,app-components}
+--ignore-dir={bin,node_modules,vendor,app-components,build,tmp}
 
 # Use less as pager
 --pager=less -FX

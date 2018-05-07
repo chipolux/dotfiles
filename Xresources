@@ -11,15 +11,18 @@ Xft.hintstyle: hintslight
 ! xterm settings
 !------------------------------------------------------------------------------
 xterm*faceName: Monospace
-xterm*faceSize: 9
+xterm*faceSize: 10
 xterm*metaSendsEscape: true
 
 !------------------------------------------------------------------------------
 ! URxvt settings
 !------------------------------------------------------------------------------
-URxvt.font: xft:monospace:size=9
+URxvt.font: xft:monospace:size=10
 URxvt.letterSpace: -2
 URxvt.scrollBar: false
+URxvt.pointerBlank: true
+URxvt.perl-ext: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
 !URxvt.transparent: true
 !URxvt.shading: 50
 

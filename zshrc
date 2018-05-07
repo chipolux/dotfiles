@@ -29,6 +29,9 @@ if [ -s "$HOME/.bashrc" ]; then
     source "$HOME/.bashrc"
 fi
 
+# Disable beeping
+setopt no_beep
+
 # Don't share history between terminals
 setopt no_share_history
 setopt no_inc_append_history
