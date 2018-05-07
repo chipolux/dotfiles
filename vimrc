@@ -107,6 +107,7 @@ command Q q
 let g:SimpylFold_fold_docstring = 0
 let g:SimpylFold_fold_import = 0
 let g:flake8_show_in_gutter=1
+let g:flake8_show_quickfix=0
 autocmd BufWritePost *.py call Flake8()  " run flake8 when saving a py/pyw file
 autocmd BufWritePost *.pyw call Flake8()
 "autocmd BufReadPost *.py call Flake8()  " run flake8 when opening a py/pyw file
