@@ -39,6 +39,8 @@ set guioptions-=m  " don't show menubar in GUI
 set guioptions-=T  " don't show toolbar in GUI
 set guioptions-=r  " don't show right scrollbar
 set guioptions-=L  " don't show left scrollbar
+set noerrorbells  " don't play bell sound on errors
+set visualbell  " don't play bell sound for any reason
 set tabstop=4  " tabs display as 4 spaces wide
 set shiftwidth=4  " (auto)indent to 4 spaces
 set expandtab  " pressing tab inserts spaces
