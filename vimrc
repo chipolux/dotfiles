@@ -136,7 +136,7 @@ au FileType mail setlocal formatoptions-=t formatoptions+=w
 au FileType make setlocal noexpandtab shiftwidth=8 softtabstop=0
 
 " Several filetypes should have indent foldmethod
-au FileType coffee,qml setlocal foldmethod=indent
+au FileType coffee,qml,cpp setlocal foldmethod=indent
 
 " Ugh omni-complete for sql files is bound to a shitty key by default
 let g:ftplugin_sql_omni_key = '<C-j>'
