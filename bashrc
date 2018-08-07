@@ -58,6 +58,10 @@ if [ $TERM = "screen" ]; then
     export TERM=screen-256color
 fi
 
+if [ $TERM = "xterm-kitty" ]; then
+    alias ssh="kitty +kitten ssh"
+fi
+
 export EDITOR=vim
 
 # If there is stuff like API tokens, keys, etc that need to be put in the
