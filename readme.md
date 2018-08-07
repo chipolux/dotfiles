@@ -13,3 +13,7 @@ installed.
 On Ubuntu the latest versions of tmux and weechat aren't always in the default
 repos, but you can add `ppa:pi-rho/dev` for tmux and `ppa:nesthib/weechat-stable`
 for weechat.
+
+## Weechat Setup
+A lot of defaults will be configured but don't forget to
+`/set irc.server.*.sasl_username` and password for the servers that use it.
