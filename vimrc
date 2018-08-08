@@ -39,6 +39,7 @@ set guioptions-=m  " don't show menubar in GUI
 set guioptions-=T  " don't show toolbar in GUI
 set guioptions-=r  " don't show right scrollbar
 set guioptions-=L  " don't show left scrollbar
+set noshowmode  " since we have lightline we don't need to show the current mode
 set noerrorbells  " don't play bell sound on errors
 set visualbell  " don't play bell sound for any reason
 set tabstop=4  " tabs display as 4 spaces wide
@@ -121,6 +122,14 @@ function SetPythonOptions()
     syn keyword pythonSelf self
     highlight def link pythonSelf Special
 endfunction
+
+" lightline config
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'relativepath', 'modified'] ]
+      \ },
+      \ }
 
 " Vim JSON stuff
 let g:vim_json_syntax_conceal = 0
