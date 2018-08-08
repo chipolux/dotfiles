@@ -146,7 +146,7 @@ if has("win32")
     set guifont=Consolas:h10
     set noswapfile
 elseif has("gui_macvim")
-    set guifont=Roboto\ Mono:h14
+    set guifont=Menlo:h14
 elseif has("gui_gtk")
     set guifont=Monospace\ 9
 endif
