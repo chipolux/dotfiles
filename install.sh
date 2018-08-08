@@ -70,6 +70,7 @@ function setup () {
             "/set weechat.bar.nicklist.size_max 15" \
             "/set weechat.bar.status.color_bg black" \
             "/set weechat.bar.title.color_bg black" \
+            "/set weechat.bar.buflist.size_max 28" \
             "/set weechat.color.chat 179" \
             "/set weechat.bar.input.color_fg 48" \
             "/set fset.color.line_selected_bg1 237" \
@@ -84,10 +85,16 @@ function setup () {
             "/set irc.server_default.realname 'nakyle'" \
             "/server add freenode chat.freenode.net/6697 -ssl" \
             "/set irc.server.freenode.autoconnect yes" \
-            "/set irc.server.freenode.autojoin #reddit-anime,#python,#powershell" \
+            "/set irc.server.freenode.autojoin #reddit-anime,#python,#powershell,#lisp,#lispgames,#lispcafe,#reddit-gamedev,##proggit,#1gam" \
             "/server add rizon irc.rizon.net/6697 -ssl" \
             "/set irc.server.rizon.autoconnect yes" \
             "/set irc.server.rizon.autojoin #horriblesubs" \
+            "/server add espernet irc.esper.net/6697 -ssl" \
+            "/set irc.server.espernet.autoconnect yes" \
+            "/set irc.server.espernet.autojoin #tigirc" \
+            "/server add afternet irc.afternet.org/6697 -ssl" \
+            "/set irc.server.afternet.autoconnect yes" \
+            "/set irc.server.afternet.autojoin #gamedev,#ludumdare" \
             "/quit")
         weechat -r "$weechat_cmds"
     fi
