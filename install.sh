@@ -75,6 +75,8 @@ function setup () {
             "/set weechat.bar.input.color_fg 48" \
             "/set fset.color.line_selected_bg1 237" \
             "/set buflist.format.buffer_current '\\\${color:,237}\\\${format_buffer}'" \
+            "/set buflist.format.hotlist_message '\\\${color:148}'" \
+            "/set buflist.format.hotlist_highlight '\\\${color:196}'" \
             "/set irc.look.smart_filter on" \
             "/filter add irc_smart * irc_smart_filter *" \
             "/filter add joinquit * irc_join,irc_part,irc_quit *" \
