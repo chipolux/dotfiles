@@ -3,6 +3,8 @@ set -e
 
 function join-by { local IFS="$1"; shift; echo "$*"; }
 
+echo -n SASL Password:
+read -s password
 
 interface_cmds=$(join-by ";" \
     "/set weechat.startup.display_logo off" \
@@ -22,6 +24,7 @@ interface_cmds=$(join-by ";" \
     "/set fset.color.line_selected_bg1 237")
 
 buflist_cmds=$(join-by ";" \
+    "/set irc.look.server_buffer independent" \
     "/set buflist.format.buffer '\\\${format_number}\\\${indent}\\\${eval:\\\${format_name}}\\\${format_hotlist} \\\${color:31}\\\${buffer.local_variables.filter}\\\${buffer.local_variables.buflist}'" \
     "/set buflist.format.buffer_current \\\${if:\\\${type}==server?\\\${color:*white,31}:\\\${color:*white}}\\\${hide:>,\\\${buffer[last_gui_buffer].number}} \\\${indent}\\\${if:\\\${type}==server&&\\\${info:irc_server_isupport_value,\\\${name},NETWORK}?\\\${info:irc_server_isupport_value,\\\${name},NETWORK}:\\\${name}} \\\${color:31}\\\${buffer.local_variables.filter}\\\${buffer.local_variables.buflist}" \
     "/set buflist.format.hotlist ' \\\${color:239}\\\${hotlist}\\\${color:239}'" \
@@ -45,12 +48,21 @@ server_cmds=$(join-by ";" \
     "/set irc.server_default.realname 'nakyle'" \
     "/server add freenode chat.freenode.net/6697 -ssl" \
     "/set irc.server.freenode.autoconnect yes" \
+    "/set irc.server.freenode.sasl_mechanism plain" \
+    "/set irc.server.freenode.sasl_username chipolux" \
+    "/set irc.server.freenode.sasl_password $password" \
     "/set irc.server.freenode.autojoin #reddit-anime,#python,#powershell,#lisp,#lispgames,#lispcafe,#reddit-gamedev,##proggit,#1gam,#godotengine" \
     "/server add rizon irc.rizon.net/6697 -ssl" \
     "/set irc.server.rizon.autoconnect yes" \
+    "/set irc.server.rizon.sasl_mechanism plain" \
+    "/set irc.server.rizon.sasl_username chipolux" \
+    "/set irc.server.rizon.sasl_password $password" \
     "/set irc.server.rizon.autojoin #horriblesubs,#/g/technology,#/g/sicp,#r/a/dio" \
     "/server add espernet irc.esper.net/6697 -ssl" \
     "/set irc.server.espernet.autoconnect yes" \
+    "/set irc.server.espernet.sasl_mechanism plain" \
+    "/set irc.server.espernet.sasl_username chipolux" \
+    "/set irc.server.espernet.sasl_password $password" \
     "/set irc.server.espernet.autojoin #tigirc" \
     "/server add afternet irc.afternet.org/6697 -ssl" \
     "/set irc.server.afternet.autoconnect yes" \
@@ -58,5 +70,4 @@ server_cmds=$(join-by ";" \
 
 weechat_cmds=$(join-by ";" "$interface_cmds" "$buflist_cmds" "$server_cmds" "/quit")
 
-echo "$weechat_cmds"
 weechat -r "$weechat_cmds"
