@@ -63,7 +63,7 @@ server_cmds=$(join-by ";" \
     "/set irc.server.espernet.sasl_mechanism plain" \
     "/set irc.server.espernet.sasl_username chipolux" \
     "/set irc.server.espernet.sasl_password $password" \
-    "/set irc.server.espernet.autojoin #tigirc" \
+    "/set irc.server.espernet.autojoin #tigirc,#factorio,#coders" \
     "/server add afternet irc.afternet.org/6697 -ssl" \
     "/set irc.server.afternet.autoconnect yes" \
     "/set irc.server.afternet.autojoin #gamedev,#ludumdare")
