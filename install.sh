@@ -54,52 +54,6 @@ function setup () {
         echo "Setting shell to zsh!"
         sudo chsh -s $zsh_path $USER
     fi
-
-    weechat_path=$(which weechat)
-    if [ $weechat_path ] && [ -e $weechat_path ]; then
-        echo "Configuring weechat!"
-        weechat_cmds=$(join-by ";" \
-            "/set weechat.startup.display_logo off" \
-            "/set weechat.startup.display_version off" \
-            "/set weechat.look.mouse on" \
-            "/set weechat.look.buffer_notify_default message" \
-            "/set weechat.look.color_inactive_buffer off" \
-            "/set weechat.look.color_inactive_window off" \
-            "/set weechat.look.prefix_align_max 13" \
-            "/set weechat.look.prefix_same_nick ' '" \
-            "/set weechat.bar.nicklist.size_max 15" \
-            "/set weechat.bar.status.color_bg black" \
-            "/set weechat.bar.title.color_bg black" \
-            "/set weechat.bar.buflist.size_max 28" \
-            "/set weechat.color.chat 179" \
-            "/set weechat.bar.input.color_fg 48" \
-            "/set fset.color.line_selected_bg1 237" \
-            "/set buflist.format.buffer_current '\\\${color:,237}\\\${format_buffer}'" \
-            "/set buflist.format.hotlist_message '\\\${color:148}'" \
-            "/set buflist.format.hotlist_highlight '\\\${color:196}'" \
-            "/set irc.look.smart_filter on" \
-            "/filter add irc_smart * irc_smart_filter *" \
-            "/filter add joinquit * irc_join,irc_part,irc_quit *" \
-            "/set irc.server_default.msg_part ''" \
-            "/set irc.server_default.msg_quit ''" \
-            "/set irc.server_default.nicks 'chipolux,chip'" \
-            "/set irc.server_default.username 'chipolux'" \
-            "/set irc.server_default.realname 'nakyle'" \
-            "/server add freenode chat.freenode.net/6697 -ssl" \
-            "/set irc.server.freenode.autoconnect yes" \
-            "/set irc.server.freenode.autojoin #reddit-anime,#python,#powershell,#lisp,#lispgames,#lispcafe,#reddit-gamedev,##proggit,#1gam" \
-            "/server add rizon irc.rizon.net/6697 -ssl" \
-            "/set irc.server.rizon.autoconnect yes" \
-            "/set irc.server.rizon.autojoin #horriblesubs" \
-            "/server add espernet irc.esper.net/6697 -ssl" \
-            "/set irc.server.espernet.autoconnect yes" \
-            "/set irc.server.espernet.autojoin #tigirc" \
-            "/server add afternet irc.afternet.org/6697 -ssl" \
-            "/set irc.server.afternet.autoconnect yes" \
-            "/set irc.server.afternet.autojoin #gamedev,#ludumdare" \
-            "/quit")
-        weechat -r "$weechat_cmds"
-    fi
 }
 
 function move-dot-files () {
