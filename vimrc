@@ -11,6 +11,7 @@ Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
+Plug 'chrisbra/Colorizer'
 
 " Filetype Specific
 Plug 'tmhedberg/SimpylFold'
