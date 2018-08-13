@@ -7,6 +7,7 @@ echo -n SASL Password:
 read -s password
 
 interface_cmds=$(join-by ";" \
+    "/set xfer.file.auto_accept_files on" \
     "/set weechat.startup.display_logo off" \
     "/set weechat.startup.display_version off" \
     "/set weechat.look.mouse on" \
@@ -66,8 +67,14 @@ server_cmds=$(join-by ";" \
     "/set irc.server.espernet.autojoin #tigirc,#factorio,#coders" \
     "/server add afternet irc.afternet.org/6697 -ssl" \
     "/set irc.server.afternet.autoconnect yes" \
-    "/set irc.server.afternet.autojoin #gamedev,#ludumdare")
+    "/set irc.server.afternet.autojoin #gamedev,#ludumdare" \
+    "/server add scenep2p irc.scenep2p.net/6697 -ssl" \
+    "/set irc.server.scenep2p.autojoin #THE.SOURCE" \
+    "/server add abjects irc.abjects.net/6697 -ssl" \
+    "/set irc.server.abjects.autojoin #moviegods,#beast-xdcc" \
+    "/server add criten irc.criten.net/6697 -ssl" \
+    "/set irc.server.criten.autojoin #elitewarez")
 
 weechat_cmds=$(join-by ";" "$interface_cmds" "$buflist_cmds" "$server_cmds" "/quit")
 
-weechat -r "$weechat_cmds"
+weechat -a -r "$weechat_cmds"
