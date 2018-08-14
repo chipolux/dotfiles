@@ -68,11 +68,11 @@ server_cmds=$(join-by ";" \
     "/server add afternet irc.afternet.org/6697 -ssl" \
     "/set irc.server.afternet.autoconnect yes" \
     "/set irc.server.afternet.autojoin #gamedev,#ludumdare" \
-    "/server add scenep2p irc.scenep2p.net/6697 -ssl" \
+    "/server add scenep2p irc.scenep2p.net/6667" \
     "/set irc.server.scenep2p.autojoin #THE.SOURCE" \
-    "/server add abjects irc.abjects.net/6697 -ssl" \
-    "/set irc.server.abjects.autojoin #moviegods,#beast-xdcc" \
-    "/server add criten irc.criten.net/6697 -ssl" \
+    "/server add abjects irc.abjects.net/6667" \
+    "/set irc.server.abjects.autojoin #mg-chat,#moviegods,#beast-xdcc" \
+    "/server add criten irc.criten.net/6667" \
     "/set irc.server.criten.autojoin #elitewarez")
 
 weechat_cmds=$(join-by ";" "$interface_cmds" "$buflist_cmds" "$server_cmds" "/quit")
