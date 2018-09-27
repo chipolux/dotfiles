@@ -41,6 +41,7 @@ set guioptions-=m  " don't show menubar in GUI
 set guioptions-=T  " don't show toolbar in GUI
 set guioptions-=r  " don't show right scrollbar
 set guioptions-=L  " don't show left scrollbar
+set scrolloff=8  " always keep 8 lines between the cursor and the top and bottom
 set noshowmode  " since we have lightline we don't need to show the current mode
 set noerrorbells  " don't play bell sound on errors
 set visualbell  " don't play bell sound for any reason
