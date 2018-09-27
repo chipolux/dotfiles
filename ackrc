@@ -1,3 +1,11 @@
+# Ignore common non-source dirs
+--ignore-dir=bin
+--ignore-dir=node_modules
+--ignore-dir=vendor
+--ignore-dir=app-components
+--ignore-dir=build
+--ignore-dir=tmp
+
 # Add type for powershell files
 --type-set=ps:ext:ps1,psm1,psd1
 
@@ -9,9 +17,6 @@
 
 # Update js type to include jsx files
 --type-add=js:ext:jsx
-
-# Ignore js non-source dirs
---ignore-dir={bin,node_modules,vendor,app-components,build,tmp}
 
 # Use less as pager
 --pager=less -FX
