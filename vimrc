@@ -41,7 +41,7 @@ set guioptions-=m  " don't show menubar in GUI
 set guioptions-=T  " don't show toolbar in GUI
 set guioptions-=r  " don't show right scrollbar
 set guioptions-=L  " don't show left scrollbar
-set scrolloff=8  " always keep 8 lines between the cursor and the top and bottom
+set scrolloff=5  " always keep 8 lines between the cursor and the top and bottom
 set noshowmode  " since we have lightline we don't need to show the current mode
 set noerrorbells  " don't play bell sound on errors
 set visualbell  " don't play bell sound for any reason
@@ -126,6 +126,13 @@ function SetPythonOptions()
     highlight def link pythonSelf Special
 endfunction
 
+" QML Settings
+autocmd FileType qml :call SetQmlOptions()
+function SetQmlOptions()
+    map <buffer><leader>r :silent exec '!qmlscene' shellescape(@%, 1)<CR>
+    setlocal foldmethod=indent
+endfunction
+
 " lightline config
 let g:lightline = {
       \ 'active': {
@@ -150,7 +157,7 @@ au FileType mail setlocal formatoptions-=t formatoptions+=w
 au FileType make setlocal noexpandtab shiftwidth=8 softtabstop=0
 
 " Several filetypes should have indent foldmethod
-au FileType coffee,qml,cpp setlocal foldmethod=indent
+au FileType coffee,cpp setlocal foldmethod=indent
 
 " Ugh omni-complete for sql files is bound to a shitty key by default
 let g:ftplugin_sql_omni_key = '<C-j>'
