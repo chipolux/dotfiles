@@ -16,3 +16,8 @@
     tool = gvimdiff
 [alias]
     lp = log --graph --pretty=format:'%C(yellow)%h %C(blue)(%cr) %C(reset)- %s %C(green)<%an>'
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
