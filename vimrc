@@ -75,9 +75,9 @@ set secure
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 " Center search result in screen
-nnoremap n nzzzv
-nnoremap N Nzzzv
-nnoremap * *zzzv
+"nnoremap n nzzzv
+"nnoremap N Nzzzv
+"nnoremap * *zzzv
 
 " Close buffer without killing split
 nmap <silent> <leader>d :bp <bar> :bd #<CR>
