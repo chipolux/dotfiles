@@ -44,7 +44,7 @@ set guioptions-=L  " don't show left scrollbar
 set scrolloff=5  " always keep 8 lines between the cursor and the top and bottom
 set noshowmode  " since we have lightline we don't need to show the current mode
 set noerrorbells  " don't play bell sound on errors
-set visualbell  " don't play bell sound for any reason
+set novisualbell  " don't play bell sound for any reason
 set tabstop=4  " tabs display as 4 spaces wide
 set shiftwidth=4  " (auto)indent to 4 spaces
 set expandtab  " pressing tab inserts spaces
