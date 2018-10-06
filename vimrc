@@ -79,6 +79,15 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 "nnoremap N Nzzzv
 "nnoremap * *zzzv
 
+" Command to copy all matches in file into specified register (+ by default)
+function! CopyMatches(reg)
+    let hits = []
+    %s//\=len(add(hits, submatch(0))) ? submatch(0) : ''/gne
+    let reg = empty(a:reg) ? '+' : a:reg
+    execute 'let @'.reg.' = join(hits, "\n") . "\n"'
+endfunction
+command! -register CopyMatches call CopyMatches(<q-reg>)
+
 " Close buffer without killing split
 nmap <silent> <leader>d :bp <bar> :bd #<CR>
 nmap <silent> <leader>D :bp! <bar> :bd #<CR>
