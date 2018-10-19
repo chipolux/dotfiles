@@ -17,6 +17,7 @@ function setup () {
         "ackrc" \
         "rtorrent.rc" \
         "taskrc" \
+        "screenrc" \
         "Xresources"
 
     echo "Cloning tools!"
