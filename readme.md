@@ -13,3 +13,16 @@ installed.
 On Ubuntu the latest versions of tmux and weechat aren't always in the default
 repos, but you can add `ppa:pi-rho/dev` for tmux and `ppa:nesthib/weechat-stable`
 for weechat.
+
+## Mutt
+When using mutt for email it seems best to install from source to enable all
+the features we want.
+
+```
+> wget ftp://ftp.mutt.org/pub/mutt/mutt-1.10.1.tar.gz
+> tar zxf mutt-1.10.1.tar.gz
+> cd mutt-1.10.1
+> ./configure --enable-pop --enable-imap --enable-smtp --enable-hcache --with-ssl --with-sasl
+> # handle any missing dependencies like tokyocabinet, ssl, etc.
+> sudo make install
+```

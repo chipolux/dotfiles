@@ -21,9 +21,4 @@ set signature = "~/.mutt/personal.sig"
 
 set certificate_file = "~/.mutt/personal.cert"
 
-# set alias_file = ~/.mutt/personal.list
-set sort_alias = alias
-set reverse_alias = yes
-source $alias_file
-
 source ~/.mutt/common.muttrc

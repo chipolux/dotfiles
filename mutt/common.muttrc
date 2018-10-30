@@ -26,7 +26,9 @@ set mime_forward_rest = "yes"
 
 # Get aliases from a different file
 set alias_file = "~/.mutt/aliases"
-source ~/.mutt/aliases
+set sort_alias = alias
+set reverse_alias = yes
+source $alias_file
 
 # Multi-pane style kinda
 set pager_stop = "yes"

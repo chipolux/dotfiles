@@ -40,7 +40,6 @@ alias gvir='gvim --remote'
 
 # mutt aliases
 alias mail-personal='mutt -F ~/.mutt/personal.muttrc'
-alias mail-newmedio='mutt -F ~/.mutt/newmedio.muttrc'
 alias mail-summit='mutt -F ~/.mutt/summit.muttrc'
 
 # always try to use imagemagick with feh

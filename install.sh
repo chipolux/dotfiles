@@ -41,6 +41,9 @@ function setup () {
         "task" \
         "fluxbox"
 
+    echo "Touching ~/.mutt/aliases!"
+    touch ~/.mutt/aliases
+
     echo "Installing vim plugins!"
     vim +PlugInstall +qall
 
