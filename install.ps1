@@ -37,3 +37,6 @@ $url = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 Write-Host "Installing vim plugins..."
 gvim +PlugInstall +qall
+
+Write-Host "Installing scoop..."
+Invoke-Expression (New-Object Net.WebClient).DownloadString('https://get.scoop.sh')
