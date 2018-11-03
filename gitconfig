@@ -1,10 +1,6 @@
 [user]
     name = NaKyle Wright
     email = nakyle.wright@gmail.com
-[ui]
-    color = true
-[color]
-    ui = auto
 [core]
     excludesfile = ~/.gitignore
     pager = less -FX
@@ -15,9 +11,26 @@
 [merge]
     tool = gvimdiff
 [alias]
-    lp = log --graph --pretty=format:'%C(yellow)%h %C(blue)(%cr) %C(reset)- %s %C(green)<%an>'
+    lp = log --graph --pretty=format:'%C(yellow bold)%h %C(cyan)(%cr) %C(reset)- %s %C(green)<%an>'
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[ui]
+    color = true
+[color]
+    ui = auto
+[color "status"]
+	added = green bold
+    changed = yellow bold
+    untracked = red bold
+[color "diff"]
+    meta = cyan
+    frag = cyan
+    old = red bold
+    new = green bold
+[color "branch"]
+    current = green bold
+    remote = magenta bold
+    local = normal
