@@ -23,7 +23,7 @@
     ui = auto
 [color "status"]
 	added = green bold
-    changed = yellow bold
+    changed = red bold
     untracked = red bold
 [color "diff"]
     meta = cyan
