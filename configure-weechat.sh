@@ -22,7 +22,11 @@ interface_cmds=$(join-by ";" \
     "/set weechat.color.chat 179" \
     "/set weechat.color.chat_highlight_bg 227" \
     "/set weechat.bar.input.color_fg 48" \
-    "/set fset.color.line_selected_bg1 237")
+    "/set fset.color.line_selected_bg1 237" \
+    "/set aspell.check.default_dict en" \
+    "/set aspell.check.enabled on" \
+    "/set aspell.check.suggestions 3" \
+    "/set weechat.bar.status.items '[time],[buffer_plugin],buffer_number+:+buffer_name+(buffer_modes)+{buffer_nicklist_count}+buffer_zoom+buffer_filter,scroll,[lag],completion,[aspell_suggest]'")
 
 buflist_cmds=$(join-by ";" \
     "/set irc.look.server_buffer independent" \
@@ -47,27 +51,27 @@ server_cmds=$(join-by ";" \
     "/set irc.server_default.nicks 'chipolux,chip'" \
     "/set irc.server_default.username 'chipolux'" \
     "/set irc.server_default.realname 'nakyle'" \
-    "/server add freenode chat.freenode.net/6697 -ssl" \
-    "/set irc.server.freenode.autoconnect yes" \
-    "/set irc.server.freenode.sasl_mechanism plain" \
-    "/set irc.server.freenode.sasl_username chipolux" \
-    "/set irc.server.freenode.sasl_password $password" \
-    "/set irc.server.freenode.autojoin #reddit-anime,#python,#powershell,#lisp,#lispgames,#lispcafe,#reddit-gamedev,##proggit,#1gam,#godotengine" \
-    "/server add rizon irc.rizon.net/6697 -ssl" \
-    "/set irc.server.rizon.autoconnect yes" \
-    "/set irc.server.rizon.sasl_mechanism plain" \
-    "/set irc.server.rizon.sasl_username chipolux" \
-    "/set irc.server.rizon.sasl_password $password" \
-    "/set irc.server.rizon.autojoin #horriblesubs,#/g/technology,#/g/sicp,#r/a/dio" \
+    "/server add afternet irc.afternet.org/6697 -ssl" \
+    "/set irc.server.afternet.autoconnect yes" \
+    "/set irc.server.afternet.autojoin #gamedev,#ludumdare" \
     "/server add espernet irc.esper.net/6697 -ssl" \
     "/set irc.server.espernet.autoconnect yes" \
     "/set irc.server.espernet.sasl_mechanism plain" \
     "/set irc.server.espernet.sasl_username chipolux" \
     "/set irc.server.espernet.sasl_password $password" \
-    "/set irc.server.espernet.autojoin #tigirc,#factorio,#coders" \
-    "/server add afternet irc.afternet.org/6697 -ssl" \
-    "/set irc.server.afternet.autoconnect yes" \
-    "/set irc.server.afternet.autojoin #gamedev,#ludumdare" \
+    "/set irc.server.espernet.autojoin #tigirc,#factorio" \
+    "/server add freenode chat.freenode.net/6697 -ssl" \
+    "/set irc.server.freenode.autoconnect yes" \
+    "/set irc.server.freenode.sasl_mechanism plain" \
+    "/set irc.server.freenode.sasl_username chipolux" \
+    "/set irc.server.freenode.sasl_password $password" \
+    "/set irc.server.freenode.autojoin #1gam,#godotengine,#lisp,#lispcafe,#lispgames,#powershell,##proggit,#python,#reddit-anime,#reddit-gamedev,#stardewvalley" \
+    "/server add rizon irc.rizon.net/6697 -ssl" \
+    "/set irc.server.rizon.autoconnect yes" \
+    "/set irc.server.rizon.sasl_mechanism plain" \
+    "/set irc.server.rizon.sasl_username chipolux" \
+    "/set irc.server.rizon.sasl_password $password" \
+    "/set irc.server.rizon.autojoin #/g/sicp,#/g/technology,#horriblesubs,#r/a/dio" \
     "/server add scenep2p irc.scenep2p.net/6667" \
     "/set irc.server.scenep2p.autojoin #THE.SOURCE" \
     "/server add abjects irc.abjects.net/6667" \
