@@ -26,6 +26,7 @@ Plug 'PProvost/vim-ps1'
 Plug 'fatih/vim-nginx'
 Plug 'kchmck/vim-coffee-script'
 Plug 'peterhoeg/vim-qml'
+Plug 'calviken/vim-gdscript3'
 call plug#end()
 
 syntax enable
@@ -169,6 +170,8 @@ au FileType make setlocal noexpandtab shiftwidth=8 softtabstop=0
 
 " Several filetypes should have indent foldmethod
 au FileType coffee,cpp setlocal foldmethod=indent
+
+au FileType gdscript3 setlocal foldmethod=syntax
 
 " Ugh omni-complete for sql files is bound to a shitty key by default
 let g:ftplugin_sql_omni_key = '<C-j>'
