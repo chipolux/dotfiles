@@ -59,7 +59,8 @@ set mouse=a  " enable mouse control
 set wildmenu  " pop up completions over statusline when tabbing in command line
 set wildchar=<Tab>  " ensure tab activates wildmenu (default)
 set wildignore=*.qmlc,*.jsc,*.pyc
-set listchars=tab:>·,trail:·,nbsp:·
+set encoding=utf-8  " prefer utf-8 for files
+set listchars=tab:>Â·,trail:Â·,nbsp:Â·
 set list
 
 " Unbind the Shift+K man page binding
