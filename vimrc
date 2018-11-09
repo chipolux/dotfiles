@@ -172,7 +172,7 @@ au FileType make setlocal noexpandtab shiftwidth=8 softtabstop=0
 " Several filetypes should have indent foldmethod
 au FileType coffee,cpp setlocal foldmethod=indent
 
-au FileType gdscript3 setlocal foldmethod=syntax
+au FileType gdscript3 setlocal foldmethod=syntax noexpandtab
 
 " Ugh omni-complete for sql files is bound to a shitty key by default
 let g:ftplugin_sql_omni_key = '<C-j>'
