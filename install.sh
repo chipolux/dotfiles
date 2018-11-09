@@ -9,11 +9,12 @@ function setup () {
         "bashrc" \
         "profile" \
         "bash_profile" \
+        "zshrc" \
+        "shell_common" \
         "gitconfig" \
         "gitignore" \
         "tmux.conf" \
         "vimrc" \
-        "zshrc" \
         "ackrc" \
         "rtorrent.rc" \
         "taskrc" \

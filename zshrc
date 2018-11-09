@@ -23,10 +23,10 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# Load .bashrc if exist since aliases,
+# Load .shell_common if exist since aliases,
 # path changes and stuff live there
-if [ -s "$HOME/.bashrc" ]; then
-    source "$HOME/.bashrc"
+if [ -s "$HOME/.shell_common" ]; then
+    source "$HOME/.shell_common"
 fi
 
 # Disable beeping
@@ -45,4 +45,5 @@ setopt ignoreeof
 # Don't autocomplete some filetypes for vim
 zstyle ':completion:*:*:*vi*:*' file-patterns '^*.(qmlc|jsc):source-files' '*:all-files'
 
+# Load fzf completions/keybinds
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
