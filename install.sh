@@ -20,15 +20,22 @@ function setup () {
         "screenrc" \
         "Xresources"
 
-    echo "Cloning tools!"
+    echo "Getting tools!"
     if [ ! -d oh-my-zsh ]; then
+        echo "    Getting oh-my-zsh!"
         git clone --depth 1 https://github.com/robbyrussell/oh-my-zsh.git oh-my-zsh
     fi
     if [ ! -d tmux/plugins/tpm ]; then
+        echo "    Getting tpm!"
         git clone --depth 1 https://github.com/tmux-plugins/tpm.git tmux/plugins/tpm
     fi
-    if [ ! -d vim/autoload/plug.vim ]; then
+    if [ ! -f vim/autoload/plug.vim ]; then
+        echo "    Getting plug.vim!"
         curl -fLo vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    fi
+    if [ ! -d $HOME/.fzf ]; then
+        echo "    Getting fzf!"
+        git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
     fi
 
     echo "Moving dotfolders!"
@@ -41,11 +48,14 @@ function setup () {
         "task" \
         "fluxbox"
 
-    echo "Touching ~/.mutt/aliases!"
-    touch ~/.mutt/aliases
+    echo "Touching mutt/aliases!"
+    touch mutt/aliases
 
     echo "Installing vim plugins!"
     vim +PlugInstall +qall
+
+    echo "Installing fzf!"
+    $HOME/.fzf/install --key-bindings --completion --no-update-rc
 
     echo "Installing tmux terminfo!"
     tic -x tmux-terminfo.txt

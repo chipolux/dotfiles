@@ -68,3 +68,5 @@ export EDITOR=vim
 if [ -s "$HOME/.private_profile" ]; then
     source "$HOME/.private_profile"
 fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

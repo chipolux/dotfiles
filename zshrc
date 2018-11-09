@@ -44,3 +44,5 @@ setopt ignoreeof
 
 # Don't autocomplete some filetypes for vim
 zstyle ':completion:*:*:*vi*:*' file-patterns '^*.(qmlc|jsc):source-files' '*:all-files'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
