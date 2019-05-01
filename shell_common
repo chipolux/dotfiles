@@ -16,17 +16,32 @@ if [ -d "/usr/local/var/postgres" ]; then
     export PGDATA="/usr/local/var/postgres"
 fi
 
-# virtualenvwrapper
-venvwrapper=$(which virtualenvwrapper.sh)
-if [ -f ~/.local/bin/virtualenvwrapper.sh ]; then
-    venvwrapper=~/.local/bin/virtualenvwrapper.sh
+# Set mysql stuff
+if [ -d "/usr/local/Cellar/mysql@5.7/5.7.25/lib" ]; then
+    export DYLD_LIBRARY_PATH="/usr/local/Cellar/mysql@5.7/5.7.25/lib:$DYLD_LIBRARY_PATH"
 fi
 
-if [ $venvwrapper ] && [ -s $venvwrapper ] && [ -z $VIRTUAL_ENV ]; then
-    export WORKON_HOME=$HOME/.virtualenvs
-    export PIP_VIRTUALENV_BASE=$WORKON_HOME
-    export VIRTUALENVWRAPPER_PYTHON=$(which python3)
-    source $venvwrapper
+# pyenv
+if [ -f "$(which pyenv)" ]; then
+    eval "$(pyenv init -)"
+fi
+if [ -f "$(which pyenv-virtualenv-init)" ]; then
+    eval "$(pyenv virtualenv-init -)"
+fi
+
+# virtualenvwrapper
+if [ -z "$PYENV_SHELL" ]; then
+    venvwrapper=$(which virtualenvwrapper.sh)
+    if [ -f ~/.local/bin/virtualenvwrapper.sh ]; then
+        venvwrapper=~/.local/bin/virtualenvwrapper.sh
+    fi
+
+    if [ $venvwrapper ] && [ -s $venvwrapper ] && [ -z $VIRTUAL_ENV ]; then
+        export WORKON_HOME=$HOME/.virtualenvs
+        export PIP_VIRTUALENV_BASE=$WORKON_HOME
+        export VIRTUALENVWRAPPER_PYTHON=$(which python3)
+        source $venvwrapper
+    fi
 fi
 
 # Ack-grep to ack
