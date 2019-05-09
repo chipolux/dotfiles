@@ -11,7 +11,7 @@
 [merge]
     tool = gvimdiff
 [alias]
-    lp = log --graph --pretty=format:'%C(yellow bold)%h %C(cyan)(%cr) %C(reset)- %s %C(green)<%an>'
+    lp = log --graph --pretty=format:'%C(yellow bold)%h %C(cyan)(%cr)%C(reset) %s %C(green)<%an>'
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
