@@ -116,6 +116,10 @@ vmap <leader>j !python -m json.tool<CR>
 " Show current byte offset
 nmap <leader>b :echo eval(line2byte(line('.')) + col('.') - 1)<CR>
 
+" URL encode/decode selection
+vnoremap <leader>en :!python -c 'import sys,urllib;print urllib.quote(sys.stdin.read().strip())'<cr>
+vnoremap <leader>de :!python -c 'import sys,urllib;print urllib.unquote(sys.stdin.read().strip())'<cr>
+
 " I always hold shift just a tiny bit too long
 command WQ wq
 command Wq wq
