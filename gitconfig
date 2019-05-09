@@ -9,7 +9,7 @@
 [push]
     default = current
 [merge]
-    tool = gvimdiff
+    tool = vimdiff
 [alias]
     lp = log --graph --pretty=format:'%C(yellow bold)%h %C(cyan)(%cr)%C(reset) %s %C(green)<%an>'
 [filter "lfs"]
