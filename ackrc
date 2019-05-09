@@ -3,8 +3,9 @@
 --ignore-dir=node_modules
 --ignore-dir=vendor
 --ignore-dir=app-components
---ignore-dir=build
 --ignore-dir=tmp
+--ignore-dir=pynsist_pkgs
+--ignore-dir=match:build*
 
 # Add type for powershell files
 --type-set=ps:ext:ps1,psm1,psd1
@@ -15,8 +16,9 @@
 # Add type for godot files
 --type-set=gd:ext:gd
 
-# Update python type to include pyw files
+# Update python type to include pyw files and wscript files
 --type-add=python:ext:pyw
+--type-add=python:is:wscript
 
 # Update js type to include jsx files
 --type-add=js:ext:jsx
