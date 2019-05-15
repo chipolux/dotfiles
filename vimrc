@@ -27,6 +27,7 @@ Plug 'fatih/vim-nginx'
 Plug 'kchmck/vim-coffee-script'
 Plug 'peterhoeg/vim-qml'
 Plug 'calviken/vim-gdscript3'
+Plug 'artoj/qmake-syntax-vim'
 call plug#end()
 
 syntax enable
