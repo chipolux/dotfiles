@@ -11,18 +11,18 @@
 [merge]
     tool = vimdiff
 [alias]
-    lp = log --graph --pretty=format:'%C(yellow bold)%h %C(cyan)(%cr)%C(reset) %s %C(green)<%an>'
+    lp = log --graph --date=short --pretty=format:'%C(yellow bold)%h %C(cyan)(%cd)%C(reset) %s %C(green)<%an>'
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 [ui]
     color = true
 [color]
     ui = auto
 [color "status"]
-	added = green bold
+    added = green bold
     changed = red bold
     untracked = red bold
 [color "diff"]
