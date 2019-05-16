@@ -7,6 +7,8 @@ echo -n SASL Password:
 read -s password
 
 interface_cmds=$(join-by ";" \
+    "/key bind meta2-1\\\;5A /window scroll_up" \
+    "/key bind meta2-1\\\;5B /window scroll_down" \
     "/set xfer.file.auto_accept_files on" \
     "/set weechat.startup.display_logo off" \
     "/set weechat.startup.display_version off" \
