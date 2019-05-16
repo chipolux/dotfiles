@@ -56,7 +56,6 @@ set nowrap  " do not soft-wrap lines
 set hlsearch  " highlight search pattern matches
 set incsearch  " as you type a search pattern start trying to match
 set ttyfast  " our terminal is fast so send more characters for smoother display
-set mouse=a  " enable mouse control
 set wildmenu  " pop up completions over statusline when tabbing in command line
 set wildchar=<Tab>  " ensure tab activates wildmenu (default)
 set wildignore=*.qmlc,*.jsc,*.pyc
@@ -184,11 +183,14 @@ let g:ftplugin_sql_omni_key = '<C-j>'
 
 " Display stuff
 if has("win32")
+    set mouse=a
     set guifont=Consolas:h10
     set noswapfile
 elseif has("gui_macvim")
+    set mouse=a
     set guifont=Menlo:h14
 elseif has("gui_gtk")
+    set mouse=a
     set guifont=Monospace\ 9
 endif
 silent! colorscheme molokai
