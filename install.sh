@@ -49,6 +49,22 @@ function setup () {
         "task" \
         "fluxbox"
 
+    echo "Moving kitty config!"
+    kitty_conf=$HOME/.config/kitty/kitty.conf
+    mkdir -p $HOME/.config/kitty
+    if [ -e $kitty_conf -a ! -h $kitty_conf ]; then
+        mv -f $kitty_conf $kitty_conf.old
+    fi
+    ln -snf "$(pwd)/kitty.conf" $kitty_conf
+
+    echo "Moving alacritty config!"
+    alacritty_conf=$HOME/.config/alacritty/alacritty.yml
+    mkdir -p $HOME/.config/alacritty
+    if [ -e $alacritty_conf -a ! -h $alacritty_conf ]; then
+        mv -f $alacritty_conf $alacritty_conf.old
+    fi
+    ln -snf "$(pwd)/alacritty.yml" $alacritty_conf
+
     echo "Touching mutt/aliases!"
     touch mutt/aliases
 
