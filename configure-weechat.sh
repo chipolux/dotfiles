@@ -12,7 +12,7 @@ interface_cmds=$(join-by ";" \
     "/set xfer.file.auto_accept_files on" \
     "/set weechat.startup.display_logo off" \
     "/set weechat.startup.display_version off" \
-    "/set weechat.look.mouse on" \
+    "/set weechat.look.mouse off" \
     "/set weechat.look.buffer_notify_default message" \
     "/set weechat.look.color_inactive_buffer off" \
     "/set weechat.look.color_inactive_window off" \
