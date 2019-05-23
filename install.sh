@@ -49,6 +49,14 @@ function setup () {
         "task" \
         "fluxbox"
 
+    echo "Setting up nvim config!"
+    nvim_conf=$HOME/.config/nvim/init.vim
+    mkdir -p $HOME/.config/nvim/init.vim
+    if [ -e $nvim_conf -a ! -h $nvim_conf ]; then
+        mv -f $nvim_conf $nvim_conf.old
+    fi
+    ln -snf "$(pwd)/init.vim" $nvim_conf
+
     echo "Moving kitty config!"
     kitty_conf=$HOME/.config/kitty/kitty.conf
     mkdir -p $HOME/.config/kitty
