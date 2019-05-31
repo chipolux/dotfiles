@@ -38,6 +38,11 @@ function setup () {
         echo "    Getting fzf!"
         git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
     fi
+    if [ ! -d $HOME/.quicklisp ] && [ -f "$(which sbcl)" ]; then
+        echo "    Getting quicklisp!"
+        curl -fLO https://beta.quicklisp.org/quicklisp.lisp
+        sbcl --load install-quicklisp.lisp
+    fi
 
     echo "Moving dotfolders!"
     move-dot-folders \
@@ -51,7 +56,7 @@ function setup () {
 
     echo "Setting up nvim config!"
     nvim_conf=$HOME/.config/nvim/init.vim
-    mkdir -p $HOME/.config/nvim/init.vim
+    mkdir -p $HOME/.config/nvim
     if [ -e $nvim_conf -a ! -h $nvim_conf ]; then
         mv -f $nvim_conf $nvim_conf.old
     fi
