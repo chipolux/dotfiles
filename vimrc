@@ -12,6 +12,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
 Plug 'chrisbra/Colorizer'
+Plug 'ciaranm/securemodelines'
 " Plug 'junegunn/rainbow_parentheses.vim' " my colorblindness makes this useless :(
 
 " Filetype Specific
@@ -50,7 +51,7 @@ set novisualbell  " don't play bell sound for any reason
 set tabstop=4  " tabs display as 4 spaces wide
 set shiftwidth=4  " (auto)indent to 4 spaces
 set expandtab  " pressing tab inserts spaces
-set modeline  " enable modeline comments to set vim options (security risk)
+set nomodeline  " disable modeline comments to set vim options (security risk)
 set number  " show line numbers
 set nowrap  " do not soft-wrap lines
 set hlsearch  " highlight search pattern matches
