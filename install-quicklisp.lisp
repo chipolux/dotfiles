@@ -7,3 +7,6 @@
 
 (format t "Adding quicklisp to init file...")
 (ql:add-to-init-file)
+
+(format t "quicklisp setup!")
+(quit)
