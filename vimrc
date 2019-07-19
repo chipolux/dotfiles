@@ -97,7 +97,7 @@ command! -register CopyMatches call CopyMatches(<q-reg>)
 
 " Close buffer without killing split
 nmap <silent> <leader>d :bp <bar> :bd #<CR>
-nmap <silent> <leader>D :bp! <bar> :bd #<CR>
+nmap <silent> <leader>D :bp! <bar> :bd! #<CR>
 
 " Remove trailing whitespace
 nmap <silent> <leader>s :%s/\s\+$//<CR>
