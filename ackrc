@@ -23,6 +23,9 @@
 # Update js type to include jsx files
 --type-add=js:ext:jsx
 
+# Add type for bitbake files
+--type-set=bb:ext:bb,bbclass,bbappend,conf
+
 # Use less as pager
 --pager=less -FX
 
