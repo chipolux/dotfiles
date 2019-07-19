@@ -29,6 +29,8 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'peterhoeg/vim-qml'
 Plug 'calviken/vim-gdscript3'
 Plug 'artoj/qmake-syntax-vim'
+Plug 'kergoth/vim-bitbake'
+Plug 'Matt-Deacalion/vim-systemd-syntax'
 call plug#end()
 
 syntax enable
