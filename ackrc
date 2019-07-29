@@ -7,6 +7,9 @@
 --ignore-dir=pynsist_pkgs
 --ignore-dir=match:build*
 
+# ignore ctags files
+--ignore-file=is:tags
+
 # Add type for powershell files
 --type-set=ps:ext:ps1,psm1,psd1
 
