@@ -13,6 +13,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
 Plug 'chrisbra/Colorizer'
 Plug 'ciaranm/securemodelines'
+Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'junegunn/rainbow_parentheses.vim' " my colorblindness makes this useless :(
 
 " Filetype Specific
