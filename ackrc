@@ -6,6 +6,7 @@
 --ignore-dir=tmp
 --ignore-dir=pynsist_pkgs
 --ignore-dir=match:build*
+--ignore-dir=.env
 
 # ignore ctags files
 --ignore-file=is:tags
