@@ -32,6 +32,7 @@ Plug 'calviken/vim-gdscript3'
 Plug 'artoj/qmake-syntax-vim'
 Plug 'kergoth/vim-bitbake'
 Plug 'Matt-Deacalion/vim-systemd-syntax'
+Plug 'tbastos/vim-lua'
 call plug#end()
 
 syntax enable
@@ -180,7 +181,7 @@ au FileType make setlocal noexpandtab shiftwidth=8 softtabstop=0
 " Several filetypes should have indent foldmethod
 au FileType coffee,cpp setlocal foldmethod=indent
 
-au FileType gdscript3 setlocal foldmethod=syntax noexpandtab
+au FileType gdscript3,lua setlocal foldmethod=syntax noexpandtab
 
 " Ugh omni-complete for sql files is bound to a shitty key by default
 let g:ftplugin_sql_omni_key = '<C-j>'
@@ -188,7 +189,7 @@ let g:ftplugin_sql_omni_key = '<C-j>'
 " Display stuff
 if has("win32")
     set mouse=a
-    set guifont=Consolas:h10
+    set guifont=Consolas:h11
     set noswapfile
 elseif has("gui_macvim")
     set mouse=a
