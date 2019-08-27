@@ -33,6 +33,7 @@ Plug 'artoj/qmake-syntax-vim'
 Plug 'kergoth/vim-bitbake'
 Plug 'Matt-Deacalion/vim-systemd-syntax'
 Plug 'tbastos/vim-lua'
+Plug 'bfrg/vim-cpp-modern'
 call plug#end()
 
 syntax enable
