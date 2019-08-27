@@ -66,6 +66,15 @@ function map() {
     tree -a -J $1 | $HOME/.dotfiles/map.py | dot -Tpdf
 }
 
+# function to open vim with fuzzy found file
+# alias vf='vim $(fzf --height 30)'
+function vf() {
+    f=$(fzf --height 15)
+    if [ $f ] && [ -f $f ]; then
+        vim $f
+    fi
+}
+
 # Don't close terminal on Ctrl+D
 export IGNOREEOF=2
 
