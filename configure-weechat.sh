@@ -67,7 +67,7 @@ server_cmds=$(join-by ";" \
     "/set irc.server.freenode.sasl_mechanism plain" \
     "/set irc.server.freenode.sasl_username chipolux" \
     "/set irc.server.freenode.sasl_password $password" \
-    "/set irc.server.freenode.autojoin #1gam,#godotengine,#lisp,#lispcafe,#lispgames,#powershell,##proggit,#python,#reddit-anime,#reddit-gamedev,#stardewvalley" \
+    "/set irc.server.freenode.autojoin #1gam,#godotengine,#lisp,#lispcafe,#lispgames,#qt,#qt-pyside,##proggit,#python,#reddit-anime,#reddit-gamedev,#stardewvalley" \
     "/server add snoonet irc.snoonet.org/6697 -ssl" \
     "/set irc.server.snoonet.autoconnect yes" \
     "/set irc.server.snoonet.sasl_mechanism plain" \
