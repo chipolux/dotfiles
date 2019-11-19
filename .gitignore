@@ -3,7 +3,4 @@ oh-my-zsh
 tmux/plugins/*
 tmux/resurrect/*
 
-vim/autoload/plug.vim
-vim/plugged/*
-
-vim/spell
+vim/*
