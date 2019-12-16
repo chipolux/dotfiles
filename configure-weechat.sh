@@ -85,7 +85,9 @@ server_cmds=$(join-by ";" \
     "/server add abjects irc.abjects.net/6667" \
     "/set irc.server.abjects.autojoin #mg-chat,#moviegods,#beast-xdcc" \
     "/server add criten irc.criten.net/6667" \
-    "/set irc.server.criten.autojoin #elitewarez")
+    "/set irc.server.criten.autojoin #elitewarez" \
+    "/server add thefuture irc.frozyn.net/6667" \
+    "/set irc.server.thefuture.autojoin #THE-FUTURE,#Future-Chat")
 
 weechat_cmds=$(join-by ";" "$interface_cmds" "$buflist_cmds" "$server_cmds" "/quit")
 
