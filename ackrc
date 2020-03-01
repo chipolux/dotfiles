@@ -17,8 +17,11 @@
 # Add type for qml files
 --type-set=qml:ext:qml
 
-# Add type for godot files
+# Add type for godot script files
 --type-set=gd:ext:gd
+
+# Add type for godot scene files
+--type-set=tscn:ext:tscn
 
 # Update python type to include pyw files and wscript files
 --type-add=python:ext:pyw
