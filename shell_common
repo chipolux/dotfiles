@@ -88,6 +88,9 @@ function countdown() {
         echo -en "\r\033[K$(($t - `date +%s`))"
         sleep 0.1
     done
+    if [ "$(uname)" = "Darwin" ]; then
+        say -v Fred "Your $(printf "%'.0f" $1) second timer is done!"
+    fi
     echo -e "\nDONE"
 }
 
