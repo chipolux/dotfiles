@@ -80,6 +80,17 @@ function vf() {
     fi
 }
 
+# function to countdown the provided seconds
+# ex: `countdown $((5*60))` to countdown for 5 minutes
+function countdown() {
+    t=$((`date +%s` + $1))
+    while [ "$t" -gt `date +%s` ]; do
+        echo -en "\r\033[K$(($t - `date +%s`))"
+        sleep 0.1
+    done
+    echo -e "\nDONE"
+}
+
 # Don't close terminal on Ctrl+D
 export IGNOREEOF=2
 
