@@ -35,6 +35,7 @@ Plug 'Matt-Deacalion/vim-systemd-syntax'
 Plug 'tbastos/vim-lua'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'keith/swift.vim'
+Plug 'posva/vim-vue'
 call plug#end()
 
 syntax enable
@@ -181,8 +182,11 @@ au FileType mail setlocal formatoptions-=t formatoptions+=w
 " Makefiles need tabs instead of spaces
 au FileType make setlocal noexpandtab shiftwidth=8 softtabstop=0
 
+" JSON files should use 2 space indents rather than 4
+au FileType json setlocal shiftwidth=2
+
 " Several filetypes should have indent foldmethod
-au FileType coffee,cpp setlocal foldmethod=indent
+au FileType coffee,cpp,json setlocal foldmethod=indent
 
 au FileType gdscript3,lua setlocal foldmethod=syntax noexpandtab
 
