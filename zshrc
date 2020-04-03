@@ -17,7 +17,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # HIST_STAMPS="mm/dd/yyyy"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-plugins=(git osx)
+plugins=(git osx asdf)
 
 source $ZSH/oh-my-zsh.sh
 
