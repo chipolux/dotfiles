@@ -35,7 +35,7 @@ Plug 'Matt-Deacalion/vim-systemd-syntax'
 Plug 'tbastos/vim-lua'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'keith/swift.vim'
-Plug 'posva/vim-vue'
+Plug 'leafoftree/vim-vue-plugin'
 call plug#end()
 
 syntax enable
@@ -189,6 +189,9 @@ au FileType json setlocal shiftwidth=2
 au FileType coffee,cpp,json setlocal foldmethod=indent
 
 au FileType gdscript3,lua setlocal foldmethod=syntax noexpandtab
+
+" Treat vue components as html
+"au BufRead,BufNewFile *.vue setlocal filetype=html
 
 " Ugh omni-complete for sql files is bound to a shitty key by default
 let g:ftplugin_sql_omni_key = '<C-j>'
