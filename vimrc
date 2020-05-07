@@ -13,8 +13,10 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
 Plug 'chrisbra/Colorizer'
 Plug 'ciaranm/securemodelines'
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf'
 " Plug 'junegunn/rainbow_parentheses.vim' " my colorblindness makes this useless :(
+" Plug 'natebosch/vim-lsc'
 
 " Filetype Specific
 Plug 'tmhedberg/SimpylFold'
@@ -71,6 +73,7 @@ set wildignore=*.qmlc,*.jsc,*.pyc
 set encoding=utf-8  " prefer utf-8 for files
 set listchars=tab:>·,trail:·,nbsp:·
 set list
+set shortmess-=F
 
 " Unbind the Shift+K man page binding
 map <S-k> <Nop>
@@ -129,6 +132,9 @@ nmap <leader>b :echo eval(line2byte(line('.')) + col('.') - 1)<CR>
 vnoremap <leader>en :!python -c 'import sys,urllib;print urllib.quote(sys.stdin.read().strip())'<cr>
 vnoremap <leader>de :!python -c 'import sys,urllib;print urllib.unquote(sys.stdin.read().strip())'<cr>
 
+" map fzf to be Ctrl+P
+nnoremap <C-p> :<C-u>FZF<CR>
+
 " I always hold shift just a tiny bit too long
 command WQ wq
 command Wq wq
@@ -168,6 +174,11 @@ let g:lightline = {
       \   'left': [['relativepath']],
       \ },
       \ }
+
+" vim-lsc language server stuff
+" let g:lsc_enable_autocomplete = v:true
+" let g:lsc_auto_map = v:true
+" let g:lsc_server_commands = {'java': '~/Projects/java-language-server/dist/lang_server_mac.sh'}
 
 " Vim JSON stuff
 let g:vim_json_syntax_conceal = 0
