@@ -98,6 +98,14 @@ function setup () {
         echo "Setting shell to zsh!"
         sudo chsh -s $zsh_path $USER
     fi
+
+    task_path=$(which task)
+    timew_path=$(which timew)
+    if [ -e $task_path ] && [ -e $timew_path ]; then
+        echo "Setting up timewarrior hook..."
+        mkdir -p $HOME/.task-data/hooks
+        cp $HOME/.task/on-modify.timewarrior $HOME/.task-data/hooks/.
+    fi
 }
 
 function move-dot-files () {

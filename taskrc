@@ -2,6 +2,7 @@
 # Use the command 'task show' to see all defaults and overrides
 
 data.location = ~/.task-data
+#journal.time = on
 
 uda.priority.values=H,M,,L
 urgency.uda.priority.L.coefficient=-1.8
