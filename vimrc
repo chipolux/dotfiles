@@ -38,6 +38,8 @@ Plug 'tbastos/vim-lua'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'keith/swift.vim'
 Plug 'leafoftree/vim-vue-plugin'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 call plug#end()
 
 syntax enable
