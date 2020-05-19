@@ -10,7 +10,11 @@
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 function virtualenv_info {
-    [ $VIRTUAL_ENV ] && echo '('%F{blue}`basename $(dirname $VIRTUAL_ENV)`%f') '
+    if [ $VIRTUAL_ENV ] && [[ $(basename $VIRTUAL_ENV) = .* ]]; then
+        echo '('%F{blue}`basename $(dirname $VIRTUAL_ENV)`%f')'
+    elif [ $VIRTUAL_ENV ]; then
+        echo '('%F{blue}`basename $VIRTUAL_ENV`%f')'
+    fi
 }
 # PR_GIT_UPDATE=1
 
