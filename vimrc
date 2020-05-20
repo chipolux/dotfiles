@@ -17,6 +17,7 @@ Plug 'ciaranm/securemodelines'
 Plug 'junegunn/fzf'
 " Plug 'junegunn/rainbow_parentheses.vim' " my colorblindness makes this useless :(
 " Plug 'natebosch/vim-lsc'
+Plug 'prettier/vim-prettier'
 
 " Filetype Specific
 Plug 'tmhedberg/SimpylFold'
@@ -40,6 +41,7 @@ Plug 'keith/swift.vim'
 Plug 'leafoftree/vim-vue-plugin'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'jparise/vim-graphql'
 call plug#end()
 
 syntax enable
@@ -152,10 +154,30 @@ let g:flake8_show_quickfix=0
 "autocmd BufWritePost *.pyw call Flake8()
 "autocmd BufReadPost *.py call Flake8()  " run flake8 when opening a py/pyw file
 "autocmd BufReadPost *.pyw call Flake8()
+function PythonFormat(path)
+    if &modified
+        echo 'save before formatting'
+    elseif executable('black')
+        call system("black " . a:path)
+        edit!
+    else
+        echo 'black not found'
+    endif
+endfunction
+
+function PythonLint()
+    if executable('flake8')
+        call Flake8()
+    else
+        echo 'flake8 not found'
+    endif
+endfunction
+
 autocmd FileType python :call SetPythonOptions()
 function SetPythonOptions()
-    map <buffer> <leader>l :call Flake8()<CR>
+    map <buffer> <leader>l :call PythonLint()<CR>
     map <buffer> <leader>r :exec '!python' shellescape(@%, 1)<CR>
+    map <buffer> <leader>p :call PythonFormat(shellescape(@%, 1))<CR>
     syn keyword pythonSelf self
     highlight def link pythonSelf Special
 endfunction
