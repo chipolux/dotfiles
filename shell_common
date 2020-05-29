@@ -53,10 +53,11 @@ fi
 alias lt='ls -lth'
 alias rsync='rsync -h --progress --partial'
 alias gvir='gvim --remote'
+alias tree='tree -I __pycache__'
+alias ag='ag --pager less'
 
 # mutt aliases
 alias mail-personal='mutt -F ~/.mutt/personal.muttrc'
-alias mail-summit='mutt -F ~/.mutt/summit.muttrc'
 
 # always try to use imagemagick with feh
 alias feh='feh --magick-timeout 1 --geometry 500x500'
@@ -80,6 +81,14 @@ function vf() {
     fi
 }
 
+# function to remove all docker state
+function docker-purge () {
+    docker rmi --force $(docker images --all --quiet)
+    docker rm --force $(docker ps --all --quiet)
+    docker volume rm --force $(docker volume ls --quiet)
+    docker system prune --all --force --volumes
+}
+
 # function to countdown the provided seconds
 # ex: `countdown $((5*60))` to countdown for 5 minutes
 function countdown() {
@@ -93,6 +102,10 @@ function countdown() {
     fi
     echo -e "\nDONE"
 }
+
+# make fzf use fd for searching file names
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # Don't close terminal on Ctrl+D
 export IGNOREEOF=2
