@@ -16,6 +16,7 @@ DISABLE_AUTO_TITLE="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 # HIST_STAMPS="mm/dd/yyyy"
 # ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_DISABLE_COMPFIX="true"
 
 plugins=(git osx asdf)
 
