@@ -156,12 +156,15 @@ let g:flake8_show_quickfix=0
 "autocmd BufReadPost *.pyw call Flake8()
 function PythonFormat(path)
     if &modified
-        echo 'save before formatting'
-    elseif executable('black')
-        call system("black " . a:path)
-        edit!
+        echoerr 'save before formatting'
     else
-        echo 'black not found'
+        if executable('isort')
+            call system('isort ' . a:path)
+        endif
+        if executable('black')
+            call system('black ' . a:path)
+        endif
+        edit!
     endif
 endfunction
 
