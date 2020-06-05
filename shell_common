@@ -107,6 +107,9 @@ function countdown() {
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+# make ripgrep aware of configuration
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+
 # Don't close terminal on Ctrl+D
 export IGNOREEOF=2
 
