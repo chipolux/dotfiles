@@ -36,22 +36,20 @@ fi
 
 # cheapo virtualenvwrapper
 function activate() {
-    if [ -f '.venv/bin/activate' ]; then
-        . .venv/bin/activate
-        return 0
+    PROJ_DIR=$(git rev-parse --show-toplevel)
+    if [ $PROJ_DIR ]; then
+        PROJ_DIR="$PROJ_DIR/"
     fi
-    if [ -f '.env/bin/activate' ]; then
-        . .env/bin/activate
-        return 0
-    fi
-    if [ -f 'venv/bin/activate' ]; then
-        . venv/bin/activate
-        return 0
-    fi
-    if [ -f 'env/bin/activate' ]; then
-        . env/bin/activate
-        return 0
-    fi
+    ACTIVATE_SCRIPTS=("${PROJ_DIR}.venv/bin/activate"
+                      "${PROJ_DIR}.env/bin/activate"
+                      "${PROJ_DIR}venv/bin/activate"
+                      "${PROJ_DIR}env/bin/activate")
+    for ACTIVATE_SCRIPT in "${ACTIVATE_SCRIPTS[@]}"; do
+        if [ -f "$ACTIVATE_SCRIPT" ]; then
+            . "$ACTIVATE_SCRIPT"
+            return 0
+        fi
+    done
     if [ -f 'poetry.lock' ] && [ -f 'pyproject.toml' ]; then
         poetry shell
         return 0
