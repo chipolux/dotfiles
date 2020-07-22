@@ -60,7 +60,7 @@ function map() {
 # function to open vim with fuzzy found file
 # alias vf='vim $(fzf --height 30)'
 function vf() {
-    f=$(fzf --height 15 --query=$1)
+    f=$(fzf --height 30 --query=$1)
     if [ $f ] && [ -f $f ]; then
         vim $f
     fi
