@@ -11,16 +11,6 @@ for PART in "${PARTS[@]}"; do
     fi
 done
 
-# Set Postgres stuff
-if [ -d "/usr/local/var/postgres" ]; then
-    export PGDATA="/usr/local/var/postgres"
-fi
-
-# Set mysql stuff
-if [ -d "/usr/local/Cellar/mysql@5.7/5.7.25/lib" ]; then
-    export DYLD_LIBRARY_PATH="/usr/local/Cellar/mysql@5.7/5.7.25/lib:$DYLD_LIBRARY_PATH"
-fi
-
 # pyenv
 if [ -f "$(which pyenv)" ]; then
     eval "$(pyenv init -)"
@@ -130,11 +120,6 @@ fi
 # Make less not clear screen on exit (-X), exit if content fits (-F), and use
 # colors (-R)
 export LESS="-XFR"
-
-# Don't seem to need this anymore.
-# if [ $TERM = "xterm-kitty" ]; then
-#     alias ssh="kitty +kitten ssh"
-# fi
 
 export EDITOR=vim
 
