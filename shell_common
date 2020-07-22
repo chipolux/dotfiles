@@ -44,12 +44,7 @@ alias lt='ls -lth'
 alias rsync='rsync -h --progress --partial'
 alias gvir='gvim --remote'
 alias tree='tree -I __pycache__'
-alias ag='ag --pager less'
-
-# mutt aliases
 alias mail-personal='mutt -F ~/.mutt/personal.muttrc'
-
-# always try to use imagemagick with feh
 alias feh='feh --magick-timeout 1 --geometry 500x500'
 
 # TODO: need to make this work on linux.
@@ -104,6 +99,9 @@ export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 function rg() {
     $RIPGREP_BIN -p "$@" | less -RFX
 }
+# replace other search tools with ripgrep
+alias ag='rg'
+alias ack='rg'
 
 # Don't close terminal on Ctrl+D
 export IGNOREEOF=2
