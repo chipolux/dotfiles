@@ -54,7 +54,7 @@ function activate() {
         poetry shell
         return 0
     fi
-    echo 'No environment found to active :('
+    echo 'No environment found to activate :('
     return 1
 }
 
