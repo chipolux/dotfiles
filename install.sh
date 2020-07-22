@@ -19,6 +19,7 @@ function setup () {
         "rtorrent.rc" \
         "taskrc" \
         "screenrc" \
+        "ripgreprc" \
         "Xresources"
 
     echo "Getting tools!"
