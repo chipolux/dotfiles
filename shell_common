@@ -34,6 +34,32 @@ if [ -z "$PYENV_SHELL" ]; then
     fi
 fi
 
+# cheapo virtualenvwrapper
+function activate() {
+    if [ -f '.venv/bin/activate' ]; then
+        . .venv/bin/activate
+        return 0
+    fi
+    if [ -f '.env/bin/activate' ]; then
+        . .env/bin/activate
+        return 0
+    fi
+    if [ -f 'venv/bin/activate' ]; then
+        . venv/bin/activate
+        return 0
+    fi
+    if [ -f 'env/bin/activate' ]; then
+        . env/bin/activate
+        return 0
+    fi
+    if [ -f 'poetry.lock' ] && [ -f 'pyproject.toml' ]; then
+        poetry shell
+        return 0
+    fi
+    echo 'No environment found to active :('
+    return 1
+}
+
 # Ack-grep to ack
 if [ -s "$(which ack-grep)" ]; then
     alias ack='ack-grep'
