@@ -139,6 +139,9 @@ vnoremap <leader>de :!python -c 'import sys,urllib;print urllib.unquote(sys.stdi
 " map fzf to be Ctrl+P
 nnoremap <C-p> :<C-u>FZF<CR>
 
+" 'zoom' the current pane
+nnoremap <leader>z <C-w>_ \| <C-w>\|
+
 " I always hold shift just a tiny bit too long
 command WQ wq
 command Wq wq
@@ -149,7 +152,7 @@ command Q q
 let g:SimpylFold_fold_docstring = 0
 let g:SimpylFold_fold_import = 0
 let g:flake8_show_in_gutter=1
-let g:flake8_show_quickfix=0
+let g:flake8_show_quickfix=1
 "autocmd BufWritePost *.py call Flake8()  " run flake8 when saving a py/pyw file
 "autocmd BufWritePost *.pyw call Flake8()
 "autocmd BufReadPost *.py call Flake8()  " run flake8 when opening a py/pyw file
@@ -159,10 +162,20 @@ function PythonFormat(path)
         echoerr 'save before formatting'
     else
         if executable('isort')
-            call system('isort ' . a:path)
+            let output = system('isort ' . a:path)
+            if v:shell_error != 0
+                echoerr 'isort error ' output
+            endif
+        else
+            echoerr 'isort not found'
         endif
         if executable('black')
-            call system('black ' . a:path)
+            let output = system('black ' . a:path)
+            if v:shell_error != 0
+                echoerr 'black error ' output
+            endif
+        else
+            echoerr 'black not found'
         endif
         edit!
     endif
