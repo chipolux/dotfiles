@@ -132,7 +132,7 @@ nmap <leader>f :setlocal foldmethod=syntax<CR>
 vmap <leader>j !python -m json.tool<CR>
 
 " Show current byte offset
-nmap <leader>b :echo eval(line2byte(line('.')) + col('.') - 1)<CR>
+nmap <leader>B :echo eval(line2byte(line('.')) + col('.') - 1)<CR>
 
 " URL encode/decode selection
 vnoremap <leader>en :!python -c 'import sys,urllib;print urllib.quote(sys.stdin.read().strip())'<cr>
@@ -191,11 +191,21 @@ function PythonLint()
     endif
 endfunction
 
+function PythonBreakpoint()
+    if executable('ipdb3')
+        let text = "import ipdb; ipdb.set_trace()"
+    else
+        let text = "import pdb; pdb.set_trace()"
+    endif
+    exe "normal! O" . text . "\<Esc>"
+endfunction
+
 autocmd FileType python :call SetPythonOptions()
 function SetPythonOptions()
     map <buffer> <leader>l :call PythonLint()<CR>
     map <buffer> <leader>r :exec '!python' shellescape(@%, 1)<CR>
     map <buffer> <leader>p :call PythonFormat(shellescape(@%, 1))<CR>
+    map <buffer> <leader>b :call PythonBreakpoint()<CR>
     syn keyword pythonSelf self
     highlight def link pythonSelf Special
 endfunction
