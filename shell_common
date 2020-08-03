@@ -90,6 +90,22 @@ function vf() {
     fi
 }
 
+# function to git diff with fzf to pick a file
+function gdf() {
+    f=$(fzf --height 30 --query=$1)
+    if [ $f ] && [ -f $f ]; then
+        git diff $f
+    fi
+}
+
+# function to git add with fzf to pick a file
+function gaf() {
+    f=$(fzf --height 30 --query=$1)
+    if [ $f ] && [ -f $f ]; then
+        git add $f
+    fi
+}
+
 # function to remove all docker state
 function docker-purge () {
     docker rmi --force $(docker images --all --quiet)
