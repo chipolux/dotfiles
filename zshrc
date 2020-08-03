@@ -6,7 +6,7 @@ ZSH_THEME="steeef"
 #ZSH_THEME="candy"
 #ZSH_THEME="ys"
 
-CASE_SENSITIVE="true"
+# CASE_SENSITIVE="true"
 # DISABLE_AUTO_UPDATE="true"
 # export UPDATE_ZSH_DAYS=13
 # DISABLE_LS_COLORS="true"
