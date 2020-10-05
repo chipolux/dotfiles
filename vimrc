@@ -14,11 +14,10 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
 Plug 'chrisbra/Colorizer'
 Plug 'ciaranm/securemodelines'
-" Plug 'ctrlpvim/ctrlp.vim'
-Plug 'junegunn/fzf'
-" Plug 'junegunn/rainbow_parentheses.vim' " my colorblindness makes this useless :(
-" Plug 'natebosch/vim-lsc'
 Plug 'prettier/vim-prettier'
+Plug 'junegunn/fzf'
+" Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'junegunn/rainbow_parentheses.vim' " my colorblindness makes this useless :(
 
 " Filetype Specific
 Plug 'tmhedberg/SimpylFold'
@@ -155,10 +154,6 @@ let g:SimpylFold_fold_docstring = 0
 let g:SimpylFold_fold_import = 0
 let g:flake8_show_in_gutter=1
 let g:flake8_show_quickfix=1
-"autocmd BufWritePost *.py call Flake8()  " run flake8 when saving a py/pyw file
-"autocmd BufWritePost *.pyw call Flake8()
-"autocmd BufReadPost *.py call Flake8()  " run flake8 when opening a py/pyw file
-"autocmd BufReadPost *.pyw call Flake8()
 function PythonFormat(path)
     if &modified
         echoerr 'save before formatting'
@@ -227,10 +222,6 @@ let g:lightline = {
       \ },
       \ }
 
-" vim-lsc language server stuff
-" let g:lsc_enable_autocomplete = v:true
-" let g:lsc_auto_map = v:true
-" let g:lsc_server_commands = {'java': '~/Projects/java-language-server/dist/lang_server_mac.sh'}
 
 " Vim JSON stuff
 let g:vim_json_syntax_conceal = 0
