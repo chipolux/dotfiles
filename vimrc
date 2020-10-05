@@ -266,3 +266,8 @@ hi MatchParen cterm=bold ctermfg=15 ctermbg=none guifg=#ffffff guibg=background 
 autocmd BufRead,BufNewFile * syn match Braces /[\[\](){}]/ | hi Braces ctermfg=gray guifg=#b8b8b8
 hi Special cterm=italic gui=italic
 hi Comment cterm=italic gui=italic
+
+" Finally, include local private vim config if present
+if filereadable(expand("~/.private_vimrc"))
+    source ~/.private_vimrc
+endif
