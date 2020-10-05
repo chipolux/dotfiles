@@ -136,8 +136,16 @@ nmap <leader>B :echo eval(line2byte(line('.')) + col('.') - 1)<CR>
 vnoremap <leader>en :!python -c 'import sys,urllib;print urllib.quote(sys.stdin.read().strip())'<cr>
 vnoremap <leader>de :!python -c 'import sys,urllib;print urllib.unquote(sys.stdin.read().strip())'<cr>
 
-" map fzf to be Ctrl+P
+" map fzf to be Ctrl+p and Ctrl+k
 nnoremap <C-p> :<C-u>FZF<CR>
+nnoremap <C-k> :<C-u>FZF<CR>
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+" TODO: once tmux 3.2 is released
+" if exists('$TMUX')
+"     let g:fzf_layout = { 'tmux': '-p90%,60%' }
+" else
+"     let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+" endif
 
 " 'zoom' the current pane
 nnoremap <leader>z <C-w>_ \| <C-w>\|
