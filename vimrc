@@ -78,7 +78,6 @@ set encoding=utf-8  " prefer utf-8 for files
 set listchars=tab:>·,trail:·,nbsp:·
 set list
 set shortmess-=F
-set spell
 
 " Unbind the Shift+K man page binding
 map <S-k> <Nop>
