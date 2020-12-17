@@ -30,6 +30,23 @@ if [ -s "$HOME/.shell_common" ]; then
     source "$HOME/.shell_common"
 fi
 
+# function to remove all docker state
+unset -f docker-purge 2>> /dev/null
+function docker-purge () {
+    read "?Are you sure you want to purge? [y/N] " response
+    case "$response" in
+        [yY][eE][sS]|[yY])
+            docker rmi --force $(docker images --all --quiet)
+            docker rm --force $(docker ps --all --quiet)
+            docker volume rm --force $(docker volume ls --quiet)
+            docker system prune --all --force --volumes
+            ;;
+        *)
+            echo Cancelling...
+            ;;
+    esac
+}
+
 # Disable beeping
 setopt no_beep
 
