@@ -222,10 +222,17 @@ endfunction
 " lightline config
 let g:lightline = {
       \ 'active': {
-      \   'left': [['mode', 'paste'], ['readonly', 'relativepath', 'modified']]
+      \   'left': [['mode', 'paste'], ['readonly', 'relativepath', 'modified']],
+      \   'right': [['lineinfo'],
+      \             ['percent'],
+      \             ['charvaluehex', 'charoffsethex', 'fileformat', 'fileencoding', 'filetype']],
       \ },
       \ 'inactive': {
       \   'left': [['relativepath']],
+      \ },
+      \ 'component': {
+      \   'charvaluehex': '0x%B',
+      \   'charoffsethex': '%o',
       \ },
       \ }
 
