@@ -88,7 +88,7 @@ function map() {
 # alias vf='vim $(fzf --height 30)'
 unset -f vf 2>> /dev/null
 function vf() {
-    f=$(fzf --height 30 --query=$1)
+    f=$(fzf --height 30 --query "$*")
     if [ $f ] && [ -f $f ]; then
         vim $f
     fi
@@ -97,7 +97,7 @@ function vf() {
 # function to git diff with fzf to pick a file
 unset -f gdf 2>> /dev/null
 function gdf() {
-    f=$(fzf --height 30 --query=$1)
+    f=$(fzf --height 30 --query "$*")
     if [ $f ] && [ -f $f ]; then
         git diff $f
     fi
@@ -106,7 +106,7 @@ function gdf() {
 # function to git add with fzf to pick a file
 unset -f gaf 2>> /dev/null
 function gaf() {
-    f=$(fzf --height 30 --query=$1)
+    f=$(fzf --height 30 --query "$*")
     if [ $f ] && [ -f $f ]; then
         git add $f
     fi
@@ -115,7 +115,7 @@ function gaf() {
 # function to open with fuzzy found file
 unset -f of 2>> /dev/null
 function of() {
-    f=$(fzf --height 30 --query=$1)
+    f=$(fzf --height 30 --query "$*")
     if [ $f ] && [ -f $f ]; then
         open $f
     fi
