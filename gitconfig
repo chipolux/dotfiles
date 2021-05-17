@@ -4,7 +4,7 @@
 [core]
     excludesfile = ~/.gitignore
     pager = less -FX
-    editor = vim
+    editor = nvim
     autocrlf = false
 [push]
     default = current
@@ -36,4 +36,4 @@
     remote = magenta bold
     local = normal
 [pull]
-	rebase = false
+    rebase = false
