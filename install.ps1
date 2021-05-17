@@ -2,6 +2,7 @@ $DOTFILES = Split-Path -Parent $PSCommandPath
 
 $FILES = (
     ("ackrc", ".ackrc"),
+    ("vimrc", "AppData\nvim\init.vim"),
     ("vimrc", ".vimrc"),
     ("gitignore", ".gitignore"),
     ("gitconfig", ".gitconfig"),
@@ -17,26 +18,33 @@ foreach ($pair in $FILES) {
     $source = "$DOTFILES\$($pair[0])"
     $destination = "$HOME\$($pair[1])"
     Write-Host "Linking $destination..."
-    if (Test-Path $destination) {Remove-Item $destination}
-    cmd /c mklink $destination $source > $null
+    New-Item $destination -ItemType Directory -Force
+    if (Test-Path $destination) {Remove-Item $destination -Force -Recurse}
+    Copy-Item -Path $source -Destination $destination -Force -Recurse
+    #cmd /c mklink $destination $source > $null
 }
 
 foreach ($pair in $DIRECTORIES) {
     $source = "$DOTFILES\$($pair[0])"
     $destination = "$HOME\$($pair[1])"
     Write-Host "Linking $destination..."
+    New-Item $destination -ItemType Directory -Force
     $file = Get-Item $destination -Force -ErrorAction SilentlyContinue
-    if ($file) {$file.Delete()}
-    cmd /c mklink /J $destination $source > $null
+    if ($file) {Remove-Item $destination -Force -Recurse}
+    Copy-Item -Path $source -Destination $destination -Force
+    #cmd /c mklink /J $destination $source > $null
 }
 
 Write-Host "Downloading ~\vimfiles\autoload\plug.vim..."
-$autoload = New-Item -ItemType Directory -Force -Path $HOME\vimfiles\autoload
-$url = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-(New-Object Net.WebClient).DownloadFile($url, "$autoload\plug.vim")
+# for vim
+iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
+    ni $HOME/vimfiles/autoload/plug.vim -Force
+# for neovim
+iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
+    ni "$(@($env:XDG_DATA_HOME, $env:LOCALAPPDATA)[$null -eq $env:XDG_DATA_HOME])/nvim-data/site/autoload/plug.vim" -Force
 
 Write-Host "Installing vim plugins..."
-gvim +PlugInstall +qall
+nvim +PlugInstall +qall
 
-Write-Host "Installing scoop..."
-Invoke-Expression (New-Object Net.WebClient).DownloadString('https://get.scoop.sh')
+#Write-Host "Installing scoop..."
+#Invoke-Expression (New-Object Net.WebClient).DownloadString('https://get.scoop.sh')
