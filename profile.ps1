@@ -5,6 +5,9 @@ Remove-Item Alias:gc -Force
 Remove-Item Alias:gl -Force
 Remove-Item Alias:gp -Force
 
+Set-Alias -Name vim -Value nvim
+Set-Alias -Name gvim -Value nvim-qt
+
 function g {cmd /c $((@("git") + $args) -Join " ")}
 function ga {cmd /c $((@("git", "add") + $args) -Join " ")}
 function gb {cmd /c $((@("git", "branch") + $args) -Join " ")}
