@@ -258,6 +258,9 @@ au FileType coffee,cpp,json setlocal foldmethod=indent
 
 au FileType gdscript3,lua setlocal foldmethod=syntax noexpandtab
 
+" Give git commits a distinct color scheme.
+au FileType gitcommit colorscheme industry
+
 " Treat vue components as html
 "au BufRead,BufNewFile *.vue setlocal filetype=html
 
