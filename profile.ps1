@@ -1,5 +1,5 @@
 Set-PSReadlineOption -BellStyle None
-if (Get-Module -Name posh-git -ListAvailable) {Import-Module posh-git}
+# if (Get-Module -Name posh-git -ListAvailable) {Import-Module posh-git}
 
 Remove-Item Alias:gc -Force
 Remove-Item Alias:gl -Force
@@ -17,3 +17,7 @@ function gd {cmd /c $((@("git", "diff") + $args) -Join " ")}
 function gl {cmd /c $((@("git", "pull") + $args) -Join " ")}
 function gp {cmd /c $((@("git", "push") + $args) -Join " ")}
 function gst {cmd /c $((@("git", "status") + $args) -Join " ")}
+
+function of {start $(fzf --height 10)}
+function vf {vim $(fzf --height 10)}
+function gvf {gvim $(fzf --hright 10)}
