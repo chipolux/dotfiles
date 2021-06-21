@@ -37,7 +37,7 @@ fi
 # cheapo virtualenvwrapper
 unset -f activate 2>> /dev/null
 function activate() {
-    PROJ_DIR=$(git rev-parse --show-toplevel)
+    PROJ_DIR=$(git rev-parse --show-toplevel 2>/dev/null)
     if [ $PROJ_DIR ]; then
         PROJ_DIR="$PROJ_DIR/"
     fi
