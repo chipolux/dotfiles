@@ -42,6 +42,7 @@ Plug 'leafoftree/vim-vue-plugin'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'jparise/vim-graphql'
+Plug 'rhysd/vim-clang-format'
 call plug#end()
 
 syntax enable
@@ -211,6 +212,8 @@ function SetPythonOptions()
     syn keyword pythonSelf self
     highlight def link pythonSelf Special
 endfunction
+
+autocmd FileType cpp map <buffer> <leader>p :ClangFormat<CR>
 
 " QML Settings
 autocmd FileType qml :call SetQmlOptions()
