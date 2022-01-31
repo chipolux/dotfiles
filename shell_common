@@ -45,14 +45,18 @@ fi
 # cheapo virtualenvwrapper
 unset -f activate 2>> /dev/null
 function activate() {
+    ACTIVATE_SCRIPTS=(".venv/bin/activate"
+                      ".env/bin/activate"
+                      "venv/bin/activate"
+                      "env/bin/activate")
     PROJ_DIR=$(git rev-parse --show-toplevel 2>/dev/null)
     if [ $PROJ_DIR ]; then
         PROJ_DIR="$PROJ_DIR/"
+        ACTIVATE_SCRIPTS+=("${PROJ_DIR}.venv/bin/activate"
+                           "${PROJ_DIR}.env/bin/activate"
+                           "${PROJ_DIR}venv/bin/activate"
+                           "${PROJ_DIR}env/bin/activate")
     fi
-    ACTIVATE_SCRIPTS=("${PROJ_DIR}.venv/bin/activate"
-                      "${PROJ_DIR}.env/bin/activate"
-                      "${PROJ_DIR}venv/bin/activate"
-                      "${PROJ_DIR}env/bin/activate")
     for ACTIVATE_SCRIPT in "${ACTIVATE_SCRIPTS[@]}"; do
         if [ -f "$ACTIVATE_SCRIPT" ]; then
             . "$ACTIVATE_SCRIPT"
