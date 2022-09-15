@@ -138,6 +138,9 @@ nmap <leader>B :echo eval(line2byte(line('.')) + col('.') - 1)<CR>
 vnoremap <leader>en :!python -c 'import sys,urllib;print urllib.quote(sys.stdin.read().strip())'<cr>
 vnoremap <leader>de :!python -c 'import sys,urllib;print urllib.unquote(sys.stdin.read().strip())'<cr>
 
+" Add command to format xml
+command FormatXML :%!python -c "import sys,xml.dom.minidom;print(xml.dom.minidom.parse(sys.stdin).toprettyxml(indent='  '))"
+
 " map fzf to be Ctrl+p and Ctrl+k
 nnoremap <C-p> :<C-u>FZF<CR>
 nnoremap <C-k> :<C-u>FZF<CR>
@@ -251,8 +254,8 @@ au FileType mail setlocal formatoptions-=t formatoptions+=w
 " Makefiles need tabs instead of spaces
 au FileType make setlocal noexpandtab shiftwidth=8 softtabstop=0
 
-" JSON files should use 2 space indents rather than 4
-au FileType json setlocal shiftwidth=2
+" JSON, HTML, and XML files should use 2 space indents rather than 4
+au FileType json,html,xml setlocal shiftwidth=2
 
 " Several filetypes should have indent foldmethod
 au FileType coffee,cpp,json setlocal foldmethod=indent
