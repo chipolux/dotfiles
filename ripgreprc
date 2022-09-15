@@ -1,2 +1,4 @@
 --type-add
 graphql:*.graphql
+--type-add
+gql:*.graphql
