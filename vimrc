@@ -31,7 +31,7 @@ Plug 'PProvost/vim-ps1'
 Plug 'fatih/vim-nginx'
 Plug 'kchmck/vim-coffee-script'
 Plug 'peterhoeg/vim-qml'
-Plug 'calviken/vim-gdscript3'
+" Plug 'calviken/vim-gdscript3' " calviken seems to have deleted their account!
 Plug 'artoj/qmake-syntax-vim'
 Plug 'kergoth/vim-bitbake'
 Plug 'Matt-Deacalion/vim-systemd-syntax'
@@ -43,6 +43,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'jparise/vim-graphql'
 Plug 'rhysd/vim-clang-format'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 syntax enable
@@ -128,7 +129,7 @@ nmap <leader>v :set cursorline! cursorcolumn!<CR>
 nmap <leader>f :setlocal foldmethod=syntax<CR>
 
 " Format selected json using python
-vmap <leader>j !python -m json.tool<CR>
+vmap <leader>j !python -m json.tool --indent 2<CR>
 
 " Show current byte offset
 nmap <leader>B :echo eval(line2byte(line('.')) + col('.') - 1)<CR>
@@ -195,11 +196,7 @@ function PythonLint()
 endfunction
 
 function PythonBreakpoint()
-    if executable('ipdb3')
-        let text = "import ipdb; ipdb.set_trace()"
-    else
-        let text = "import pdb; pdb.set_trace()"
-    endif
+    let text = "import pdb; pdb.set_trace()"
     exe "normal! O" . text . "\<Esc>"
 endfunction
 
@@ -214,6 +211,7 @@ function SetPythonOptions()
 endfunction
 
 autocmd FileType cpp map <buffer> <leader>p :ClangFormat<CR>
+autocmd FileType rust map <buffer> <leader>p :RustFmt<CR>
 
 " QML Settings
 autocmd FileType qml :call SetQmlOptions()
