@@ -83,7 +83,13 @@ function setup () {
     touch mutt/aliases
 
     echo "Installing vim plugins!"
-    vim +PlugInstall +qall
+    if [ -e $(which nvim) ]; then
+        nvim +PlugInstall +qall
+    elif [ -e $(which vim) ]; then
+        vim +PlugInstall +qall
+    else
+        echo "  No vim or neovim found!"
+    fi
 
     echo "Installing fzf!"
     $HOME/.fzf/install --key-bindings --completion --no-update-rc

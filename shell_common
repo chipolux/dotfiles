@@ -84,6 +84,11 @@ alias tree='tree -I __pycache__'
 alias mail-personal='mutt -F ~/.mutt/personal.muttrc'
 alias feh='feh --magick-timeout 1 --geometry 500x500'
 
+# prefer neovim
+if [ -e $(which nvim) ]; then
+    alias vim=nvim
+fi
+
 # TODO: need to make this work on linux.
 unset -f pman 2>> /dev/null
 function pman() {
