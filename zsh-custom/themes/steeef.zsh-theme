@@ -99,6 +99,5 @@ PR_RST="%f"
 # }
 # add-zsh-hook precmd steeef_precmd
 
-PROMPT=$'
-%{$purple%}%n${PR_RST}@%{$orange%}%m${PR_RST}:%{$limegreen%}%~${PR_RST} $(virtualenv_info)
+PROMPT=$'%{$purple%}%n${PR_RST}@%{$orange%}%m${PR_RST}:%{$limegreen%}%~${PR_RST} $(virtualenv_info)
 $ '
