@@ -161,6 +161,9 @@ command Wq wq
 command W w
 command Q q
 
+" Rust Plugin Settings
+let g:rust_fold = 1
+
 " Python Plugin Settings
 let g:SimpylFold_fold_docstring = 0
 let g:SimpylFold_fold_import = 0
