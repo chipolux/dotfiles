@@ -231,7 +231,11 @@ function PythonLint()
 endfunction
 
 function PythonBreakpoint()
-    let text = "import pdb; pdb.set_trace()"
+    if executable('ipdb3')
+        let text = "import ipdb; ipdb.set_trace()"
+    else
+        let text = "import pdb; pdb.set_trace()"
+    endif
     exe "normal! O" . text . "\<Esc>"
 endfunction
 
