@@ -312,6 +312,7 @@ if has("win32")
     set mouse=a
     set guifont=Consolas:h11
     set noswapfile
+    let $FZF_DEFAULT_COMMAND = 'fd --type f' " picked up by shell on other systems
 elseif has("gui_macvim")
     set mouse=a
     set guifont=Menlo:h14
