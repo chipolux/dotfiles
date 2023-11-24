@@ -172,6 +172,27 @@ command FH %!xxd -r
 " Rust Plugin Settings
 let g:rust_fold = 1
 
+" Clang Format Settings
+function ClangFormat(path)
+    if &modified
+        echoerr 'save before formatting'
+    else
+        if executable('clang-format')
+            let output = system('clang-format -i ' . a:path)
+            if v:shell_error != 0
+                echoerr 'clang-format error ' output
+            endif
+        else
+            echoerr 'clang-format not found'
+        endif
+        edit!
+    endif
+endfunction
+function SetCppOptions()
+    map <buffer> <leader>p :call ClangFormat(shellescape(@%, 1))<CR>
+endfunction
+autocmd FileType cpp,c :call SetCppOptions()
+
 " Python Plugin Settings
 let g:SimpylFold_fold_docstring = 0
 let g:SimpylFold_fold_import = 0
