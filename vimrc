@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tomasr/molokai'
 Plug 'itchyny/lightline.vim'
 Plug 'dannyob/quickfixstatus'
+Plug 'yutkat/confirm-quit.nvim'
 
 " Utility
 Plug 'editorconfig/editorconfig-vim'
@@ -155,11 +156,18 @@ let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 " 'zoom' the current pane
 nnoremap <leader>z <C-w>_ \| <C-w>\|
 
+" Disable markdown folding
+let g:vim_markdown_folding_disabled = 1
+
 " I always hold shift just a tiny bit too long
 command WQ wq
 command Wq wq
 command W w
 command Q q
+
+" Some shorcuts for decoding and re-encoding binary as hex
+command TH %!xxd
+command FH %!xxd -r
 
 " Rust Plugin Settings
 let g:rust_fold = 1
