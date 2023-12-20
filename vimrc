@@ -1,3 +1,10 @@
+" disable these providers by default, we can enable them on a case by case
+" basis, because otherwise they can slow down startup
+let g:loaded_python3_provider = 0
+let g:loaded_ruby_provider = 0
+let g:loaded_perl_provider = 0
+let g:loaded_node_provider = 0
+
 " vim-plug stuff
 call plug#begin('~/.vim/plugged')
 " Look And Feel
