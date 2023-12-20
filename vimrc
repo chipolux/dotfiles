@@ -174,7 +174,7 @@ function PythonFormat(path)
     else
         " ruff can take the place of older slower tools
         if executable('ruff')
-            let output = system('ruff format -q ' . a:path)
+            let output = system('ruff format --no-cache --verbose ' . a:path)
             if v:shell_error != 0
                 echoerr 'ruff error ' output
             endif
