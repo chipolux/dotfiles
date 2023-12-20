@@ -1,3 +1,8 @@
+# System Prep
+# 1. Install scoop
+# 2. scoop bucket add extras
+# 3. scoop install git neovim alacritty wget curl fd ripgrep fzf python uutils-coreutils
+
 $DOTFILES = Split-Path -Parent $PSCommandPath
 
 $FILES = (
