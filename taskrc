@@ -8,3 +8,4 @@ uda.priority.values=H,M,,L
 urgency.uda.priority.L.coefficient=-1.8
 
 include ~/.task/solarized-dark-256.theme
+news.version=2.6.0
