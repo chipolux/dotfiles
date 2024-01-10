@@ -8,6 +8,7 @@ $DOTFILES = Split-Path -Parent $PSCommandPath
 $FILES = (
     ("ackrc", ".ackrc"),
     ("vimrc", "AppData\nvim\init.vim"),
+    ("vimrc", "AppData\Local\nvim\init.vim"),
     ("vimrc", ".vimrc"),
     ("gitignore", ".gitignore"),
     ("gitconfig", ".gitconfig"),
@@ -33,6 +34,7 @@ foreach ($pair in $DIRECTORIES) {
     $source = "$DOTFILES\$($pair[0])"
     $destination = "$HOME\$($pair[1])"
     Write-Host "Linking $destination..."
+    if (-not (Test-Path $source)) {New-Item $source -ItemType Directory -Force}
     New-Item $destination -ItemType Directory -Force
     $file = Get-Item $destination -Force -ErrorAction SilentlyContinue
     if ($file) {Remove-Item $destination -Force -Recurse}
