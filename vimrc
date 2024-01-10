@@ -181,9 +181,14 @@ function PythonFormat(path)
     else
         " ruff can take the place of older slower tools
         if executable('ruff')
-            let output = system('ruff format --no-cache --verbose ' . a:path)
+            " see https://docs.astral.sh/ruff/rules for more info
+            let output = system('ruff format --no-cache ' . a:path)
             if v:shell_error != 0
-                echoerr 'ruff error ' output
+                echoerr 'ruff format error ' output
+            endif
+            let output = system('ruff check --fix --select ALL --ignore T,ANN,N,D,FIX,TD,DTZ,INP,ARG,FBT,PERF,S --no-cache ' . a:path)
+            if v:shell_error != 0
+                echoerr 'ruff check error ' output
             endif
         else
             if executable('isort')
