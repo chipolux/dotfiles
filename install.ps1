@@ -2,6 +2,8 @@
 # 1. Install scoop
 # 2. scoop bucket add extras
 # 3. scoop install git neovim alacritty wget curl fd ripgrep fzf python uutils-coreutils
+#
+# May need to Unblock-File on the profile script if it gets marked as from the "scary internet"
 
 $DOTFILES = Split-Path -Parent $PSCommandPath
 
