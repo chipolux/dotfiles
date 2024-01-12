@@ -24,7 +24,6 @@ Plug 'tmhedberg/SimpylFold' " python folding
 Plug 'elzr/vim-json'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'plasticboy/vim-markdown'
 Plug 'PProvost/vim-ps1'
 Plug 'peterhoeg/vim-qml'
 Plug 'Matt-Deacalion/vim-systemd-syntax'
@@ -134,9 +133,6 @@ let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 
 " 'zoom' the current pane
 nnoremap <leader>z <C-w>_ \| <C-w>\|
-
-" Disable markdown folding
-let g:vim_markdown_folding_disabled = 1
 
 " I always hold shift just a tiny bit too long
 command WQ wq
