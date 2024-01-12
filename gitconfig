@@ -6,6 +6,8 @@
     pager = less -FX
     editor = nvim
     autocrlf = false
+[commit]
+    verbose = true
 [push]
     default = current
 [merge]
