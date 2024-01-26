@@ -182,7 +182,7 @@ function PythonFormat(path)
             if v:shell_error != 0
                 echoerr 'ruff format error ' output
             endif
-            let output = system('ruff check --fix --select ALL --ignore T,ANN,N,D,FIX,TD,DTZ,INP,ARG,FBT,PERF,S --no-cache ' . a:path)
+            let output = system('ruff check --fix --select ALL --ignore T,ANN,N,D,FIX,TD,DTZ,INP,ARG,FBT,PERF,S,ERA --no-cache ' . a:path)
             if v:shell_error != 0
                 echoerr 'ruff check error ' output
             endif
