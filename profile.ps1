@@ -66,3 +66,26 @@ function activate-vs {
      Import-Module "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\Microsoft.VisualStudio.DevShell.dll"
      Enter-VsDevShell 6b1f3f5f
 }
+
+# Setup function to activate virtualenv
+function activate-venv {
+    $ProjectDir = $(git rev-parse --show-toplevel 2>$null)
+    if ($ProjectDir) {
+        $ProjectDir = $ProjectDir.Replace("/", "\") + "\"
+    } else {
+        $ProjectDir = $(Get-Location).Path + "\"
+    }
+    $ProjectName = Split-Path $ProjectDir -Leaf
+    $ActivateScripts = @(
+        $("{0}.env\Scripts\Activate.ps1" -f $ProjectDir),
+        $("{0}.venv\Scripts\Activate.ps1" -f $ProjectDir),
+        $("{0}env\Scripts\Activate.ps1" -f $ProjectDir),
+        $("{0}venv\Scripts\Activate.ps1" -f $ProjectDir)
+    )
+    foreach ($Script in $ActivateScripts) {
+        if (Test-Path -Path $Script) {
+            . $Script -Prompt $ProjectName
+            break
+        }
+    }
+}
