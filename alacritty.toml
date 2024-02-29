@@ -1,4 +1,4 @@
-import = ['C:\Users\nakylew\.dotfiles/alacritty-colors/doom-one.toml']
+import = ['~/.dotfiles/alacritty-colors/doom-one.toml']
 
 [cursor]
 unfocused_hollow = true

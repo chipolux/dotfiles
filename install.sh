@@ -72,12 +72,12 @@ function setup () {
     ln -snf "$(pwd)/kitty.conf" $kitty_conf
 
     echo "Moving alacritty config!"
-    alacritty_conf=$HOME/.config/alacritty/alacritty.yml
+    alacritty_conf=$HOME/.config/alacritty/alacritty.toml
     mkdir -p $HOME/.config/alacritty
     if [ -e $alacritty_conf -a ! -h $alacritty_conf ]; then
         mv -f $alacritty_conf $alacritty_conf.old
     fi
-    ln -snf "$(pwd)/alacritty.yml" $alacritty_conf
+    ln -snf "$(pwd)/alacritty.toml" $alacritty_conf
 
     echo "Touching mutt/aliases!"
     touch mutt/aliases
