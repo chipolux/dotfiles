@@ -168,6 +168,8 @@ function SetCppOptions()
 endfunction
 autocmd FileType cpp,c :call SetCppOptions()
 
+autocmd FileType rust map <buffer> <leader>p :RustFmt<CR>
+
 " Python Plugin Settings
 let g:SimpylFold_fold_docstring = 1
 let g:SimpylFold_fold_import = 1
@@ -182,7 +184,7 @@ function PythonFormat(path)
             if v:shell_error != 0
                 echoerr 'ruff format error ' output
             endif
-            let output = system('ruff check --fix --select ALL --ignore T,ANN,N,D,FIX,TD,DTZ,INP,ARG,FBT,PERF,S,ERA --no-cache ' . a:path)
+            let output = system('ruff check --fix --select ALL --ignore T,ANN,N,D,FIX,TD,DTZ,INP,ARG,FBT,PERF,S,ERA,BLE,PLR2004 --no-cache ' . a:path)
             if v:shell_error != 0
                 echoerr 'ruff check error ' output
             endif
@@ -225,9 +227,6 @@ function SetPythonOptions()
     syn keyword pythonSelf self
     highlight def link pythonSelf Special
 endfunction
-
-autocmd FileType cpp map <buffer> <leader>p :ClangFormat<CR>
-autocmd FileType rust map <buffer> <leader>p :RustFmt<CR>
 
 " QML Settings
 autocmd FileType qml :call SetQmlOptions()
