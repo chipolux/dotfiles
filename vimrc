@@ -186,7 +186,8 @@ function PythonFormat(path)
             endif
             let output = system('ruff check --fix --select ALL --ignore T,ANN,N,D,FIX,TD,DTZ,INP,ARG,FBT,PERF,S,ERA,BLE,PLR2004 --no-cache ' . a:path)
             if v:shell_error != 0
-                echoerr 'ruff check error ' output
+                lgetexpr output
+                call win_execute(win_getid(), 'lopen')
             endif
         else
             if executable('isort')
