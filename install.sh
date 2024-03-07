@@ -1,6 +1,24 @@
 #!/bin/bash
 set -e
 
+# Install at least some of these tools eirst:
+#   zsh
+#   git
+#   wget
+#   curl
+#   tmux
+#   neovim
+#   alacritty
+#   kitty
+#   ack
+#   ripgrep
+#   fd
+#   rlwrap
+#   ecl
+#   asdf
+#     python
+#     sbcl
+
 function join-by { local IFS="$1"; shift; echo "$*"; }
 
 function setup () {
