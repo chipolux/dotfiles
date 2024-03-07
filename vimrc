@@ -184,10 +184,13 @@ function PythonFormat(path)
             if v:shell_error != 0
                 echoerr 'ruff format error ' output
             endif
-            let output = system('ruff check --fix --select ALL --ignore T,ANN,N,D,FIX,TD,DTZ,INP,ARG,FBT,PERF,S,ERA,BLE,PLR2004 --no-cache ' . a:path)
+            let output = system('ruff check --fix --select ALL --ignore T,ANN,N,D,FIX,TD,DTZ,INP,ARG,FBT,PERF,S,ERA,BLE --no-cache ' . a:path)
             if v:shell_error != 0
-                lgetexpr output
                 call win_execute(win_getid(), 'lopen')
+                lgetexpr output
+            else
+                call win_execute(win_getid(), 'lclose')
+                lexpr []
             endif
         else
             if executable('isort')
