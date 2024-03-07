@@ -1,4 +1,5 @@
 #!/bin/sh
+
 PARTS=("/usr/local/bin"
        "/usr/local/sbin"
        "/opt/local/bin"
@@ -76,6 +77,11 @@ if [ -s "$(which ack-grep)" ]; then
     alias ack='ack-grep'
 fi
 
+# sometimes ack-grep is ag
+if [ -s "$(which ag)" ]; then
+    alias ack='ag'
+fi
+
 # useful aliases
 alias lt='ls -lth'
 alias rsync='rsync -h --progress --partial'
@@ -85,7 +91,7 @@ alias mail-personal='mutt -F ~/.mutt/personal.muttrc'
 alias feh='feh --magick-timeout 1 --geometry 500x500'
 
 # prefer neovim
-if [ -e $(which nvim) ]; then
+if [ -e "$(which nvim)" ]; then
     alias vim=nvim
 fi
 
