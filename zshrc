@@ -18,7 +18,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 ZSH_DISABLE_COMPFIX="true"
 
-plugins=(git brew macos asdf)
+plugins=(git brew rust macos asdf)
 
 source $ZSH/oh-my-zsh.sh
 
