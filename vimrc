@@ -139,6 +139,7 @@ command WQ wq
 command Wq wq
 command W w
 command Q q
+command Qa qa
 
 " Some shorcuts for decoding and re-encoding binary as hex
 command TH %!xxd
@@ -186,11 +187,11 @@ function PythonFormat(path)
             endif
             let output = system('ruff check --fix --select ALL --ignore T,ANN,N,D,FIX,TD,DTZ,INP,ARG,FBT,PERF,S,ERA,BLE --no-cache ' . a:path)
             if v:shell_error != 0
-                call win_execute(win_getid(), 'lopen')
                 lgetexpr output
+                call win_execute(win_getid(), 'lopen')
             else
                 call win_execute(win_getid(), 'lclose')
-                lexpr []
+                lgetexpr []
             endif
         else
             if executable('isort')
