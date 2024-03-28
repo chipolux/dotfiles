@@ -29,7 +29,8 @@ foreach ($pair in $FILES) {
     New-Item $destination -ItemType Directory -Force
     if (Test-Path $destination) {Remove-Item $destination -Force -Recurse}
     Copy-Item -Path $source -Destination $destination -Force -Recurse
-    #cmd /c mklink $destination $source > $null
+    # New-Item -Path $destination -Value $source -ItemType HardLink -Force
+    # cmd /c mklink $destination $source > $null
 }
 
 foreach ($pair in $DIRECTORIES) {
@@ -41,7 +42,8 @@ foreach ($pair in $DIRECTORIES) {
     $file = Get-Item $destination -Force -ErrorAction SilentlyContinue
     if ($file) {Remove-Item $destination -Force -Recurse}
     Copy-Item -Path $source -Destination $destination -Force
-    #cmd /c mklink /J $destination $source > $null
+    # New-Item -Path $destination -Value $source -ItemType Junction -Force
+    # cmd /c mklink /J $destination $source > $null
 }
 
 Write-Host "Downloading ~\vimfiles\autoload\plug.vim..."
