@@ -12,35 +12,12 @@ for PART in "${PARTS[@]}"; do
     fi
 done
 
-# pyenv
-if [ -f "$(which pyenv)" ]; then
-    eval "$(pyenv init -)"
-fi
-if [ -f "$(which pyenv-virtualenv-init)" ]; then
-    eval "$(pyenv virtualenv-init -)"
-fi
-
 # prefer clang if available
 if [ -f "$(which clang)" ]; then
     export CC="$(which clang)"
 fi
 if [ -f "$(which clang++)" ]; then
     export CXX="$(which clang++)"
-fi
-
-# virtualenvwrapper
-if [ -z "$PYENV_SHELL" ]; then
-    venvwrapper=$(which virtualenvwrapper.sh)
-    if [ -f ~/.local/bin/virtualenvwrapper.sh ]; then
-        venvwrapper=~/.local/bin/virtualenvwrapper.sh
-    fi
-
-    if [ $venvwrapper ] && [ -s $venvwrapper ] && [ -z $VIRTUAL_ENV ]; then
-        export WORKON_HOME=$HOME/.virtualenvs
-        export PIP_VIRTUALENV_BASE=$WORKON_HOME
-        export VIRTUALENVWRAPPER_PYTHON=$(which python3)
-        source $venvwrapper
-    fi
 fi
 
 # cheapo virtualenvwrapper
@@ -71,16 +48,6 @@ function activate() {
     echo 'No environment found to activate :('
     return 1
 }
-
-# Ack-grep to ack
-if [ -s "$(which ack-grep)" ]; then
-    alias ack='ack-grep'
-fi
-
-# sometimes ack-grep is ag
-if [ -s "$(which ag)" ]; then
-    alias ack='ag'
-fi
 
 # useful aliases
 alias lt='ls -lth'
