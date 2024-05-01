@@ -13,10 +13,10 @@ for PART in "${PARTS[@]}"; do
 done
 
 # prefer clang if available
-if [ -f "$(which clang)" ]; then
+if [ -f "$(which clang 2>/dev/null)" ]; then
     export CC="$(which clang)"
 fi
-if [ -f "$(which clang++)" ]; then
+if [ -f "$(which clang++ 2>/dev/null)" ]; then
     export CXX="$(which clang++)"
 fi
 
@@ -58,7 +58,7 @@ alias mail-personal='mutt -F ~/.mutt/personal.muttrc'
 alias feh='feh --magick-timeout 1 --geometry 500x500'
 
 # prefer neovim
-if [ -e "$(which nvim)" ]; then
+if [ -e "$(which nvim 2>/dev/null)" ]; then
     alias vim=nvim
 fi
 
@@ -127,14 +127,14 @@ function countdown() {
 }
 
 # make fzf use fd for searching file names
-if [ -x "$(which fd)" ]; then
+if [ -x "$(which fd 2>/dev/null)" ]; then
     export FZF_DEFAULT_COMMAND='fd --type f'
     export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
 
 # make ripgrep aware of configuration and set it up to use a pager
 unset -f rg 2>> /dev/null
-export RIPGREP_BIN=$(which rg)
+export RIPGREP_BIN=$(which rg 2>/dev/null)
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 function rg() {
     $RIPGREP_BIN -p "$@" | less -RFX
