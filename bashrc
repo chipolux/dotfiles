@@ -1,4 +1,4 @@
 #!/bin/bash
-if [ -s "$HOME/.shell_common" ]; then
+if [ -z "${TOOLBOX_PATH}" ] && [ -s "$HOME/.shell_common" ]; then
     source "$HOME/.shell_common"
 fi
