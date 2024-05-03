@@ -14,6 +14,7 @@
     tool = vimdiff
 [alias]
     lp = log --graph --date=short --pretty=format:'%C(yellow bold)%h %C(cyan)(%cd)%C(reset) %s %C(green)<%an>'
+    lf = log --date=short --pretty=format:'%C(yellow bold)%h %C(cyan)(%cd)%C(reset) %s %C(green)<%an>'
     sh = show --stat
 [filter "lfs"]
     clean = git-lfs clean -- %f
