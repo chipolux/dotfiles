@@ -18,6 +18,7 @@ Plug 'tmhedberg/matchit' " expanded % handling
 Plug 'ciaranm/securemodelines'
 Plug 'prettier/vim-prettier' " <leader>p formatting
 Plug 'junegunn/fzf' " Ctrl+K fzf searching
+Plug 'vivien/vim-linux-coding-style' " :LinuxCodingStyle when editing kernel
 
 " Filetype Specific
 Plug 'tmhedberg/SimpylFold' " python folding
