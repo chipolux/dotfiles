@@ -84,6 +84,9 @@ endif
 set exrc
 set secure
 
+" disable linux-coding-style auto-matching, only enable it manually
+let g:linuxsty_patterns = []
+
 " Jump to last known position in a file after opening it, same as doing `"
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
