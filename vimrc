@@ -178,6 +178,8 @@ autocmd FileType rust map <buffer> <leader>p :RustFmt<CR>
 " Python Plugin Settings
 let g:SimpylFold_fold_docstring = 1
 let g:SimpylFold_fold_import = 1
+let g:ruff_formt = 'ruff format --no-cache'
+let g:ruff_check = 'ruff check --fix --select ALL --ignore T,ANN,N,D,FIX,TD,DTZ,INP,ARG,FBT,PERF,S,ERA,BLE,PLR2004 --no-cache --output-format concise '
 function PythonFormat(path)
     if &modified
         echoerr 'save before formatting'
@@ -185,11 +187,11 @@ function PythonFormat(path)
         " ruff can take the place of older slower tools
         if executable('ruff')
             " see https://docs.astral.sh/ruff/rules for more info
-            let output = system('ruff format --no-cache ' . a:path)
+            let output = system(g:ruff_formt . ' ' . a:path)
             if v:shell_error != 0
                 echoerr 'ruff format error ' output
             endif
-            let output = system('ruff check --fix --select ALL --ignore T,ANN,N,D,FIX,TD,DTZ,INP,ARG,FBT,PERF,S,ERA,BLE --no-cache ' . a:path)
+            let output = system(g:ruff_check . ' ' . a:path)
             if v:shell_error != 0
                 lgetexpr output
                 call win_execute(win_getid(), 'lopen')
