@@ -14,7 +14,7 @@ $FILES = (
     ("vimrc", ".vimrc"),
     ("gitignore", ".gitignore"),
     ("gitconfig", ".gitconfig"),
-    ("profile.ps1", "Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1")
+    ("profile-shim.ps1", "Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1")
 )
 
 $DIRECTORIES = (

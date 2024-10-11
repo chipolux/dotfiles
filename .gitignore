@@ -6,3 +6,4 @@ tmux/resurrect/*
 vim/*
 
 quicklisp.lisp
+private-profile.ps1

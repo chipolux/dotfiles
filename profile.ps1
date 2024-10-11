@@ -89,3 +89,7 @@ function activate-venv {
         }
     }
 }
+
+if (Test-Path ~\.dotfiles\private-profile.ps1) {
+    . ~\.dotfiles\private-profile.ps1
+}
