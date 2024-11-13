@@ -118,7 +118,7 @@ nmap <leader>v :set cursorline! cursorcolumn!<CR>
 nmap <leader>f :setlocal foldmethod=syntax<CR>
 
 " Format selected json using python
-vmap <leader>j !python -m json.tool --indent 2<CR>
+vmap <leader>j !python -m json.tool<CR>
 
 " Show current byte offset
 nmap <leader>B :echo eval(line2byte(line('.')) + col('.') - 1)<CR>
@@ -179,7 +179,7 @@ autocmd FileType rust map <buffer> <leader>p :RustFmt<CR>
 let g:SimpylFold_fold_docstring = 1
 let g:SimpylFold_fold_import = 1
 let g:ruff_formt = 'ruff format --no-cache'
-let g:ruff_check = 'ruff check --fix --select ALL --ignore T,ANN,N,D,FIX,TD,DTZ,INP,ARG,FBT,PERF,S,ERA,BLE,PLR2004 --no-cache --output-format concise '
+let g:ruff_check = 'ruff check --fix --select ALL --ignore T,ANN,N,D,FIX,TD,DTZ,INP,ARG,FBT,PERF,S,ERA,BLE,PLR2004,EXE001,EXE002,PLR0913,PLW2901,PD901 --no-cache --output-format concise '
 function PythonFormat(path)
     if &modified
         echoerr 'save before formatting'
