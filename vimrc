@@ -99,6 +99,9 @@ function! CopyMatches(reg)
 endfunction
 command! -register CopyMatches call CopyMatches(<q-reg>)
 
+" Remove empty lines
+command RemoveEmpty :g/^$/d
+
 " Close buffer without killing split
 nmap <silent> <leader>d :bp <bar> :bd #<CR>
 nmap <silent> <leader>D :bp! <bar> :bd! #<CR>
