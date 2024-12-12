@@ -2,6 +2,7 @@
 
 ########
 # Usage:
+#   install graphviz
 #   tree -a -J | ./map.py | dot -Tpdf > map.pdf
 ########
 import json
@@ -28,7 +29,7 @@ template = '    n{i} [label=' + label_template + '];'
 while dirs:
     p = len(nodes)
     d = dirs.pop(0)
-    for c in d['contents']:
+    for c in d.get('contents', []):
         if c['type'] == 'directory':
             if c['name'] == '.git':
                 # skip .git directory
