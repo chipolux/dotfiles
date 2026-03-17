@@ -102,6 +102,23 @@ function gaf() {
     fi
 }
 
+unset -f glf 2>> /dev/null
+function glf() {
+    lbranch=$(git branch -vv | grep '*' | cut -d' ' -f2)
+    rbranch=$(git branch -vv | grep '*' | awk -F'[\\[\\]]' '{print $2}')
+    remote=$(git branch -vv | grep '*' | awk -F'[\\[\\]]' '{print $2}' | cut -d'/' -f1)
+    while true; do
+        printf "Force reset $lbranch to match $rbranch? (y/N): " >&2
+        read -r yn
+        case $yn in
+            [Yy]* ) echo "Fetching and resetting..."; break;;
+            * ) echo "Aborting, no changes made!"; return;;
+        esac
+    done
+    git fetch $remote
+    git reset --hard $rbranch
+}
+
 # function to open with fuzzy found file
 unset -f of 2>> /dev/null
 function of() {
