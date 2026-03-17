@@ -18,15 +18,18 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 ZSH_DISABLE_COMPFIX="true"
 
-plugins=(git brew rust macos asdf fzf tmux iterm2)
-
-source $ZSH/oh-my-zsh.sh
+if [ ! -e /run/.containerenv ]; then
+    plugins=(git brew rust macos asdf fzf tmux iterm2)
+    source $ZSH/oh-my-zsh.sh
+fi
 
 # User configuration
 
 # Load .shell_common if exist since aliases,
 # path changes and stuff live there
-if [ -s "$HOME/.shell_common" ]; then
+if [ -e /run/.containerenv ] && [ -s "$HOME/.toolbox_profile" ]; then
+    source "$HOME/.toolbox_profile"
+elif [ ! -e /run/.containerenv ] && [ -s "$HOME/.shell_common" ]; then
     source "$HOME/.shell_common"
 fi
 
@@ -64,4 +67,6 @@ setopt ignoreeof
 zstyle ':completion:*:*:*vi*:*' file-patterns '^*.(qmlc|jsc):source-files' '*:all-files'
 
 # Load fzf completions/keybinds
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [ ! -e /run/.containerenv ]; then
+    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+fi
