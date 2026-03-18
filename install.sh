@@ -1,6 +1,11 @@
 #!/bin/bash
 set -e
 
+# we may need aliases or other special secrets from here
+if [ -s "$HOME/.private_profile" ]; then
+    source "$HOME/.private_profile"
+fi
+
 # Install at least some of these tools eirst:
 #   zsh
 #   git
@@ -57,7 +62,7 @@ function setup () {
         echo "    Getting fzf!"
         git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
     fi
-    if [ ! -d $HOME/.quicklisp ] && [ -f "$(which sbcl)" ]; then
+    if [ ! -d $HOME/.quicklisp ] && [ -n "$(command -v sbcl)" ]; then
         echo "    Getting quicklisp!"
         curl -fLO https://beta.quicklisp.org/quicklisp.lisp
         sbcl --load install-quicklisp.lisp
@@ -100,13 +105,20 @@ function setup () {
     echo "Touching mutt/aliases!"
     touch mutt/aliases
 
+    if [ -n "$(command -v io.neovim.nvim)" ]; then
+        echo "Linking neovim..."
+        sudo ln -s $(which io.neovim.nvim) /usr/local/bin/nvim || true
+    fi
+
     echo "Installing vim plugins!"
-    if [ -e $(which nvim) ]; then
+    if [ -n "$(command -v nvim)" ]; then
+        echo "> Using nvim to install plugins..."
         nvim +PlugInstall +qall
-    elif [ -e $(which vim) ]; then
+    elif [ -n "$(command -v vim)" ]; then
+        echo "> Using vim to install plugins..."
         vim +PlugInstall +qall
     else
-        echo "  No vim or neovim found!"
+        echo "> No vim or neovim found!"
     fi
 
     echo "Installing fzf!"
@@ -118,15 +130,12 @@ function setup () {
     echo "Installing xterm terminfo!"
     tic -x xterm-terminfo.txt
 
-    zsh_path=$(which zsh)
-    if [ $zsh_path ] && [ -e $zsh_path ]; then
+    if [ -n "$(command -v zsh)" ]; then
         echo "Setting shell to zsh!"
-        sudo chsh -s $zsh_path $USER
+        sudo chsh -s $(which zsh) $USER
     fi
 
-    task_path=$(which task)
-    timew_path=$(which timew)
-    if [ -e $task_path ] && [ -e $timew_path ]; then
+    if [ -n "$(command -v task)" ] && [ -n "$(command -v timew)" ]; then
         echo "Setting up timewarrior hook..."
         mkdir -p $HOME/.task-data/hooks
         cp $HOME/.task/on-modify.timewarrior $HOME/.task-data/hooks/.
