@@ -105,7 +105,7 @@ function gaf() {
 unset -f glf 2>> /dev/null
 function glf() {
     lbranch=$(git branch -vv | grep '*' | cut -d' ' -f2)
-    rbranch=$(git branch -vv | grep '*' | awk -F'[\\[\\]]' '{print $2}')
+    rbranch=$(git branch -vv | grep '*' | awk -F'[\\[\\]]' '{print $2}' | cut -d':' -f1)
     remote=$(git branch -vv | grep '*' | awk -F'[\\[\\]]' '{print $2}' | cut -d'/' -f1)
     while true; do
         printf "Force reset $lbranch to match $rbranch? (y/N): " >&2
