@@ -17,8 +17,10 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tmhedberg/matchit' " expanded % handling
 Plug 'ciaranm/securemodelines'
 Plug 'prettier/vim-prettier' " <leader>p formatting
-Plug 'junegunn/fzf' " Ctrl+K fzf searching
+Plug 'junegunn/fzf' " base fzf plugin, needed for fzf.vim
+Plug 'junegunn/fzf.vim' " Ctrl+K fzf searching and more
 Plug 'vivien/vim-linux-coding-style' " :LinuxCodingStyle when editing kernel
+Plug 'tpope/vim-fugitive'
 
 " Filetype Specific
 Plug 'tmhedberg/SimpylFold' " python folding
@@ -134,8 +136,8 @@ vnoremap <leader>de :!python -c 'import sys,urllib;print urllib.unquote(sys.stdi
 command FormatXML :%!python -c "import sys,xml.dom.minidom;print(xml.dom.minidom.parse(sys.stdin).toprettyxml(indent='  '))"
 
 " map fzf to be Ctrl+p and Ctrl+k
-nnoremap <C-p> :<C-u>FZF<CR>
-nnoremap <C-k> :<C-u>FZF<CR>
+nnoremap <C-p> :<C-u>Files<CR>
+nnoremap <C-k> :<C-u>Files<CR>
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 
 " 'zoom' the current pane
@@ -174,7 +176,7 @@ endfunction
 function SetCppOptions()
     map <buffer> <leader>p :call ClangFormat(shellescape(@%, 1))<CR>
 endfunction
-autocmd FileType cpp,c :call SetCppOptions()
+autocmd FileType cpp,c,arduino :call SetCppOptions()
 
 autocmd FileType rust map <buffer> <leader>p :RustFmt<CR>
 
@@ -182,7 +184,7 @@ autocmd FileType rust map <buffer> <leader>p :RustFmt<CR>
 let g:SimpylFold_fold_docstring = 1
 let g:SimpylFold_fold_import = 1
 let g:ruff_formt = 'ruff format --no-cache'
-let g:ruff_check = 'ruff check --fix --select ALL --ignore T,ANN,N,D,FIX,TD,DTZ,INP,ARG,FBT,PERF,S,ERA,BLE,PLR2004,EXE001,EXE002,PLR0913,PLW2901,PD901 --no-cache --output-format concise '
+let g:ruff_check = 'ruff check --fix --select ALL --ignore T,ANN,N,D,FIX,TD,DTZ,INP,ARG,FBT,PERF,S,ERA,BLE,PLR2004,EXE001,EXE002,PLR0913,PLW2901 --no-cache --output-format concise '
 function PythonFormat(path)
     if &modified
         echoerr 'save before formatting'
