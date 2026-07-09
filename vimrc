@@ -245,8 +245,24 @@ function SetPythonOptions()
 endfunction
 
 " QML Settings
+function QmlFormat(path)
+    if &modified
+        echoerr 'save before formatting'
+    else
+        if executable('qmlformat')
+            let output = system('qmlformat -i ' . a:path)
+            if v:shell_error != 0
+                echoerr 'qmlformat error ' output
+            endif
+        else
+            echoerr 'qmlformat not found'
+        endif
+        edit!
+    endif
+endfunction
 autocmd FileType qml :call SetQmlOptions()
 function SetQmlOptions()
+    map <buffer> <leader>p :call QmlFormat(shellescape(@%, 1))<CR>
     map <buffer><leader>r :silent exec '!qmlscene' shellescape(@%, 1)<CR>
     setlocal foldmethod=indent
 endfunction
