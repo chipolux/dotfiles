@@ -4,7 +4,7 @@
 [core]
     excludesfile = ~/.gitignore
     pager = less -FX
-    editor = nvim
+    editor = vim
     autocrlf = false
 [commit]
     verbose = true
