@@ -17,8 +17,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tmhedberg/matchit' " expanded % handling
 Plug 'ciaranm/securemodelines'
 Plug 'prettier/vim-prettier' " <leader>p formatting
-Plug 'junegunn/fzf' " base fzf plugin, needed for fzf.vim
-Plug 'junegunn/fzf.vim' " Ctrl+K fzf searching and more
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim' " Ctrl+K fzf searching
 Plug 'vivien/vim-linux-coding-style' " :LinuxCodingStyle when editing kernel
 Plug 'tpope/vim-fugitive'
 
