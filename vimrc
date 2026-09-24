@@ -156,6 +156,13 @@ command FH %!xxd -r
 
 " Rust Plugin Settings
 let g:rust_fold = 1
+function SetRustOptions()
+    map <buffer> <leader>p :RustFmt<CR>
+    set foldmethod=indent
+    " set foldexpr=nvim_treesitter#foldexpr()
+    " set foldlevel=99
+endfunction
+autocmd FileType rust :call SetRustOptions()
 
 " Clang Format Settings
 function ClangFormat(path)
@@ -178,13 +185,11 @@ function SetCppOptions()
 endfunction
 autocmd FileType cpp,c,arduino :call SetCppOptions()
 
-autocmd FileType rust map <buffer> <leader>p :RustFmt<CR>
-
 " Python Plugin Settings
 let g:SimpylFold_fold_docstring = 1
 let g:SimpylFold_fold_import = 1
 let g:ruff_formt = 'ruff format --no-cache'
-let g:ruff_check = 'ruff check --fix --select ALL --ignore T,ANN,N,D,FIX,TD,DTZ,INP,ARG,FBT,PERF,S,ERA,BLE,PLR2004,EXE001,EXE002,PLR0913,PLW2901 --no-cache --output-format concise '
+let g:ruff_check = 'ruff check --fix --select ALL --ignore T,ANN,N,D,FIX,TD,DTZ,INP,ARG,FBT,PERF,S,ERA,BLE,PLR2004,EXE001,EXE002,PLR0913,PLW2901,CPY001 --no-cache --output-format concise '
 function PythonFormat(path)
     if &modified
         echoerr 'save before formatting'
